@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+backend/venv/
+backend/__pycache__/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.local
+backend/serviceAccountKey.json
+
+# Dataset & Models (Too large for Git)
+backend/dataset/
+backend/models/*.h5
+!backend/models/.keep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
