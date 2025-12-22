@@ -21,7 +21,7 @@ LEARNING_RATE = 0.001
 
 # Dataset path - update this to your local path after downloading from Kaggle
 # https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
-DATASET_PATH = Path("dataset/PlantVillage")  # Adjust based on your download location
+DATASET_PATH = Path("backend/dataset/PlantVillage")  # Corrected path
 TRAIN_DIR = DATASET_PATH / "train"
 VAL_DIR = DATASET_PATH / "valid"
 
@@ -122,6 +122,18 @@ def train_model():
     # Create model
     print("\n2. Building model...")
     model = create_model(num_classes)
+    
+    # Check for existing weights to resume training
+    weights_path = Path('backend/models/plant_disease_model.h5')
+    if weights_path.exists():
+        print(f"\nFound existing model at {weights_path}")
+        print("Loading weights to resume training...")
+        try:
+            model.load_weights(str(weights_path))
+            print("✅ Weights loaded successfully! Resuming training...")
+        except Exception as e:
+            print(f"⚠️ Could not load weights: {e}")
+            print("Starting training from scratch...")
     
     # Compile model
     model.compile(

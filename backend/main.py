@@ -11,6 +11,44 @@ from pathlib import Path
 
 from database import init_db, save_scan
 
+# Global model variable
+model = None
+
+def load_model():
+    global model
+    try:
+        model = tf.keras.models.load_model("backend/models/plant_disease_model.h5")
+        print("Model loaded successfully")
+    except:
+        print("Model not found, using mock")
+        model = None
+
+def preprocess_image(image_bytes):
+    img = Image.open(io.BytesIO(image_bytes))
+    img = img.resize((224, 224))
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    return img_array / 255.0
+
+def predict_disease(img_array):
+    if model is None:
+        return "early_blight", 0.95 # Mock
+    
+    predictions = model.predict(img_array)
+    class_idx = np.argmax(predictions[0])
+    confidence = float(predictions[0][class_idx])
+    
+    # Load class names
+    try:
+        with open("backend/models/class_names.txt", "r") as f:
+            class_names = f.read().splitlines()
+        disease = class_names[class_idx]
+    except:
+        disease = "early_blight"
+        
+    return disease, confidence
+
+
 app = FastAPI(title="SANJIVANI API", version="1.0.0")
 
 # CORS middleware for React frontend
@@ -22,14 +60,43 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ... (Disease Info Dict) ...
 
-@app.on_event("startup")
-async def startup_event():
-    load_model()
-    init_db()
+# ---------------------------------------------------------
+# DATA MODELS & INFO
+# ---------------------------------------------------------
 
-# ... (PredictionResponse Class) ...
+class PredictionResponse(BaseModel):
+    disease: str
+    confidence: float
+    severity: str
+    treatment: str
+    prevention: str
+
+DISEASE_INFO = {
+    "early_blight": {
+        "severity": "Moderate",
+        "treatment": "Use copper-based fungicides. Remove infected leaves.",
+        "prevention": "Rotate crops. Ensure good airflow."
+    },
+    "late_blight": {
+        "severity": "High",
+        "treatment": "Apply fungicides immediately. Destroy infected plants.",
+        "prevention": "Use resistant varieties. Avoid overhead irrigation."
+    },
+    "healthy": {
+        "severity": "None",
+        "treatment": "None required.",
+        "prevention": "Continue good agricultural practices."
+    }
+}
+# Default fallback for unknown classes
+for k in ["target_spot", "mosaic_virus", "curl_virus", "bacterial_spot"]:
+    DISEASE_INFO[k] = {
+        "severity": "Unknown", 
+        "treatment": "Consult an agronomist.", 
+        "prevention": "Isolate plant."
+    }
+
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(file: UploadFile = File(...)):
