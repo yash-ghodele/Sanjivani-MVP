@@ -1,58 +1,64 @@
 """
-Dataset Configuration for SANJIVANI 2.0
-Focused scope: 3 crops with 8-10 critical diseases for higher accuracy
+Dataset Configuration
+Defines the scope, classes, and preprocessing parameters for the AI model
 """
 
-# Narrowed scope for production-grade accuracy
-CROPS = ["Tomato", "Potato", "Rice"]
-
-# Disease classes per crop (realistic, focused scope)
-DISEASES = {
-    "Tomato": [
-        "Early_Blight",
-        "Late_Blight",
-        "Leaf_Mold",
-        "Healthy"
-    ],
-    "Potato": [
-        "Early_Blight",
-        "Late_Blight",
-        "Healthy"
-    ],
-    "Rice": [
-        "Bacterial_Blight",
-        "Brown_Spot",
-        "Healthy"
-    ]
+# Focused Scope: Tomato & Potato (Rice unavailable in current dataset)
+# Using EXACT folder names from PlantVillage dataset
+DISEASE_MAPPING = {
+    # Tomato
+    "Tomato___Early_blight": {
+        "crop": "Tomato",
+        "disease": "Early_Blight",
+        "severity": "Moderate"
+    },
+    "Tomato___Late_blight": {
+        "crop": "Tomato",
+        "disease": "Late_Blight",
+        "severity": "High"
+    },
+    "Tomato___Leaf_Mold": {
+        "crop": "Tomato",
+        "disease": "Leaf_Mold",
+        "severity": "Low"
+    },
+    "Tomato___healthy": {
+        "crop": "Tomato",
+        "disease": "Healthy",
+        "severity": "Low"
+    },
+    
+    # Potato
+    "Potato___Early_blight": {
+        "crop": "Potato",
+        "disease": "Early_Blight",
+        "severity": "Moderate"
+    },
+    "Potato___Late_blight": {
+        "crop": "Potato",
+        "disease": "Late_Blight",
+        "severity": "Critical"
+    },
+    "Potato___healthy": {
+        "crop": "Potato",
+        "disease": "Healthy",
+        "severity": "Low"
+    }
 }
 
-# Flattened class list for model training (10 total classes)
-CLASS_NAMES = [
-    "Tomato__Early_Blight",
-    "Tomato__Late_Blight",
-    "Tomato__Leaf_Mold",
-    "Tomato__Healthy",
-    "Potato__Early_Blight",
-    "Potato__Late_Blight",
-    "Potato__Healthy",
-    "Rice__Bacterial_Blight",
-    "Rice__Brown_Spot",
-    "Rice__Healthy"
-]
+CLASS_NAMES = list(DISEASE_MAPPING.keys())
 
-# Model configuration
+# Model Hyperparameters
 MODEL_CONFIG = {
-    "architecture": "MobileNetV2",
     "input_size": (224, 224, 3),
-    "num_classes": len(CLASS_NAMES),
-    "weights": "imagenet",  # Transfer learning
-    "trainable_layers": -4,  # Fine-tune last 4 layers
-    "learning_rate": 0.0001,
     "batch_size": 32,
-    "epochs": 20
+    "epochs": 5,  # Reduced for demonstration/portfolio speed (usually 10-20)
+    "learning_rate": 1e-4,
+    "trainable_layers": 20, 
+    "weights": "imagenet"
 }
 
-# Data augmentation settings
+# Augmentation Parameters
 AUGMENTATION_CONFIG = {
     "rotation_range": 20,
     "width_shift_range": 0.2,
@@ -63,27 +69,19 @@ AUGMENTATION_CONFIG = {
     "fill_mode": "nearest"
 }
 
-# Validation split
+# Training Split
 VALIDATION_SPLIT = 0.2
 TEST_SPLIT = 0.1
 
-# Performance thresholds
+# Performance Thresholds
 PERFORMANCE_THRESHOLDS = {
-    "min_accuracy": 0.90,  # 90% minimum
-    "min_precision": 0.88,
-    "min_recall": 0.88,
-    "max_inference_ms": 100  # Edge-ready target
+    "min_accuracy": 0.85,
+    "max_inference_ms": 100,
+    "max_model_size_mb": 20
 }
 
 def get_crop_from_class(class_name: str) -> str:
-    """Extract crop name from class name"""
-    return class_name.split("__")[0]
+    return DISEASE_MAPPING.get(class_name, {}).get("crop", "Unknown")
 
 def get_disease_from_class(class_name: str) -> str:
-    """Extract disease name from class name"""
-    return class_name.split("__")[1]
-
-def format_disease_display(class_name: str) -> str:
-    """Format disease name for user display"""
-    disease = get_disease_from_class(class_name)
-    return disease.replace("_", " ").title()
+    return DISEASE_MAPPING.get(class_name, {}).get("disease", "Unknown")

@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
 
 > **Built from scratch** with production-grade architecture, comprehensive testing, and edge-ready AI optimization. Not a tutorial project—this is a **portfolio-grade system** demonstrating senior full-stack AI engineering capabilities.
@@ -20,7 +20,7 @@ This isn't another Plant Village clone. SANJIVANI 2.0 is a **complete rebuild** 
 ✅ **Clean Architecture**: Separated AI inference, knowledge base, and business logic layers  
 ✅ **Production APIs**: RESTful API v2 with structured responses and versioning  
 ✅ **Edge-Ready AI**: MobileNetV2 optimized for <100ms inference with dual format export (.h5 + .tflite)  
-✅ **Offline-First**: Full PWA with IndexedDB queue and background sync  
+✅ **Modern Frontend**: Next.js 15 App Router with "Premium Nature" Glassmorphism UI  
 ✅ **Real Testing**: 34 test cases with 70%+ coverage, not just mock data  
 ✅ **Portfolio Quality**: Built to showcase in interviews, not just to pass a hackathon  
 
@@ -30,10 +30,10 @@ This isn't another Plant Village clone. SANJIVANI 2.0 is a **complete rebuild** 
 
 ```mermaid
 graph TB
-    subgraph "Frontend Layer"
-        A[React PWA<br/>TypeScript]
-        B[Service Worker<br/>Offline Support]
-        C[IndexedDB<br/>Scan Queue]
+    subgraph "Frontend Layer (Next.js)"
+        A[App Router]
+        B[Server Components]
+        C[Tailwind v4 UI]
     end
     
     subgraph "API Gateway"
@@ -55,7 +55,7 @@ graph TB
     end
     
     A -->|REST/JSON| D
-    B -->|Sync Queue| D
+    B -->|SSR Data| D
     D --> E
     E --> F
     D --> H
@@ -79,28 +79,19 @@ graph TB
 - **<100ms inference** time (edge-ready)
 - **Dual format export**: .h5 (14MB) + .tflite (4MB)
 - **Comprehensive metrics**: Accuracy, Precision, Recall, F1-Score
-- **Confusion matrix** visualization
 
 ### 📡 API Design
 - **RESTful API v2** with structured responses
 - **Categorized treatments**: Immediate, Short-term, Preventive
-- **Multilingual support**: English, Hindi, Marathi
+- **Multilingual support**: English, Hindi, Marathi (Planned)
 - **Performance metadata**: Inference time, model version tracking
-- **Backward compatibility**: Legacy v1 endpoint maintained
 
-### 📱 Progressive Web App
-- **Offline-first** architecture with service worker
-- **IndexedDB queue** for scans when offline
-- **Auto-sync** when connection restored
-- **Installable** on mobile and desktop
-- **Cache strategies**: Cache-first for assets, network-first for API
-
-### 🎨 User Experience
-- **Mobile-optimized** farmer interface
-- **Real-time** spraying condition assessment
-- **Task calendar** with urgency indicators
-- **Confidence visualization** with progress bars
-- **Color-coded severity** badges
+### �️ Next.js Frontend
+- **App Router** architecture for optimal performance
+- **Premium Dark Theme** ("Nature" palette: Deep Slate + Neon Green)
+- **Glassmorphism** UI components
+- **Real-time Weather** integration (OpenWeather API)
+- **Responsive** mobile-first layout
 
 ---
 
@@ -109,7 +100,7 @@ graph TB
 ### Prerequisites
 ```bash
 - Python 3.11+
-- Node.js 18+
+- Node.js 18+ (20+ Recommended)
 - Git
 ```
 
@@ -129,15 +120,19 @@ python main.py
 
 ### Frontend Setup
 ```bash
-# Navigate to root
-cd ..
+# Navigate to frontend directory
+cd ../frontend
 
 # Install dependencies
 npm install
 
+# Setup Environment
+cp .env.example .env.local
+# (Optional) Add your OpenWeather API Key in .env.local
+
 # Run dev server
 npm run dev
-# → http://localhost:5173
+# → http://localhost:3000
 ```
 
 ### Run Tests
@@ -151,29 +146,13 @@ pytest tests/ -v
 
 ---
 
-## 📊 Performance Metrics
-
-| Metric | Target | Achieved |
-|--------|--------|----------|
-| **Model Accuracy** | >90% | Ready to train* |
-| **Inference Time** | <100ms | ✅ ~45ms (mock) |
-| **API Response** | <200ms | ✅ ~150ms |
-| **Model Size (.tflite)** | <20MB | ✅ ~4MB |
-| **Code Coverage** | >70% | ✅ 75% (estimated) |
-| **Offline Support** | Full PWA | ✅ Complete |
-
-*\*Model training script ready. Run `python backend/train_model_v2.py` with dataset.*
-
----
-
-## 🛠️ Tech Stack
+## ️ Tech Stack
 
 ### Frontend
-- **Framework**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS (Farmer-optimized theme)
-- **State**: TanStack Query
-- **PWA**: Service Worker + IndexedDB
-- **Icons**: Lucide React
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4 + Lucide React
+- **Language**: TypeScript
+- **State**: React 19 Hooks
 
 ### Backend
 - **Framework**: FastAPI + Uvicorn
@@ -185,7 +164,6 @@ pytest tests/ -v
 - **Containers**: Docker + docker-compose
 - **Testing**: pytest + unittest
 - **CI/CD**: GitHub Actions ready
-- **Deployment**: Nginx + gunicorn
 
 ---
 
@@ -195,62 +173,19 @@ pytest tests/ -v
 SANJIVANI/
 ├── backend/
 │   ├── ai/                    # AI inference layer
-│   │   ├── inference_engine.py   # MobileNetV2 wrapper
-│   │   └── dataset_config.py     # 10 disease classes
 │   ├── knowledge/             # Knowledge base layer
-│   │   ├── knowledge_engine.py   # Deterministic logic
-│   │   └── disease_knowledge.json # Versioned DB
 │   ├── api/v2/                # REST API v2
-│   │   ├── predict.py           # Disease prediction
-│   │   └── metrics.py           # Model performance
 │   ├── tests/                 # 34 test cases
 │   └── train_model_v2.py      # Training pipeline
-├── src/
-│   ├── components/            # React components
-│   ├── pages/                 # Routes (Dashboard, Scan)
-│   └── lib/                   # PWA + offline queue
-├── docs/                      # Documentation
-│   ├── architecture.md          # System design
-│   ├── AI_TRAINING.md           # Training guide
-│   └── TESTING.md               # Test documentation
-└── public/
-    ├── service-worker.js      # Offline support
-    └── manifest.json          # PWA manifest
+├── frontend/                  # Next.js Application
+│   ├── app/                   # App Router pages
+│   │   ├── dashboard/         # Protected routes
+│   │   └── scan/              # AI Interface
+│   ├── components/            # Shadcn-like UI
+│   ├── services/              # API Clients
+│   └── public/                # Static assets
+└── docs/                      # Documentation
 ```
-
----
-
-## 🧪 Testing
-
-Comprehensive test coverage across all layers:
-
-```bash
-# Run all tests
-pytest backend/tests/ -v
-
-# With coverage report
-pytest backend/tests/ --cov=. --cov-report=html
-```
-
-**Test Suite:**
-- ✅ 12 tests: AI Inference Engine
-- ✅ 10 tests: Knowledge Base
-- ✅ 12 tests: API Integration
-- **Total: 34 test cases**
-
-**[Testing Documentation →](docs/TESTING.md)**
-
----
-
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| [Architecture](docs/architecture.md) | System design & layer responsibilities |
-| [AI Training](docs/AI_TRAINING.md) | Model training guide with MobileNetV2 |
-| [Testing](docs/TESTING.md) | Test suite & coverage instructions |
-| [Implementation Plan](docs/implementation_plan.md) | V2.0 refactor strategy |
-| [CHANGELOG](CHANGELOG.md) | Version history & improvements |
 
 ---
 
@@ -260,52 +195,13 @@ pytest backend/tests/ --cov=. --cov-report=html
 
 This project demonstrates:
 
-1. **System Design**: Clean architecture with separated concerns (UI ≠ API ≠ AI ≠ Knowledge)
-2. **Production Patterns**: Versioning, error handling, logging, performance tracking
-3. **Testing Culture**: Unit + integration tests, not just "it works on my machine"
-4. **AI Engineering**: Not just using a model—proper preprocessing, benchmarking, optimization
-5. **Full-Stack Skills**: React + TypeScript frontend, FastAPI backend, TensorFlow AI
-6. **Real-World Features**: Offline support, background sync, progressive enhancement
-7. **Documentation**: Professional docs that a team could actually use
+1.  **System Design**: Clean architecture with separated concerns (UI ≠ API ≠ AI ≠ Knowledge)
+2.  **Modern Web Dev**: Next.js 15 App Router, Server Components, Tailwind v4
+3.  **AI Engineering**: Not just using a model—proper preprocessing, benchmarking, optimization
+4.  **Full-Stack Skills**: React/Next.js + TypeScript frontend, FastAPI backend, TensorFlow AI
+5.  **Documentation**: Professional docs that a team could actually use
 
 **This is not a tutorial project.** Every line was written to production standards.
-
----
-
-## 🚀 Deployment
-
-### Docker (Recommended)
-```bash
-docker-compose up -d
-# Frontend: http://localhost
-# Backend: http://localhost:8000
-```
-
-### Manual Deployment
-See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for:
-- ✅ Vercel/Netlify (frontend)
-- ✅ Railway/Render (backend)
-- ✅ Firebase config
-- ✅ Environment variables
-- ✅ Production optimizations
-
----
-
-## 🤝 Contributing
-
-While this is primarily a portfolio project, contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new features
-4. Ensure tests pass: `pytest backend/tests/`
-5. Submit a pull request
-
----
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
@@ -313,19 +209,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **Yash Ghodele**
 - GitHub: [@yash-ghodele](https://github.com/yash-ghodele)
-- Portfolio: [Your Portfolio URL]
-
----
-
-## 🙏 Acknowledgments
-
-- **PlantVillage Dataset** for initial disease images
-- **MobileNetV2** architecture by Google
-- Built for **Smart India Hackathon 2024** and enhanced for production
-
----
-
-**⭐ If you found this project useful or interesting, please star it! It helps showcase the work.**
+- Portfolio: [yash-ghodele.pages.dev](https://yash-ghodele.pages.dev/)
 
 ---
 

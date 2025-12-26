@@ -137,6 +137,7 @@ def setup_data_generators(dataset_dir: str):
         target_size=IMG_SIZE,
         batch_size=BATCH_SIZE,
         class_mode='categorical',
+        classes=CLASS_NAMES,  # Only load focused classes
         subset='training',
         shuffle=True,
         seed=42
@@ -148,6 +149,7 @@ def setup_data_generators(dataset_dir: str):
         target_size=IMG_SIZE,
         batch_size=BATCH_SIZE,
         class_mode='categorical',
+        classes=CLASS_NAMES,  # Only load focused classes
         subset='validation',
         shuffle=False,
         seed=42
