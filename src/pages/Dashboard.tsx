@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { SprayingWidget } from "../components/dashboard/SprayingWidget";
 import { CropCalendar } from "../components/dashboard/CropCalendar";
+import { OfflineStatus } from "../components/dashboard/OfflineStatus";
 
 export default function Dashboard() {
     return (
@@ -20,6 +21,9 @@ export default function Dashboard() {
                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" />
                 </div>
             </div>
+
+            {/* Offline Status */}
+            <OfflineStatus />
 
             {/* Spraying Index (High Priority) */}
             <section>
