@@ -1,812 +1,281 @@
-    INFO: 2025-12-26 15:12:58,775:               log.py:   20: Logging to D:\Projects\CropGuard\mdpdf.log
-   DEBUG: 2025-12-26 15:12:58,777:               cli.py:  103: C:\Users\Yash\.gemini\antigravity\brain\964703e4-afde-4f53-bab8-d7b22b75136d\progress_report.md
-    INFO: 2025-12-26 15:12:58,779:         converter.py:   14: C:\Users\Yash\.gemini\antigravity\brain\964703e4-afde-4f53-bab8-d7b22b75136d\progress_report.md
-   DEBUG: 2025-12-26 15:12:58,791:      pdf_renderer.py:  470: printSegment: CropGuard/SANJIVANI - Project Progress Report
-   DEBUG: 2025-12-26 15:12:58,793:      pdf_renderer.py:  470: printSegment: Generated:
-   DEBUG: 2025-12-26 15:12:58,796:      pdf_renderer.py:  470: printSegment:  December 26, 2024
-   DEBUG: 2025-12-26 15:12:58,798:      pdf_renderer.py:  470: printSegment: Project Status:
-   DEBUG: 2025-12-26 15:12:58,799:      pdf_renderer.py:  470: printSegment:  ✅ Core Features Complete - Ready for Testing 
-   DEBUG: 2025-12-26 15:12:58,809:      pdf_renderer.py:  470: printSegment: &
-   DEBUG: 2025-12-26 15:12:58,809:      pdf_renderer.py:  470: printSegment:  Deployment
-   DEBUG: 2025-12-26 15:12:58,811:      pdf_renderer.py:  470: printSegment: 📋 Executive Summary
-   DEBUG: 2025-12-26 15:12:58,954:      pdf_renderer.py:  470: printSegment: CropGuard (SANJIVANI) is a production-ready AI crop disease detection platform built for Smart India Hackathon
-   DEBUG: 2025-12-26 15:12:58,958:      pdf_renderer.py:  470: printSegment: 2024. The project features a complete React+TypeScript frontend with a Python FastAPI backend, implementing
-   DEBUG: 2025-12-26 15:12:58,959:      pdf_renderer.py:  470: printSegment: real-time disease detection, farmer dashboard, and Firebase integration.
-   DEBUG: 2025-12-26 15:12:58,959:      pdf_renderer.py:  470: printSegment: Key Achievements
-   DEBUG: 2025-12-26 15:12:58,960:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,961:      pdf_renderer.py:  470: printSegment: ✅ Full-stack architecture implemented
-   DEBUG: 2025-12-26 15:12:58,961:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,961:      pdf_renderer.py:  470: printSegment: ✅ Dashboard 2.0 with advanced widgets
-   DEBUG: 2025-12-26 15:12:58,962:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,962:      pdf_renderer.py:  470: printSegment: ✅ AI disease detection with webcam support
-   DEBUG: 2025-12-26 15:12:58,962:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,964:      pdf_renderer.py:  470: printSegment: ✅ Firebase database integration
-   DEBUG: 2025-12-26 15:12:58,965:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,965:      pdf_renderer.py:  470: printSegment: ✅ Docker containerization ready
-   DEBUG: 2025-12-26 15:12:58,966:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,966:      pdf_renderer.py:  470: printSegment: ✅ Mobile-first responsive design
-   DEBUG: 2025-12-26 15:12:58,967:      pdf_renderer.py:  470: printSegment: 🏗️ Architecture Overview
-   DEBUG: 2025-12-26 15:12:58,968:      pdf_renderer.py:  470: printSegment: Tech Stack
-   DEBUG: 2025-12-26 15:12:58,969:      pdf_renderer.py:  470: printSegment: Frontend
-   DEBUG: 2025-12-26 15:12:58,969:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,970:      pdf_renderer.py:  470: printSegment: Framework:
-   DEBUG: 2025-12-26 15:12:58,971:      pdf_renderer.py:  470: printSegment:  React 18 + TypeScript + Vite
-   DEBUG: 2025-12-26 15:12:58,971:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,973:      pdf_renderer.py:  470: printSegment: Styling:
-   DEBUG: 2025-12-26 15:12:58,973:      pdf_renderer.py:  470: printSegment:  Tailwind CSS with custom 
-   DEBUG: 2025-12-26 15:12:58,973:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:58,973:      pdf_renderer.py:  470: printSegment: Farmer
-   DEBUG: 2025-12-26 15:12:58,974:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:58,975:      pdf_renderer.py:  470: printSegment:  theme
-   DEBUG: 2025-12-26 15:12:58,976:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,976:      pdf_renderer.py:  470: printSegment: State Management:
-   DEBUG: 2025-12-26 15:12:58,977:      pdf_renderer.py:  470: printSegment:  Zustand
-   DEBUG: 2025-12-26 15:12:58,978:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,978:      pdf_renderer.py:  470: printSegment: Data Fetching:
-   DEBUG: 2025-12-26 15:12:58,979:      pdf_renderer.py:  470: printSegment:  TanStack Query (React Query)
-   DEBUG: 2025-12-26 15:12:58,979:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,979:      pdf_renderer.py:  470: printSegment: Routing:
-   DEBUG: 2025-12-26 15:12:58,980:      pdf_renderer.py:  470: printSegment:  React Router DOM v6
-   DEBUG: 2025-12-26 15:12:58,980:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,981:      pdf_renderer.py:  470: printSegment: Animations:
-   DEBUG: 2025-12-26 15:12:58,981:      pdf_renderer.py:  470: printSegment:  Framer Motion
-   DEBUG: 2025-12-26 15:12:58,982:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,983:      pdf_renderer.py:  470: printSegment: UI Components:
-   DEBUG: 2025-12-26 15:12:58,984:      pdf_renderer.py:  470: printSegment:  Custom component library with Radix UI primitives
-   DEBUG: 2025-12-26 15:12:58,984:      pdf_renderer.py:  470: printSegment: Backend
-   DEBUG: 2025-12-26 15:12:58,985:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,985:      pdf_renderer.py:  470: printSegment: Framework:
-   DEBUG: 2025-12-26 15:12:58,986:      pdf_renderer.py:  470: printSegment:  FastAPI (Python)
-   DEBUG: 2025-12-26 15:12:58,986:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,986:      pdf_renderer.py:  470: printSegment: Server:
-   DEBUG: 2025-12-26 15:12:58,987:      pdf_renderer.py:  470: printSegment:  Uvicorn with hot reload
-   DEBUG: 2025-12-26 15:12:58,988:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,988:      pdf_renderer.py:  470: printSegment: AI Model:
-   DEBUG: 2025-12-26 15:12:58,988:      pdf_renderer.py:  470: printSegment:  TensorFlow + MobileNetV2 (Transfer Learning)
-   DEBUG: 2025-12-26 15:12:58,989:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,989:      pdf_renderer.py:  470: printSegment: Database:
-   DEBUG: 2025-12-26 15:12:58,989:      pdf_renderer.py:  470: printSegment:  Google Firebase Firestore
-   DEBUG: 2025-12-26 15:12:58,991:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,991:      pdf_renderer.py:  470: printSegment: Image Processing:
-   DEBUG: 2025-12-26 15:12:58,992:      pdf_renderer.py:  470: printSegment:  OpenCV, PIL
-   DEBUG: 2025-12-26 15:12:58,992:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,993:      pdf_renderer.py:  470: printSegment: Training Dataset:
-   DEBUG: 2025-12-26 15:12:58,993:      pdf_renderer.py:  470: printSegment:  38 disease classes (~2.7GB)
-   DEBUG: 2025-12-26 15:12:58,994:      pdf_renderer.py:  470: printSegment: Infrastructure
-   DEBUG: 2025-12-26 15:12:58,994:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,995:      pdf_renderer.py:  470: printSegment: Containerization:
-   DEBUG: 2025-12-26 15:12:58,995:      pdf_renderer.py:  470: printSegment:  Docker + Docker Compose
-   DEBUG: 2025-12-26 15:12:58,996:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,996:      pdf_renderer.py:  470: printSegment: Web Server:
-   DEBUG: 2025-12-26 15:12:58,996:      pdf_renderer.py:  470: printSegment:  Nginx (production)
-   DEBUG: 2025-12-26 15:12:58,997:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:58,998:      pdf_renderer.py:  470: printSegment: Package Management:
-   DEBUG: 2025-12-26 15:12:58,998:      pdf_renderer.py:  470: printSegment:  npm (frontend), pip (backend)
-   DEBUG: 2025-12-26 15:12:59,000:      pdf_renderer.py:  470: printSegment: ✅ Completed Features
-   DEBUG: 2025-12-26 15:12:59,001:      pdf_renderer.py:  470: printSegment: 1. Frontend Implementation
-   DEBUG: 2025-12-26 15:12:59,001:      pdf_renderer.py:  470: printSegment: Pages (6 Total)
-   DEBUG: 2025-12-26 15:12:59,001:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,002:      pdf_renderer.py:  470: printSegment: Landing Page
-   DEBUG: 2025-12-26 15:12:59,002:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,003:      pdf_renderer.py:  470: printSegment: Landing.tsx
-   DEBUG: 2025-12-26 15:12:59,004:      pdf_renderer.py:  470: printSegment: ) - Entry point with branding
-   DEBUG: 2025-12-26 15:12:59,005:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,006:      pdf_renderer.py:  470: printSegment: Auth
-   DEBUG: 2025-12-26 15:12:59,006:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,006:      pdf_renderer.py:  470: printSegment: Auth.tsx
-   DEBUG: 2025-12-26 15:12:59,007:      pdf_renderer.py:  470: printSegment: ) - Authentication flow
-   DEBUG: 2025-12-26 15:12:59,007:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,007:      pdf_renderer.py:  470: printSegment: Dashboard
-   DEBUG: 2025-12-26 15:12:59,007:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,007:      pdf_renderer.py:  470: printSegment: Dashboard.tsx
-   DEBUG: 2025-12-26 15:12:59,009:      pdf_renderer.py:  470: printSegment: ) - Main farmer interface
-   DEBUG: 2025-12-26 15:12:59,009:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,009:      pdf_renderer.py:  470: printSegment: Scan
-   DEBUG: 2025-12-26 15:12:59,009:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,010:      pdf_renderer.py:  470: printSegment: Scan.tsx
-   DEBUG: 2025-12-26 15:12:59,010:      pdf_renderer.py:  470: printSegment: ) - Real-time disease detection with webcam
-   DEBUG: 2025-12-26 15:12:59,011:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,011:      pdf_renderer.py:  470: printSegment: Camera
-   DEBUG: 2025-12-26 15:12:59,011:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,012:      pdf_renderer.py:  470: printSegment: Camera.tsx
-   DEBUG: 2025-12-26 15:12:59,012:      pdf_renderer.py:  470: printSegment: ) - Advanced camera controls
-   DEBUG: 2025-12-26 15:12:59,014:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,014:      pdf_renderer.py:  470: printSegment: History
-   DEBUG: 2025-12-26 15:12:59,014:      pdf_renderer.py:  470: printSegment:  (
-   DEBUG: 2025-12-26 15:12:59,015:      pdf_renderer.py:  470: printSegment: History.tsx
-   DEBUG: 2025-12-26 15:12:59,016:      pdf_renderer.py:  470: printSegment: ) - Scan history viewer
-   DEBUG: 2025-12-26 15:12:59,016:      pdf_renderer.py:  470: printSegment: Dashboard 2.0 Components
-   DEBUG: 2025-12-26 15:12:59,018:      pdf_renderer.py:  470: printSegment: 🌾 Spraying Widget
-   DEBUG: 2025-12-26 15:12:59,018:      pdf_renderer.py:  470: printSegment: SprayingWidget.tsx
-   DEBUG: 2025-12-26 15:12:59,019:      pdf_renderer.py:  470: printSegment: Purpose:
-   DEBUG: 2025-12-26 15:12:59,020:      pdf_renderer.py:  470: printSegment:  Real-time spraying condition assessment
-   DEBUG: 2025-12-26 15:12:59,020:      pdf_renderer.py:  470: printSegment: Features:
-   DEBUG: 2025-12-26 15:12:59,020:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,021:      pdf_renderer.py:  470: printSegment: Wind speed monitoring (km/h)
-   DEBUG: 2025-12-26 15:12:59,021:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,021:      pdf_renderer.py:  470: printSegment: Humidity tracking (%)
-   DEBUG: 2025-12-26 15:12:59,021:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,023:      pdf_renderer.py:  470: printSegment: Rain detection
-   DEBUG: 2025-12-26 15:12:59,023:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,024:      pdf_renderer.py:  470: printSegment: Smart safety logic:
-   DEBUG: 2025-12-26 15:12:59,024:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,024:      pdf_renderer.py:  470: printSegment: ❌ Unsafe if raining
-   DEBUG: 2025-12-26 15:12:59,034:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,035:      pdf_renderer.py:  470: printSegment: ❌ Unsafe if wind > 15 km/h
-   DEBUG: 2025-12-26 15:12:59,035:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,036:      pdf_renderer.py:  470: printSegment: ❌ Unsafe if humidity 
-   DEBUG: 2025-12-26 15:12:59,036:      pdf_renderer.py:  470: printSegment: <
-   DEBUG: 2025-12-26 15:12:59,036:      pdf_renderer.py:  470: printSegment:  30%
-   DEBUG: 2025-12-26 15:12:59,037:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,038:      pdf_renderer.py:  470: printSegment: ✅ Optimal otherwise
-   DEBUG: 2025-12-26 15:12:59,038:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,038:      pdf_renderer.py:  470: printSegment: Visual indicators (red/green with thumbs up/down)
-   DEBUG: 2025-12-26 15:12:59,038:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,039:      pdf_renderer.py:  470: printSegment: Contextual warnings
-   DEBUG: 2025-12-26 15:12:59,039:      pdf_renderer.py:  470: printSegment: 📅 Crop Calendar
-   DEBUG: 2025-12-26 15:12:59,039:      pdf_renderer.py:  470: printSegment: CropCalendar.tsx
-   DEBUG: 2025-12-26 15:12:59,041:      pdf_renderer.py:  470: printSegment: Purpose:
-   DEBUG: 2025-12-26 15:12:59,041:      pdf_renderer.py:  470: printSegment:  Weekly task management for farmers
-   DEBUG: 2025-12-26 15:12:59,042:      pdf_renderer.py:  470: printSegment: Features:
-   DEBUG: 2025-12-26 15:12:59,042:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,043:      pdf_renderer.py:  470: printSegment: Task list with urgency indicators
-   DEBUG: 2025-12-26 15:12:59,043:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,044:      pdf_renderer.py:  470: printSegment: Color-coded status (urgent vs pending)
-   DEBUG: 2025-12-26 15:12:59,044:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,044:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,045:      pdf_renderer.py:  470: printSegment: DO NOW
-   DEBUG: 2025-12-26 15:12:59,045:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,046:      pdf_renderer.py:  470: printSegment:  badges for critical tasks
-   DEBUG: 2025-12-26 15:12:59,046:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,047:      pdf_renderer.py:  470: printSegment: Hover animations for interactivity
-   DEBUG: 2025-12-26 15:12:59,048:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,048:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,048:      pdf_renderer.py:  470: printSegment: View Full Calendar
-   DEBUG: 2025-12-26 15:12:59,049:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,049:      pdf_renderer.py:  470: printSegment:  CTA
-   DEBUG: 2025-12-26 15:12:59,050:      pdf_renderer.py:  470: printSegment: Dashboard Layout
-   DEBUG: 2025-12-26 15:12:59,050:      pdf_renderer.py:  470: printSegment: Dashboard.tsx
-   DEBUG: 2025-12-26 15:12:59,050:      pdf_renderer.py:  470: printSegment: Features:
-   DEBUG: 2025-12-26 15:12:59,050:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,052:      pdf_renderer.py:  470: printSegment: Personalized greeting (
-   DEBUG: 2025-12-26 15:12:59,052:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,053:      pdf_renderer.py:  470: printSegment: Namaste, Farmer
-   DEBUG: 2025-12-26 15:12:59,053:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,055:      pdf_renderer.py:  470: printSegment: )
-   DEBUG: 2025-12-26 15:12:59,055:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,057:      pdf_renderer.py:  470: printSegment: Live weather integration (28°C, Sunny, Jalgaon)
-   DEBUG: 2025-12-26 15:12:59,057:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,058:      pdf_renderer.py:  470: printSegment: Profile avatar with dicebear API
-   DEBUG: 2025-12-26 15:12:59,058:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,059:      pdf_renderer.py:  470: printSegment: Quick action buttons (Scan Crop, My Crops, Weather)
-   DEBUG: 2025-12-26 15:12:59,059:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,059:      pdf_renderer.py:  470: printSegment: Grid layout with proper spacing
-   DEBUG: 2025-12-26 15:12:59,059:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,061:      pdf_renderer.py:  470: printSegment: Mobile-optimized with bottom navigation
-   DEBUG: 2025-12-26 15:12:59,061:      pdf_renderer.py:  470: printSegment: UI Components Library
-   DEBUG: 2025-12-26 15:12:59,062:      pdf_renderer.py:  470: printSegment: Located in 
-   DEBUG: 2025-12-26 15:12:59,062:      pdf_renderer.py:  470: printSegment: src/components/ui/
-   DEBUG: 2025-12-26 15:12:59,063:      pdf_renderer.py:  470: printSegment:  1 
-   DEBUG: 2025-12-26 15:12:59,063:      pdf_renderer.py:  470: printSegment: Button
-   DEBUG: 2025-12-26 15:12:59,064:      pdf_renderer.py:  470: printSegment:  - Variant system (big-action, default)
-   DEBUG: 2025-12-26 15:12:59,064:      pdf_renderer.py:  470: printSegment:  2 
-   DEBUG: 2025-12-26 15:12:59,064:      pdf_renderer.py:  470: printSegment: GlassCard
-   DEBUG: 2025-12-26 15:12:59,065:      pdf_renderer.py:  470: printSegment:  - Glassmorphism design
-   DEBUG: 2025-12-26 15:12:59,065:      pdf_renderer.py:  470: printSegment:  3 
-   DEBUG: 2025-12-26 15:12:59,065:      pdf_renderer.py:  470: printSegment: ChatAssistant
-   DEBUG: 2025-12-26 15:12:59,066:      pdf_renderer.py:  470: printSegment:  - AI chat interface
-   DEBUG: 2025-12-26 15:12:59,066:      pdf_renderer.py:  470: printSegment:  4 
-   DEBUG: 2025-12-26 15:12:59,067:      pdf_renderer.py:  470: printSegment: ScanOverlay
-   DEBUG: 2025-12-26 15:12:59,067:      pdf_renderer.py:  470: printSegment:  - Camera overlay with reticle
-   DEBUG: 2025-12-26 15:12:59,067:      pdf_renderer.py:  470: printSegment:  5 
-   DEBUG: 2025-12-26 15:12:59,068:      pdf_renderer.py:  470: printSegment: SpotlightCard
-   DEBUG: 2025-12-26 15:12:59,068:      pdf_renderer.py:  470: printSegment:  - Premium card animations
-   DEBUG: 2025-12-26 15:12:59,069:      pdf_renderer.py:  470: printSegment:  6 
-   DEBUG: 2025-12-26 15:12:59,069:      pdf_renderer.py:  470: printSegment: Dock
-   DEBUG: 2025-12-26 15:12:59,070:      pdf_renderer.py:  470: printSegment:  - Bottom navigation system
-   DEBUG: 2025-12-26 15:12:59,070:      pdf_renderer.py:  470: printSegment:  7 
-   DEBUG: 2025-12-26 15:12:59,071:      pdf_renderer.py:  470: printSegment: PageTransition
-   DEBUG: 2025-12-26 15:12:59,071:      pdf_renderer.py:  470: printSegment:  - Smooth page transitions
-   DEBUG: 2025-12-26 15:12:59,071:      pdf_renderer.py:  470: printSegment: Layout System
-   DEBUG: 2025-12-26 15:12:59,071:      pdf_renderer.py:  470: printSegment:  1 
-   DEBUG: 2025-12-26 15:12:59,073:      pdf_renderer.py:  470: printSegment: FarmerLayout
-   DEBUG: 2025-12-26 15:12:59,073:      pdf_renderer.py:  470: printSegment:  - Main app shell with mobile nav
-   DEBUG: 2025-12-26 15:12:59,073:      pdf_renderer.py:  470: printSegment:  2 
-   DEBUG: 2025-12-26 15:12:59,073:      pdf_renderer.py:  470: printSegment: OSLayout
-   DEBUG: 2025-12-26 15:12:59,074:      pdf_renderer.py:  470: printSegment:  - Alternative OS-like interface
-   DEBUG: 2025-12-26 15:12:59,074:      pdf_renderer.py:  470: printSegment:  3 
-   DEBUG: 2025-12-26 15:12:59,076:      pdf_renderer.py:  470: printSegment: Header
-   DEBUG: 2025-12-26 15:12:59,076:      pdf_renderer.py:  470: printSegment:  - Top navigation bar
-   DEBUG: 2025-12-26 15:12:59,077:      pdf_renderer.py:  470: printSegment:  4 
-   DEBUG: 2025-12-26 15:12:59,077:      pdf_renderer.py:  470: printSegment: MobileNav
-   DEBUG: 2025-12-26 15:12:59,077:      pdf_renderer.py:  470: printSegment:  - Bottom navigation dock
-   DEBUG: 2025-12-26 15:12:59,077:      pdf_renderer.py:  470: printSegment:  5 
-   DEBUG: 2025-12-26 15:12:59,079:      pdf_renderer.py:  470: printSegment: PageTransition
-   DEBUG: 2025-12-26 15:12:59,079:      pdf_renderer.py:  470: printSegment:  - Route transition wrapper
-   DEBUG: 2025-12-26 15:12:59,080:      pdf_renderer.py:  470: printSegment: Design System
-   DEBUG: 2025-12-26 15:12:59,080:      pdf_renderer.py:  470: printSegment: Theme:
-   DEBUG: 2025-12-26 15:12:59,081:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,081:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,081:      pdf_renderer.py:  470: printSegment: Sunlight Glass
-   DEBUG: 2025-12-26 15:12:59,082:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,082:      pdf_renderer.py:  470: printSegment:  - High contrast for outdoor use
-   DEBUG: 2025-12-26 15:12:59,083:      pdf_renderer.py:  470: printSegment: index.css
-   DEBUG: 2025-12-26 15:12:59,083:      pdf_renderer.py:  470: printSegment: Color Palette:
-   DEBUG: 2025-12-26 15:12:59,084:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,084:      pdf_renderer.py:  470: printSegment: Background: 
-   DEBUG: 2025-12-26 15:12:59,084:      pdf_renderer.py:  470: printSegment: #FEFCE8
-   DEBUG: 2025-12-26 15:12:59,085:      pdf_renderer.py:  470: printSegment:  (Warm Beige)
-   DEBUG: 2025-12-26 15:12:59,085:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,086:      pdf_renderer.py:  470: printSegment: Primary: 
-   DEBUG: 2025-12-26 15:12:59,086:      pdf_renderer.py:  470: printSegment: hsl(145 63% 24%)
-   DEBUG: 2025-12-26 15:12:59,087:      pdf_renderer.py:  470: printSegment:  (Forest Green)
-   DEBUG: 2025-12-26 15:12:59,088:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,088:      pdf_renderer.py:  470: printSegment: Accent: 
-   DEBUG: 2025-12-26 15:12:59,088:      pdf_renderer.py:  470: printSegment: #EA580C
-   DEBUG: 2025-12-26 15:12:59,088:      pdf_renderer.py:  470: printSegment:  (Vibrant Orange)
-   DEBUG: 2025-12-26 15:12:59,089:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,089:      pdf_renderer.py:  470: printSegment: Text: 
-   DEBUG: 2025-12-26 15:12:59,089:      pdf_renderer.py:  470: printSegment: #1e293b
-   DEBUG: 2025-12-26 15:12:59,089:      pdf_renderer.py:  470: printSegment:  (Slate 800)
-   DEBUG: 2025-12-26 15:12:59,091:      pdf_renderer.py:  470: printSegment: Custom Utilities:
-   DEBUG: 2025-12-26 15:12:59,091:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,091:      pdf_renderer.py:  470: printSegment: Large touch targets (min 44px) for field use
-   DEBUG: 2025-12-26 15:12:59,093:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,093:      pdf_renderer.py:  470: printSegment: Custom shadow system (
-   DEBUG: 2025-12-26 15:12:59,093:      pdf_renderer.py:  470: printSegment: shadow-card
-   DEBUG: 2025-12-26 15:12:59,094:      pdf_renderer.py:  470: printSegment: , 
-   DEBUG: 2025-12-26 15:12:59,094:      pdf_renderer.py:  470: printSegment: shadow-floating
-   DEBUG: 2025-12-26 15:12:59,094:      pdf_renderer.py:  470: printSegment: )
-   DEBUG: 2025-12-26 15:12:59,095:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,095:      pdf_renderer.py:  470: printSegment: Border radius tokens
-   DEBUG: 2025-12-26 15:12:59,096:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,096:      pdf_renderer.py:  470: printSegment: Farmer-specific color classes
-   DEBUG: 2025-12-26 15:12:59,097:      pdf_renderer.py:  470: printSegment: Typography:
-   DEBUG: 2025-12-26 15:12:59,098:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,098:      pdf_renderer.py:  470: printSegment: Font: Inter (400, 500, 600, 700)
-   DEBUG: 2025-12-26 15:12:59,099:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,099:      pdf_renderer.py:  470: printSegment: Antialiased rendering
-   DEBUG: 2025-12-26 15:12:59,099:      pdf_renderer.py:  470: printSegment: Multilingual Support
-   DEBUG: 2025-12-26 15:12:59,100:      pdf_renderer.py:  470: printSegment: LanguageContext.tsx
-   DEBUG: 2025-12-26 15:12:59,100:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,101:      pdf_renderer.py:  470: printSegment: English
-   DEBUG: 2025-12-26 15:12:59,101:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,102:      pdf_renderer.py:  470: printSegment: Hindi
-   DEBUG: 2025-12-26 15:12:59,102:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,103:      pdf_renderer.py:  470: printSegment: Marathi
-   DEBUG: 2025-12-26 15:12:59,104:      pdf_renderer.py:  470: printSegment: 2. Backend Implementation
-   DEBUG: 2025-12-26 15:12:59,104:      pdf_renderer.py:  470: printSegment: Main API Server
-   DEBUG: 2025-12-26 15:12:59,104:      pdf_renderer.py:  470: printSegment: backend/main.py
-   DEBUG: 2025-12-26 15:12:59,105:      pdf_renderer.py:  470: printSegment: Endpoints:
-   DEBUG: 2025-12-26 15:12:59,105:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,107:      pdf_renderer.py:  470: printSegment: POST /predict
-   DEBUG: 2025-12-26 15:12:59,108:      pdf_renderer.py:  470: printSegment:  - Disease prediction from uploaded image
-   DEBUG: 2025-12-26 15:12:59,108:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,109:      pdf_renderer.py:  470: printSegment: Returns: disease name, confidence %, severity, treatment, prevention
-   DEBUG: 2025-12-26 15:12:59,109:      pdf_renderer.py:  470: printSegment: Features:
-   DEBUG: 2025-12-26 15:12:59,109:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,109:      pdf_renderer.py:  470: printSegment: CORS enabled for localhost:5173, 3000, 5174
-   DEBUG: 2025-12-26 15:12:59,109:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,111:      pdf_renderer.py:  470: printSegment: Image preprocessing (224x224 resize, normalization)
-   DEBUG: 2025-12-26 15:12:59,111:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,112:      pdf_renderer.py:  470: printSegment: TensorFlow model integration
-   DEBUG: 2025-12-26 15:12:59,112:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,112:      pdf_renderer.py:  470: printSegment: Mock fallback when model not found
-   DEBUG: 2025-12-26 15:12:59,112:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,113:      pdf_renderer.py:  470: printSegment: Error handling with HTTPException
-   DEBUG: 2025-12-26 15:12:59,113:      pdf_renderer.py:  470: printSegment: Disease Info Database:
-   DEBUG: 2025-12-26 15:12:59,114:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,114:      pdf_renderer.py:  470: printSegment: Early Blight (Moderate severity)
-   DEBUG: 2025-12-26 15:12:59,115:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,115:      pdf_renderer.py:  470: printSegment: Late Blight (High severity)
-   DEBUG: 2025-12-26 15:12:59,116:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,116:      pdf_renderer.py:  470: printSegment: Healthy (No treatment)
-   DEBUG: 2025-12-26 15:12:59,116:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,117:      pdf_renderer.py:  470: printSegment: Additional: target
-   DEBUG: 2025-12-26 15:12:59,117:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,118:      pdf_renderer.py:  470: printSegment: spot, mosaic
-   DEBUG: 2025-12-26 15:12:59,118:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,118:      pdf_renderer.py:  470: printSegment: virus, curl
-   DEBUG: 2025-12-26 15:12:59,119:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,119:      pdf_renderer.py:  470: printSegment: virus, bacterial
-   DEBUG: 2025-12-26 15:12:59,119:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,119:      pdf_renderer.py:  470: printSegment: spot
-   DEBUG: 2025-12-26 15:12:59,121:      pdf_renderer.py:  470: printSegment: Database Layer
-   DEBUG: 2025-12-26 15:12:59,121:      pdf_renderer.py:  470: printSegment: backend/database.py
-   DEBUG: 2025-12-26 15:12:59,122:      pdf_renderer.py:  470: printSegment: Functions:
-   DEBUG: 2025-12-26 15:12:59,123:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,124:      pdf_renderer.py:  470: printSegment: init_db()
-   DEBUG: 2025-12-26 15:12:59,124:      pdf_renderer.py:  470: printSegment:  - Initialize Firebase connection
-   DEBUG: 2025-12-26 15:12:59,125:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,125:      pdf_renderer.py:  470: printSegment: save_scan(data)
-   DEBUG: 2025-12-26 15:12:59,126:      pdf_renderer.py:  470: printSegment:  - Save scan to Firestore with timestamp
-   DEBUG: 2025-12-26 15:12:59,126:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,127:      pdf_renderer.py:  470: printSegment: get_recent_scans(limit)
-   DEBUG: 2025-12-26 15:12:59,127:      pdf_renderer.py:  470: printSegment:  - Fetch scan history
-   DEBUG: 2025-12-26 15:12:59,128:      pdf_renderer.py:  470: printSegment: Features:
-   DEBUG: 2025-12-26 15:12:59,128:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,129:      pdf_renderer.py:  470: printSegment: Graceful fallback to mock mode if serviceAccountKey.json missing
-   DEBUG: 2025-12-26 15:12:59,129:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,130:      pdf_renderer.py:  470: printSegment: Automatic timestamp addition
-   DEBUG: 2025-12-26 15:12:59,130:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,131:      pdf_renderer.py:  470: printSegment: Collection: 
-   DEBUG: 2025-12-26 15:12:59,131:      pdf_renderer.py:  470: printSegment: scans
-   DEBUG: 2025-12-26 15:12:59,132:      pdf_renderer.py:  470: printSegment: Model Training Pipeline
-   DEBUG: 2025-12-26 15:12:59,132:      pdf_renderer.py:  470: printSegment: Scripts:
-   DEBUG: 2025-12-26 15:12:59,133:      pdf_renderer.py:  470: printSegment:  1 
-   DEBUG: 2025-12-26 15:12:59,133:      pdf_renderer.py:  470: printSegment: download
-   DEBUG: 2025-12-26 15:12:59,134:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,134:      pdf_renderer.py:  470: printSegment: dataset.py
-   DEBUG: 2025-12-26 15:12:59,135:      pdf_renderer.py:  470: printSegment:  - Automated Kaggle dataset downloader
-   DEBUG: 2025-12-26 15:12:59,135:      pdf_renderer.py:  470: printSegment:  2 
-   DEBUG: 2025-12-26 15:12:59,136:      pdf_renderer.py:  470: printSegment: extract
-   DEBUG: 2025-12-26 15:12:59,136:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,136:      pdf_renderer.py:  470: printSegment: dataset.py
-   DEBUG: 2025-12-26 15:12:59,137:      pdf_renderer.py:  470: printSegment:  - Dataset extraction utility
-   DEBUG: 2025-12-26 15:12:59,138:      pdf_renderer.py:  470: printSegment:  3 
-   DEBUG: 2025-12-26 15:12:59,138:      pdf_renderer.py:  470: printSegment: train
-   DEBUG: 2025-12-26 15:12:59,139:      pdf_renderer.py:  470: printSegment: _
-   DEBUG: 2025-12-26 15:12:59,140:      pdf_renderer.py:  470: printSegment: model.py
-   DEBUG: 2025-12-26 15:12:59,141:      pdf_renderer.py:  470: printSegment:  - MobileNetV2 training script
-   DEBUG: 2025-12-26 15:12:59,141:      pdf_renderer.py:  470: printSegment: Model Specs:
-   DEBUG: 2025-12-26 15:12:59,141:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,142:      pdf_renderer.py:  470: printSegment: Architecture: MobileNetV2 (Transfer Learning)
-   DEBUG: 2025-12-26 15:12:59,142:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,143:      pdf_renderer.py:  470: printSegment: Input: 224x224 RGB images
-   DEBUG: 2025-12-26 15:12:59,143:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,144:      pdf_renderer.py:  470: printSegment: Classes: 38 plant disease types
-   DEBUG: 2025-12-26 15:12:59,144:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,145:      pdf_renderer.py:  470: printSegment: Training: 20 epochs
-   DEBUG: 2025-12-26 15:12:59,145:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,146:      pdf_renderer.py:  470: printSegment: Output: 
-   DEBUG: 2025-12-26 15:12:59,147:      pdf_renderer.py:  470: printSegment: models/plant_disease_model.h5
-   DEBUG: 2025-12-26 15:12:59,148:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,148:      pdf_renderer.py:  470: printSegment: Metadata: 
-   DEBUG: 2025-12-26 15:12:59,148:      pdf_renderer.py:  470: printSegment: models/class_names.txt
-   DEBUG: 2025-12-26 15:12:59,149:      pdf_renderer.py:  470: printSegment: 3. Infrastructure 
-   DEBUG: 2025-12-26 15:12:59,149:      pdf_renderer.py:  470: printSegment: &
-   DEBUG: 2025-12-26 15:12:59,150:      pdf_renderer.py:  470: printSegment:  DevOps
-   DEBUG: 2025-12-26 15:12:59,150:      pdf_renderer.py:  470: printSegment: Docker Setup
-   DEBUG: 2025-12-26 15:12:59,150:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,151:      pdf_renderer.py:  470: printSegment: Frontend Dockerfile:
-   DEBUG: 2025-12-26 15:12:59,152:      pdf_renderer.py:  470: printSegment:  Multi-stage build (builder + nginx)
-   DEBUG: 2025-12-26 15:12:59,152:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,152:      pdf_renderer.py:  470: printSegment: Backend Dockerfile:
-   DEBUG: 2025-12-26 15:12:59,154:      pdf_renderer.py:  470: printSegment:  Python 3.9 with TensorFlow
-   DEBUG: 2025-12-26 15:12:59,154:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,155:      pdf_renderer.py:  470: printSegment: docker-compose.yml:
-   DEBUG: 2025-12-26 15:12:59,155:      pdf_renderer.py:  470: printSegment:  Orchestrates frontend + backend
-   DEBUG: 2025-12-26 15:12:59,156:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,156:      pdf_renderer.py:  470: printSegment: Frontend: Port 80
-   DEBUG: 2025-12-26 15:12:59,156:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,156:      pdf_renderer.py:  470: printSegment: Backend: Port 8000
-   DEBUG: 2025-12-26 15:12:59,157:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,158:      pdf_renderer.py:  470: printSegment: Network: Shared internal network
-   DEBUG: 2025-12-26 15:12:59,158:      pdf_renderer.py:  470: printSegment: Configuration Files
-   DEBUG: 2025-12-26 15:12:59,159:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,159:      pdf_renderer.py:  470: printSegment: package.json
-   DEBUG: 2025-12-26 15:12:59,161:      pdf_renderer.py:  470: printSegment:  - npm dependencies
-   DEBUG: 2025-12-26 15:12:59,161:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,161:      pdf_renderer.py:  470: printSegment: requirements.txt
-   DEBUG: 2025-12-26 15:12:59,162:      pdf_renderer.py:  470: printSegment:  - Python dependencies
-   DEBUG: 2025-12-26 15:12:59,162:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,163:      pdf_renderer.py:  470: printSegment: tsconfig.json
-   DEBUG: 2025-12-26 15:12:59,163:      pdf_renderer.py:  470: printSegment:  - TypeScript config
-   DEBUG: 2025-12-26 15:12:59,163:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,164:      pdf_renderer.py:  470: printSegment: vite.config.ts
-   DEBUG: 2025-12-26 15:12:59,164:      pdf_renderer.py:  470: printSegment:  - Vite bundler
-   DEBUG: 2025-12-26 15:12:59,164:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,165:      pdf_renderer.py:  470: printSegment: tailwind.config.js
-   DEBUG: 2025-12-26 15:12:59,166:      pdf_renderer.py:  470: printSegment:  - Theme tokens
-   DEBUG: 2025-12-26 15:12:59,167:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,168:      pdf_renderer.py:  470: printSegment: nginx.conf
-   DEBUG: 2025-12-26 15:12:59,168:      pdf_renderer.py:  470: printSegment:  - Production web server
-   DEBUG: 2025-12-26 15:12:59,169:      pdf_renderer.py:  470: printSegment: Environment Variables
-   DEBUG: 2025-12-26 15:12:59,169:      pdf_renderer.py:  470: printSegment: .env.example
-   DEBUG: 2025-12-26 15:12:59,169:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,169:      pdf_renderer.py:  470: printSegment: VITE_API_URL
-   DEBUG: 2025-12-26 15:12:59,171:      pdf_renderer.py:  470: printSegment:  - Backend API endpoint
-   DEBUG: 2025-12-26 15:12:59,171:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,172:      pdf_renderer.py:  470: printSegment: Firebase credentials (from serviceAccountKey.json)
-   DEBUG: 2025-12-26 15:12:59,173:      pdf_renderer.py:  470: printSegment: 📊 Git History
-   DEBUG: 2025-12-26 15:12:59,173:      pdf_renderer.py:  470: printSegment: Recent commits show rapid feature development:
-   DEBUG: 2025-12-26 15:12:59,174:      pdf_renderer.py:  470: printSegment: * b8cd730 (HEAD -> main) feat: Complete backend with ML model and
-   DEBUG: 2025-12-26 15:12:59,174:      pdf_renderer.py:  470: printSegment: API endpoints
-   DEBUG: 2025-12-26 15:12:59,175:      pdf_renderer.py:  470: printSegment: * b39c0e6 feat: Introduce new OS-like UI/UX, Database setup,
-   DEBUG: 2025-12-26 15:12:59,176:      pdf_renderer.py:  470: printSegment: Documentations
-   DEBUG: 2025-12-26 15:12:59,176:      pdf_renderer.py:  470: printSegment: * 335a43d Initial commit of SANJIVANI MVP
-   DEBUG: 2025-12-26 15:12:59,177:      pdf_renderer.py:  470: printSegment: Analysis:
-   DEBUG: 2025-12-26 15:12:59,177:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,178:      pdf_renderer.py:  470: printSegment: Clean commit history
-   DEBUG: 2025-12-26 15:12:59,178:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,178:      pdf_renderer.py:  470: printSegment: Feature-based commits
-   DEBUG: 2025-12-26 15:12:59,180:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,180:      pdf_renderer.py:  470: printSegment: On 
-   DEBUG: 2025-12-26 15:12:59,181:      pdf_renderer.py:  470: printSegment: main
-   DEBUG: 2025-12-26 15:12:59,181:      pdf_renderer.py:  470: printSegment:  branch, synced with 
-   DEBUG: 2025-12-26 15:12:59,181:      pdf_renderer.py:  470: printSegment: origin/main
-   DEBUG: 2025-12-26 15:12:59,182:      pdf_renderer.py:  470: printSegment: 🔍 Code Quality Assessment
-   DEBUG: 2025-12-26 15:12:59,289:      pdf_renderer.py:  470: printSegment: Strengths
-   DEBUG: 2025-12-26 15:12:59,289:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,290:      pdf_renderer.py:  470: printSegment: TypeScript Strict Mode
-   DEBUG: 2025-12-26 15:12:59,291:      pdf_renderer.py:  470: printSegment:  - Type safety across frontend
-   DEBUG: 2025-12-26 15:12:59,292:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,293:      pdf_renderer.py:  470: printSegment: Component Modularity
-   DEBUG: 2025-12-26 15:12:59,293:      pdf_renderer.py:  470: printSegment:  - Clean separation of concerns
-   DEBUG: 2025-12-26 15:12:59,294:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,294:      pdf_renderer.py:  470: printSegment: Responsive Design
-   DEBUG: 2025-12-26 15:12:59,294:      pdf_renderer.py:  470: printSegment:  - Mobile-first approach
-   DEBUG: 2025-12-26 15:12:59,294:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,295:      pdf_renderer.py:  470: printSegment: Error Handling
-   DEBUG: 2025-12-26 15:12:59,295:      pdf_renderer.py:  470: printSegment:  - Try-catch blocks and fallbacks
-   DEBUG: 2025-12-26 15:12:59,295:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,296:      pdf_renderer.py:  470: printSegment: Documentation
-   DEBUG: 2025-12-26 15:12:59,296:      pdf_renderer.py:  470: printSegment:  - Comprehensive README files
-   DEBUG: 2025-12-26 15:12:59,297:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,298:      pdf_renderer.py:  470: printSegment: Containerization
-   DEBUG: 2025-12-26 15:12:59,298:      pdf_renderer.py:  470: printSegment:  - Production-ready Docker setup
-   DEBUG: 2025-12-26 15:12:59,299:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,299:      pdf_renderer.py:  470: printSegment: API Design
-   DEBUG: 2025-12-26 15:12:59,299:      pdf_renderer.py:  470: printSegment:  - RESTful FastAPI with Pydantic validation
-   DEBUG: 2025-12-26 15:12:59,299:      pdf_renderer.py:  470: printSegment: Areas for Improvement
-   DEBUG: 2025-12-26 15:12:59,300:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,352:      pdf_renderer.py:  470: printSegment: Testing
-   DEBUG: 2025-12-26 15:12:59,353:      pdf_renderer.py:  470: printSegment:  - No unit/integration tests detected
-   DEBUG: 2025-12-26 15:12:59,353:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,353:      pdf_renderer.py:  470: printSegment: Environment Config
-   DEBUG: 2025-12-26 15:12:59,354:      pdf_renderer.py:  470: printSegment:  - .env.example exists but not populated
-   DEBUG: 2025-12-26 15:12:59,354:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,355:      pdf_renderer.py:  470: printSegment: API Health Endpoint
-   DEBUG: 2025-12-26 15:12:59,355:      pdf_renderer.py:  470: printSegment:  - Backend README mentions 
-   DEBUG: 2025-12-26 15:12:59,356:      pdf_renderer.py:  470: printSegment: /health
-   DEBUG: 2025-12-26 15:12:59,357:      pdf_renderer.py:  470: printSegment:  but not implemented
-   DEBUG: 2025-12-26 15:12:59,357:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,357:      pdf_renderer.py:  470: printSegment: History Endpoint
-   DEBUG: 2025-12-26 15:12:59,358:      pdf_renderer.py:  470: printSegment:  - Backend README mentions 
-   DEBUG: 2025-12-26 15:12:59,359:      pdf_renderer.py:  470: printSegment: /history
-   DEBUG: 2025-12-26 15:12:59,359:      pdf_renderer.py:  470: printSegment:  endpoint, not found in main.py
-   DEBUG: 2025-12-26 15:12:59,359:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,361:      pdf_renderer.py:  470: printSegment: Error Messages
-   DEBUG: 2025-12-26 15:12:59,361:      pdf_renderer.py:  470: printSegment:  - Some generic error handling (e.g., 
-   DEBUG: 2025-12-26 15:12:59,362:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,362:      pdf_renderer.py:  470: printSegment: Failed
-   DEBUG: 2025-12-26 15:12:59,362:      pdf_renderer.py:  470: printSegment: "
-   DEBUG: 2025-12-26 15:12:59,363:      pdf_renderer.py:  470: printSegment:  in Scan.tsx)
-   DEBUG: 2025-12-26 15:12:59,363:      pdf_renderer.py:  470: printSegment: ⚠️ 
-   DEBUG: 2025-12-26 15:12:59,364:      pdf_renderer.py:  470: printSegment: Loading States
-   DEBUG: 2025-12-26 15:12:59,364:      pdf_renderer.py:  470: printSegment:  - Could add skeleton loaders for better UX
-   DEBUG: 2025-12-26 15:12:59,364:      pdf_renderer.py:  470: printSegment: 🚀 Deployment Readiness
-   DEBUG: 2025-12-26 15:12:59,483:      pdf_renderer.py:  470: printSegment: ✅ Ready
-   DEBUG: 2025-12-26 15:12:59,483:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,484:      pdf_renderer.py:  470: printSegment: Frontend build pipeline (
-   DEBUG: 2025-12-26 15:12:59,487:      pdf_renderer.py:  470: printSegment: npm run build
-   DEBUG: 2025-12-26 15:12:59,487:      pdf_renderer.py:  470: printSegment: )
-   DEBUG: 2025-12-26 15:12:59,488:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,489:      pdf_renderer.py:  470: printSegment: Backend server with uvicorn
-   DEBUG: 2025-12-26 15:12:59,489:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,490:      pdf_renderer.py:  470: printSegment: Docker containerization
-   DEBUG: 2025-12-26 15:12:59,490:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,490:      pdf_renderer.py:  470: printSegment: CORS configuration
-   DEBUG: 2025-12-26 15:12:59,491:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,492:      pdf_renderer.py:  470: printSegment: Mobile responsiveness
-   DEBUG: 2025-12-26 15:12:59,493:      pdf_renderer.py:  470: printSegment: ⏳ Pending
-   DEBUG: 2025-12-26 15:12:59,493:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,495:      pdf_renderer.py:  470: printSegment: Production environment variables
-   DEBUG: 2025-12-26 15:12:59,495:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,496:      pdf_renderer.py:  470: printSegment: Firebase service account key
-   DEBUG: 2025-12-26 15:12:59,496:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,497:      pdf_renderer.py:  470: printSegment: ML model training completion
-   DEBUG: 2025-12-26 15:12:59,498:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,498:      pdf_renderer.py:  470: printSegment: API URL configuration for production
-   DEBUG: 2025-12-26 15:12:59,499:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,500:      pdf_renderer.py:  470: printSegment: SSL/HTTPS setup (if deploying to cloud)
-   DEBUG: 2025-12-26 15:12:59,501:      pdf_renderer.py:  470: printSegment: 🎯 Recommended Next Steps
-   DEBUG: 2025-12-26 15:12:59,502:      pdf_renderer.py:  470: printSegment: High Priority
-   DEBUG: 2025-12-26 15:12:59,502:      pdf_renderer.py:  470: printSegment:  1 
-   DEBUG: 2025-12-26 15:12:59,502:      pdf_renderer.py:  470: printSegment: Testing Implementation
-   DEBUG: 2025-12-26 15:12:59,503:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,504:      pdf_renderer.py:  470: printSegment: Add unit tests for UI components (Jest + React Testing Library)
-   DEBUG: 2025-12-26 15:12:59,504:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,505:      pdf_renderer.py:  470: printSegment: Add API endpoint tests (pytest)
-   DEBUG: 2025-12-26 15:12:59,505:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,507:      pdf_renderer.py:  470: printSegment: Integration tests for /predict endpoint
-   DEBUG: 2025-12-26 15:12:59,507:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,508:      pdf_renderer.py:  470: printSegment: Manual testing checklist
-   DEBUG: 2025-12-26 15:12:59,508:      pdf_renderer.py:  470: printSegment:  2 
-   DEBUG: 2025-12-26 15:12:59,510:      pdf_renderer.py:  470: printSegment: Complete Backend Endpoints
-   DEBUG: 2025-12-26 15:12:59,510:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,511:      pdf_renderer.py:  470: printSegment: Implement 
-   DEBUG: 2025-12-26 15:12:59,511:      pdf_renderer.py:  470: printSegment: GET /health
-   DEBUG: 2025-12-26 15:12:59,512:      pdf_renderer.py:  470: printSegment:  for monitoring
-   DEBUG: 2025-12-26 15:12:59,513:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,514:      pdf_renderer.py:  470: printSegment: Implement 
-   DEBUG: 2025-12-26 15:12:59,514:      pdf_renderer.py:  470: printSegment: GET /history
-   DEBUG: 2025-12-26 15:12:59,515:      pdf_renderer.py:  470: printSegment:  for scan history retrieval
-   DEBUG: 2025-12-26 15:12:59,515:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,515:      pdf_renderer.py:  470: printSegment: Add proper error response schemas
-   DEBUG: 2025-12-26 15:12:59,517:      pdf_renderer.py:  470: printSegment:  3 
-   DEBUG: 2025-12-26 15:12:59,517:      pdf_renderer.py:  470: printSegment: Model Training
-   DEBUG: 2025-12-26 15:12:59,518:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,518:      pdf_renderer.py:  470: printSegment: Run 
-   DEBUG: 2025-12-26 15:12:59,519:      pdf_renderer.py:  470: printSegment: python download_dataset.py
-   DEBUG: 2025-12-26 15:12:59,519:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,520:      pdf_renderer.py:  470: printSegment: Execute 
-   DEBUG: 2025-12-26 15:12:59,521:      pdf_renderer.py:  470: printSegment: python train_model.py
-   DEBUG: 2025-12-26 15:12:59,521:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,522:      pdf_renderer.py:  470: printSegment: Validate model accuracy
-   DEBUG: 2025-12-26 15:12:59,523:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,523:      pdf_renderer.py:  470: printSegment: Test real predictions vs mock data
-   DEBUG: 2025-12-26 15:12:59,524:      pdf_renderer.py:  470: printSegment:  4 
-   DEBUG: 2025-12-26 15:12:59,524:      pdf_renderer.py:  470: printSegment: Firebase Setup
-   DEBUG: 2025-12-26 15:12:59,524:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,525:      pdf_renderer.py:  470: printSegment: Obtain serviceAccountKey.json
-   DEBUG: 2025-12-26 15:12:59,525:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,526:      pdf_renderer.py:  470: printSegment: Configure Firestore security rules
-   DEBUG: 2025-12-26 15:12:59,526:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,528:      pdf_renderer.py:  470: printSegment: Test database read/write operations
-   DEBUG: 2025-12-26 15:12:59,528:      pdf_renderer.py:  470: printSegment: Medium Priority
-   DEBUG: 2025-12-26 15:12:59,529:      pdf_renderer.py:  470: printSegment:  5 
-   DEBUG: 2025-12-26 15:12:59,529:      pdf_renderer.py:  470: printSegment: Environment Configuration
-   DEBUG: 2025-12-26 15:12:59,529:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,530:      pdf_renderer.py:  470: printSegment: Populate .env.example with all required variables
-   DEBUG: 2025-12-26 15:12:59,530:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,531:      pdf_renderer.py:  470: printSegment: Create .env.production template
-   DEBUG: 2025-12-26 15:12:59,531:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,532:      pdf_renderer.py:  470: printSegment: Document environment setup in README
-   DEBUG: 2025-12-26 15:12:59,533:      pdf_renderer.py:  470: printSegment:  6 
-   DEBUG: 2025-12-26 15:12:59,533:      pdf_renderer.py:  470: printSegment: UI/UX Enhancements
-   DEBUG: 2025-12-26 15:12:59,534:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,534:      pdf_renderer.py:  470: printSegment: Add loading skeletons
-   DEBUG: 2025-12-26 15:12:59,535:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,535:      pdf_renderer.py:  470: printSegment: Improve error messages with i18n
-   DEBUG: 2025-12-26 15:12:59,536:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,536:      pdf_renderer.py:  470: printSegment: Complete multilingual translation strings
-   DEBUG: 2025-12-26 15:12:59,536:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,537:      pdf_renderer.py:  470: printSegment: Add haptic feedback for mobile
-   DEBUG: 2025-12-26 15:12:59,537:      pdf_renderer.py:  470: printSegment:  7 
-   DEBUG: 2025-12-26 15:12:59,538:      pdf_renderer.py:  470: printSegment: Performance Optimization
-   DEBUG: 2025-12-26 15:12:59,539:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,539:      pdf_renderer.py:  470: printSegment: Implement lazy loading for routes
-   DEBUG: 2025-12-26 15:12:59,539:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,539:      pdf_renderer.py:  470: printSegment: Image optimization for scans
-   DEBUG: 2025-12-26 15:12:59,541:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,541:      pdf_renderer.py:  470: printSegment: API response caching with React Query
-   DEBUG: 2025-12-26 15:12:59,541:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,542:      pdf_renderer.py:  470: printSegment: Bundle size analysis
-   DEBUG: 2025-12-26 15:12:59,542:      pdf_renderer.py:  470: printSegment: Low Priority
-   DEBUG: 2025-12-26 15:12:59,543:      pdf_renderer.py:  470: printSegment:  8 
-   DEBUG: 2025-12-26 15:12:59,543:      pdf_renderer.py:  470: printSegment: Documentation
-   DEBUG: 2025-12-26 15:12:59,544:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,544:      pdf_renderer.py:  470: printSegment: API documentation with Swagger/OpenAPI
-   DEBUG: 2025-12-26 15:12:59,545:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,545:      pdf_renderer.py:  470: printSegment: Component Storybook
-   DEBUG: 2025-12-26 15:12:59,546:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,546:      pdf_renderer.py:  470: printSegment: Developer onboarding guide
-   DEBUG: 2025-12-26 15:12:59,546:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,548:      pdf_renderer.py:  470: printSegment: User manual for farmers (multilingual)
-   DEBUG: 2025-12-26 15:12:59,548:      pdf_renderer.py:  470: printSegment:  9 
-   DEBUG: 2025-12-26 15:12:59,549:      pdf_renderer.py:  470: printSegment: DevOps
-   DEBUG: 2025-12-26 15:12:59,549:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,549:      pdf_renderer.py:  470: printSegment: CI/CD pipeline (GitHub Actions)
-   DEBUG: 2025-12-26 15:12:59,550:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,550:      pdf_renderer.py:  470: printSegment: Automated deployment to cloud (AWS/GCP/Azure)
-   DEBUG: 2025-12-26 15:12:59,551:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,551:      pdf_renderer.py:  470: printSegment: Monitoring and logging (Sentry, LogRocket)
-   DEBUG: 2025-12-26 15:12:59,552:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,552:      pdf_renderer.py:  470: printSegment: Analytics integration
-   DEBUG: 2025-12-26 15:12:59,553:      pdf_renderer.py:  470: printSegment: 📁 Project Structure
-   DEBUG: 2025-12-26 15:12:59,554:      pdf_renderer.py:  470: printSegment: CropGuard/
-   DEBUG: 2025-12-26 15:12:59,554:      pdf_renderer.py:  470: printSegment: ├── backend/
-   DEBUG: 2025-12-26 15:12:59,564:      pdf_renderer.py:  470: printSegment: │   ├── backend/
-   DEBUG: 2025-12-26 15:12:59,564:      pdf_renderer.py:  470: printSegment: │   │   └── (backend modules)
-   DEBUG: 2025-12-26 15:12:59,564:      pdf_renderer.py:  470: printSegment: │   ├── dataset/
-   DEBUG: 2025-12-26 15:12:59,565:      pdf_renderer.py:  470: printSegment: │   ├── models/
-   DEBUG: 2025-12-26 15:12:59,566:      pdf_renderer.py:  470: printSegment: │   │   └── plant_disease_model.h5 (after training)
-   DEBUG: 2025-12-26 15:12:59,566:      pdf_renderer.py:  470: printSegment: │   ├── database.py
-   DEBUG: 2025-12-26 15:12:59,566:      pdf_renderer.py:  470: printSegment: │   ├── main.py
-   DEBUG: 2025-12-26 15:12:59,567:      pdf_renderer.py:  470: printSegment: │   ├── train_model.py
-   DEBUG: 2025-12-26 15:12:59,567:      pdf_renderer.py:  470: printSegment: │   ├── download_dataset.py
-   DEBUG: 2025-12-26 15:12:59,567:      pdf_renderer.py:  470: printSegment: │   ├── extract_dataset.py
-   DEBUG: 2025-12-26 15:12:59,568:      pdf_renderer.py:  470: printSegment: │   ├── requirements.txt
-   DEBUG: 2025-12-26 15:12:59,568:      pdf_renderer.py:  470: printSegment: │   ├── Dockerfile
-   DEBUG: 2025-12-26 15:12:59,568:      pdf_renderer.py:  470: printSegment: │   └── README.md
-   DEBUG: 2025-12-26 15:12:59,569:      pdf_renderer.py:  470: printSegment: ├── src/
-   DEBUG: 2025-12-26 15:12:59,569:      pdf_renderer.py:  470: printSegment: │   ├── components/
-   DEBUG: 2025-12-26 15:12:59,570:      pdf_renderer.py:  470: printSegment: │   │   ├── dashboard/
-   DEBUG: 2025-12-26 15:12:59,570:      pdf_renderer.py:  470: printSegment: │   │   │   ├── CropCalendar.tsx
-   DEBUG: 2025-12-26 15:12:59,570:      pdf_renderer.py:  470: printSegment: │   │   │   └── SprayingWidget.tsx
-   DEBUG: 2025-12-26 15:12:59,571:      pdf_renderer.py:  470: printSegment: │   │   ├── layout/
-   DEBUG: 2025-12-26 15:12:59,572:      pdf_renderer.py:  470: printSegment: │   │   │   ├── Header.tsx
-   DEBUG: 2025-12-26 15:12:59,572:      pdf_renderer.py:  470: printSegment: │   │   │   ├── MobileNav.tsx
-   DEBUG: 2025-12-26 15:12:59,573:      pdf_renderer.py:  470: printSegment: │   │   │   └── PageTransition.tsx
-   DEBUG: 2025-12-26 15:12:59,573:      pdf_renderer.py:  470: printSegment: │   │   └── ui/
-   DEBUG: 2025-12-26 15:12:59,574:      pdf_renderer.py:  470: printSegment: │   │       ├── Button.tsx
-   DEBUG: 2025-12-26 15:12:59,574:      pdf_renderer.py:  470: printSegment: │   │       ├── ChatAssistant.tsx
-   DEBUG: 2025-12-26 15:12:59,575:      pdf_renderer.py:  470: printSegment: │   │       ├── Dock.tsx
-   DEBUG: 2025-12-26 15:12:59,575:      pdf_renderer.py:  470: printSegment: │   │       ├── GlassCard.tsx
-   DEBUG: 2025-12-26 15:12:59,576:      pdf_renderer.py:  470: printSegment: │   │       ├── ScanOverlay.tsx
-   DEBUG: 2025-12-26 15:12:59,576:      pdf_renderer.py:  470: printSegment: │   │       └── SpotlightCard.tsx
-   DEBUG: 2025-12-26 15:12:59,577:      pdf_renderer.py:  470: printSegment: │   ├── context/
-   DEBUG: 2025-12-26 15:12:59,577:      pdf_renderer.py:  470: printSegment: │   │   └── LanguageContext.tsx
-   DEBUG: 2025-12-26 15:12:59,578:      pdf_renderer.py:  470: printSegment: │   ├── layouts/
-   DEBUG: 2025-12-26 15:12:59,578:      pdf_renderer.py:  470: printSegment: │   │   ├── FarmerLayout.tsx
-   DEBUG: 2025-12-26 15:12:59,579:      pdf_renderer.py:  470: printSegment: │   │   └── OSLayout.tsx
-   DEBUG: 2025-12-26 15:12:59,579:      pdf_renderer.py:  470: printSegment: │   ├── pages/
-   DEBUG: 2025-12-26 15:12:59,579:      pdf_renderer.py:  470: printSegment: │   │   ├── Auth.tsx
-   DEBUG: 2025-12-26 15:12:59,580:      pdf_renderer.py:  470: printSegment: │   │   ├── Camera.tsx
-   DEBUG: 2025-12-26 15:12:59,580:      pdf_renderer.py:  470: printSegment: │   │   ├── Dashboard.tsx
-   DEBUG: 2025-12-26 15:12:59,581:      pdf_renderer.py:  470: printSegment: │   │   ├── History.tsx
-   DEBUG: 2025-12-26 15:12:59,581:      pdf_renderer.py:  470: printSegment: │   │   ├── Landing.tsx
-   DEBUG: 2025-12-26 15:12:59,582:      pdf_renderer.py:  470: printSegment: │   │   └── Scan.tsx
-   DEBUG: 2025-12-26 15:12:59,582:      pdf_renderer.py:  470: printSegment: │   ├── lib/
-   DEBUG: 2025-12-26 15:12:59,583:      pdf_renderer.py:  470: printSegment: │   │   └── utils.ts
-   DEBUG: 2025-12-26 15:12:59,584:      pdf_renderer.py:  470: printSegment: │   ├── App.tsx
-   DEBUG: 2025-12-26 15:12:59,584:      pdf_renderer.py:  470: printSegment: │   ├── main.tsx
-   DEBUG: 2025-12-26 15:12:59,585:      pdf_renderer.py:  470: printSegment: │   └── index.css
-   DEBUG: 2025-12-26 15:12:59,585:      pdf_renderer.py:  470: printSegment: ├── docker-compose.yml
-   DEBUG: 2025-12-26 15:12:59,585:      pdf_renderer.py:  470: printSegment: ├── Dockerfile
-   DEBUG: 2025-12-26 15:12:59,586:      pdf_renderer.py:  470: printSegment: ├── nginx.conf
-   DEBUG: 2025-12-26 15:12:59,587:      pdf_renderer.py:  470: printSegment: ├── package.json
-   DEBUG: 2025-12-26 15:12:59,588:      pdf_renderer.py:  470: printSegment: ├── tsconfig.json
-   DEBUG: 2025-12-26 15:12:59,589:      pdf_renderer.py:  470: printSegment: ├── vite.config.ts
-   DEBUG: 2025-12-26 15:12:59,589:      pdf_renderer.py:  470: printSegment: ├── tailwind.config.js
-   DEBUG: 2025-12-26 15:12:59,589:      pdf_renderer.py:  470: printSegment: └── README.md
-   DEBUG: 2025-12-26 15:12:59,589:      pdf_renderer.py:  470: printSegment: 🐛 Known Issues
-   DEBUG: 2025-12-26 15:12:59,591:      pdf_renderer.py:  470: printSegment: Critical
-   DEBUG: 2025-12-26 15:12:59,591:      pdf_renderer.py:  470: printSegment: None detected
-   DEBUG: 2025-12-26 15:12:59,592:      pdf_renderer.py:  470: printSegment: Minor
-   DEBUG: 2025-12-26 15:12:59,592:      pdf_renderer.py:  470: printSegment:  1 
-   DEBUG: 2025-12-26 15:12:59,593:      pdf_renderer.py:  470: printSegment: Backend README documents 
-   DEBUG: 2025-12-26 15:12:59,593:      pdf_renderer.py:  470: printSegment: /health
-   DEBUG: 2025-12-26 15:12:59,593:      pdf_renderer.py:  470: printSegment:  and 
-   DEBUG: 2025-12-26 15:12:59,594:      pdf_renderer.py:  470: printSegment: /history
-   DEBUG: 2025-12-26 15:12:59,594:      pdf_renderer.py:  470: printSegment:  endpoints not implemented
-   DEBUG: 2025-12-26 15:12:59,594:      pdf_renderer.py:  470: printSegment:  2 
-   DEBUG: 2025-12-26 15:12:59,595:      pdf_renderer.py:  470: printSegment: Some UI components may not have complete i18n coverage
-   DEBUG: 2025-12-26 15:12:59,595:      pdf_renderer.py:  470: printSegment:  3 
-   DEBUG: 2025-12-26 15:12:59,596:      pdf_renderer.py:  470: printSegment: Mock data fallback in Scan.tsx uses hardcoded values
-   DEBUG: 2025-12-26 15:12:59,596:      pdf_renderer.py:  470: printSegment: 📈 Metrics
-   DEBUG: 2025-12-26 15:12:59,597:      pdf_renderer.py:  470: printSegment: | Metric | Value |
-   DEBUG: 2025-12-26 15:12:59,597:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,597:      pdf_renderer.py:  470: printSegment: |--------|-------|
-   DEBUG: 2025-12-26 15:12:59,598:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,598:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,598:      pdf_renderer.py:  470: printSegment: Frontend Files
-   DEBUG: 2025-12-26 15:12:59,599:      pdf_renderer.py:  470: printSegment:  | 22 .tsx files |
-   DEBUG: 2025-12-26 15:12:59,599:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,600:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,600:      pdf_renderer.py:  470: printSegment: Backend Files
-   DEBUG: 2025-12-26 15:12:59,601:      pdf_renderer.py:  470: printSegment:  | 4 core Python scripts |
-   DEBUG: 2025-12-26 15:12:59,601:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,601:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,602:      pdf_renderer.py:  470: printSegment: Pages
-   DEBUG: 2025-12-26 15:12:59,603:      pdf_renderer.py:  470: printSegment:  | 6 |
-   DEBUG: 2025-12-26 15:12:59,603:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,603:      pdf_renderer.py:  470: printSegment: |
-   DEBUG: 2025-12-26 15:12:59,604:      pdf_renderer.py:  470: printSegment: 
-   DEBUG: 2025-12-26 15:12:59,604:      pdf_renderer.py:  470: printSegment: UI Components
-   DEBUG: 2025-12-26 15:12:59,605:      pdf_renderer.py:  470: printSegment:  | 7 |
-   DEBUG: 2025-12-26 15:12:59,605:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,605:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,606:      pdf_renderer.py:  470: printSegment: Layout Components
-   DEBUG: 2025-12-26 15:12:59,606:      pdf_renderer.py:  470: printSegment:  | 5 |
-   DEBUG: 2025-12-26 15:12:59,606:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,606:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,607:      pdf_renderer.py:  470: printSegment: Dashboard Widgets
-   DEBUG: 2025-12-26 15:12:59,608:      pdf_renderer.py:  470: printSegment:  | 2 (SprayingWidget, CropCalendar) |
-   DEBUG: 2025-12-26 15:12:59,608:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,609:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,609:      pdf_renderer.py:  470: printSegment: API
-   DEBUG: 2025-12-26 15:12:59,609:      pdf_renderer.py:  470: printSegment: Endpoints
-   DEBUG: 2025-12-26 15:12:59,609:      pdf_renderer.py:  470: printSegment:  | 1 implemented (/predict) |
-   DEBUG: 2025-12-26 15:12:59,609:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,611:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,611:      pdf_renderer.py:  470: printSegment: Supported Diseases
-   DEBUG: 2025-12-26 15:12:59,612:      pdf_renderer.py:  470: printSegment:  | 38 classes |
-   DEBUG: 2025-12-26 15:12:59,612:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,612:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,612:      pdf_renderer.py:  470: printSegment: Languages
-   DEBUG: 2025-12-26 15:12:59,613:      pdf_renderer.py:  470: printSegment:  | 3 (EN, HI, MR) |
-   DEBUG: 2025-12-26 15:12:59,613:      pdf_renderer.py:  470: printSegment:  
-   DEBUG: 2025-12-26 15:12:59,614:      pdf_renderer.py:  470: printSegment: | 
-   DEBUG: 2025-12-26 15:12:59,614:      pdf_renderer.py:  470: printSegment: Git
-   DEBUG: 2025-12-26 15:12:59,614:      pdf_renderer.py:  470: printSegment: Commits
-   DEBUG: 2025-12-26 15:12:59,615:      pdf_renderer.py:  470: printSegment:  | 3 |
-   DEBUG: 2025-12-26 15:12:59,616:      pdf_renderer.py:  470: printSegment: 🎓 Learning 
-   DEBUG: 2025-12-26 15:12:59,616:      pdf_renderer.py:  470: printSegment: &
-   DEBUG: 2025-12-26 15:12:59,616:      pdf_renderer.py:  470: printSegment:  Documentation
-   DEBUG: 2025-12-26 15:12:59,618:      pdf_renderer.py:  470: printSegment: Available Documentation
-   DEBUG: 2025-12-26 15:12:59,618:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,619:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,619:      pdf_renderer.py:  470: printSegment: Project README
-   DEBUG: 2025-12-26 15:12:59,620:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,620:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,620:      pdf_renderer.py:  470: printSegment: Backend README
-   DEBUG: 2025-12-26 15:12:59,621:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,621:      pdf_renderer.py:  470: printSegment: ✅ 
-   DEBUG: 2025-12-26 15:12:59,621:      pdf_renderer.py:  470: printSegment: TRAINING Documentation
-   DEBUG: 2025-12-26 15:12:59,623:      pdf_renderer.py:  470: printSegment: Quick Start Commands
-   DEBUG: 2025-12-26 15:12:59,623:      pdf_renderer.py:  470: printSegment: Frontend:
-   DEBUG: 2025-12-26 15:12:59,624:      pdf_renderer.py:  470: printSegment: npm install
-   DEBUG: 2025-12-26 15:12:59,624:      pdf_renderer.py:  470: printSegment: npm run dev
-   DEBUG: 2025-12-26 15:12:59,625:      pdf_renderer.py:  470: printSegment: # Opens http://localhost:5173
-   DEBUG: 2025-12-26 15:12:59,625:      pdf_renderer.py:  470: printSegment: Backend:
-   DEBUG: 2025-12-26 15:12:59,626:      pdf_renderer.py:  470: printSegment: cd backend
-   DEBUG: 2025-12-26 15:12:59,626:      pdf_renderer.py:  470: printSegment: python -m venv venv
-   DEBUG: 2025-12-26 15:12:59,627:      pdf_renderer.py:  470: printSegment: venv\Scripts\activate  # Windows
-   DEBUG: 2025-12-26 15:12:59,628:      pdf_renderer.py:  470: printSegment: pip install -r requirements.txt
-   DEBUG: 2025-12-26 15:12:59,628:      pdf_renderer.py:  470: printSegment: python main.py
-   DEBUG: 2025-12-26 15:12:59,629:      pdf_renderer.py:  470: printSegment: # API runs at http://localhost:8000
-   DEBUG: 2025-12-26 15:12:59,629:      pdf_renderer.py:  470: printSegment: Docker:
-   DEBUG: 2025-12-26 15:12:59,631:      pdf_renderer.py:  470: printSegment: docker-compose up --build
-   DEBUG: 2025-12-26 15:12:59,632:      pdf_renderer.py:  470: printSegment: 🏆 Conclusion
-   DEBUG: 2025-12-26 15:12:59,633:      pdf_renderer.py:  470: printSegment: CropGuard/SANJIVANI is a 
-   DEBUG: 2025-12-26 15:12:59,633:      pdf_renderer.py:  470: printSegment: well-architected, production-ready platform
-   DEBUG: 2025-12-26 15:12:59,641:      pdf_renderer.py:  470: printSegment:  with a solid foundation. The
-   DEBUG: 2025-12-26 15:12:59,644:      pdf_renderer.py:  470: printSegment: Dashboard 2.0 features (SprayingWidget and CropCalendar) are fully implemented and functional. The backend
-   DEBUG: 2025-12-26 15:12:59,645:      pdf_renderer.py:  470: printSegment: API is complete with disease prediction capability.
-   DEBUG: 2025-12-26 15:12:59,646:      pdf_renderer.py:  470: printSegment: Current Status:
-   DEBUG: 2025-12-26 15:12:59,646:      pdf_renderer.py:  470: printSegment:  🟢 
-   DEBUG: 2025-12-26 15:12:59,754:      pdf_renderer.py:  470: printSegment: 80% Complete
-   DEBUG: 2025-12-26 15:12:59,755:      pdf_renderer.py:  470: printSegment: Remaining Work:
-   DEBUG: 2025-12-26 15:12:59,755:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,756:      pdf_renderer.py:  470: printSegment: Model training (15%)
-   DEBUG: 2025-12-26 15:12:59,757:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,758:      pdf_renderer.py:  470: printSegment: Testing suite (3%)
-   DEBUG: 2025-12-26 15:12:59,758:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,760:      pdf_renderer.py:  470: printSegment: Firebase configuration (1%)
-   DEBUG: 2025-12-26 15:12:59,760:      pdf_renderer.py:  470: printSegment: l
-   DEBUG: 2025-12-26 15:12:59,761:      pdf_renderer.py:  470: printSegment: Documentation polish (1%)
-   DEBUG: 2025-12-26 15:12:59,766:      pdf_renderer.py:  470: printSegment: The project is ready for immediate testing and can be deployed to staging with minimal configuration. Once the ML
-   DEBUG: 2025-12-26 15:12:59,766:      pdf_renderer.py:  470: printSegment: model is trained and Firebase is configured, it will be fully production-ready.
-   DEBUG: 2025-12-26 15:12:59,767:      pdf_renderer.py:  470: printSegment: Recommended Action:
-   DEBUG: 2025-12-26 15:12:59,769:      pdf_renderer.py:  470: printSegment:  Proceed with model training and testing phase, then prepare for user acceptance testing
-   DEBUG: 2025-12-26 15:12:59,769:      pdf_renderer.py:  470: printSegment: (UAT) with farmers.
-   DEBUG: 2025-12-26 15:12:59,770:      pdf_renderer.py:  470: printSegment: Report generated by Antigravity AI Assistant
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 0, [1, 'CropGuard/SANJIVANI - Project Progress Report', 1, 68.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 1, [2, '📋 Executive Summary', 1, 148.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 2, [3, 'Key Achievements', 1, 223.20000000000002]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 3, [2, '🏗️ Architecture Overview', 1, 348.40000000000003]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 4, [3, 'Tech Stack', 1, 381.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 5, [4, 'Frontend', 1, 410.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 6, [4, 'Backend', 1, 530.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 7, [4, 'Infrastructure', 1, 638.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 8, [2, '✅ Completed Features', 2, 70.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 9, [3, '1. Frontend Implementation', 2, 103.19999999999999]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 10, [4, 'Pages (6 Total)', 2, 131.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 11, [4, 'Dashboard 2.0 Components', 2, 239.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 12, [5, '🌾 Spraying Widget', 2, 263.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 13, [5, '📅 Crop Calendar', 2, 485.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 14, [5, 'Dashboard Layout', 2, 635.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 15, [4, 'UI Components Library', 3, 140.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 16, [4, 'Layout System', 3, 278.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 17, [4, 'Design System', 3, 374.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 18, [4, 'Multilingual Support', 3, 644.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 19, [3, '2. Backend Implementation', 4, 104.4]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 20, [4, 'Main API Server', 4, 132.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 21, [4, 'Database Layer', 4, 396.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 22, [4, 'Model Training Pipeline', 4, 570.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 23, [3, '3. Infrastructure ', 5, 128.4]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 24, [4, 'Docker Setup', 5, 156.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 25, [4, 'Configuration Files', 5, 276.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 26, [4, 'Environment Variables', 5, 384.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 27, [2, '📊 Git History', 5, 475.6]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 28, [2, '🔍 Code Quality Assessment', 5, 677.2]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 29, [3, 'Strengths', 6, 72.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 30, [3, 'Areas for Improvement', 6, 190.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 31, [2, '🚀 Deployment Readiness', 6, 310.00000000000006]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 32, [3, '✅ Ready', 6, 343.20000000000005]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 33, [3, '⏳ Pending', 6, 444.0]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 34, [2, '🎯 Recommended Next Steps', 6, 557.1999999999999]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 35, [3, 'High Priority', 6, 590.3999999999999]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 36, [3, 'Medium Priority', 7, 254.39999999999998]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 37, [3, 'Low Priority', 7, 499.19999999999993]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 38, [2, '📁 Project Structure', 7, 696.3999999999999]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 39, [2, '🐛 Known Issues', 9, 140.8]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 40, [3, 'Critical', 9, 174.00000000000003]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 41, [3, 'Minor', 9, 220.80000000000004]
-   DEBUG: 2025-12-26 15:12:59,772:      pdf_renderer.py:   53: 42, [2, '📈 Metrics', 9, 310.00000000000006]
-   DEBUG: 2025-12-26 15:12:59,773:      pdf_renderer.py:   53: 43, [2, '🎓 Learning ', 9, 409.6000000000001]
-   DEBUG: 2025-12-26 15:12:59,773:      pdf_renderer.py:   53: 44, [3, 'Available Documentation', 9, 442.80000000000007]
-   DEBUG: 2025-12-26 15:12:59,773:      pdf_renderer.py:   53: 45, [3, 'Quick Start Commands', 9, 519.6]
-   DEBUG: 2025-12-26 15:12:59,773:      pdf_renderer.py:   53: 46, [2, '🏆 Conclusion', 10, 122.80000000000001]
+    INFO: 2025-12-26 15:55:12,831:               log.py:   20: Logging to D:\Projects\CropGuard\mdpdf.log
+   DEBUG: 2025-12-26 15:55:12,832:               cli.py:  103: C:\Users\Yash\.gemini\antigravity\brain\964703e4-afde-4f53-bab8-d7b22b75136d\architecture.md
+    INFO: 2025-12-26 15:55:12,832:         converter.py:   14: C:\Users\Yash\.gemini\antigravity\brain\964703e4-afde-4f53-bab8-d7b22b75136d\architecture.md
+   DEBUG: 2025-12-26 15:55:12,835:      pdf_renderer.py:  470: printSegment: SANJIVANI 2.0 - System Architecture
+   DEBUG: 2025-12-26 15:55:12,838:      pdf_renderer.py:  470: printSegment: High-Level Architecture
+   DEBUG: 2025-12-26 15:55:12,839:      pdf_renderer.py:  470: printSegment: graph TB
+   DEBUG: 2025-12-26 15:55:12,840:      pdf_renderer.py:  470: printSegment:     subgraph "Frontend Layer"
+   DEBUG: 2025-12-26 15:55:12,841:      pdf_renderer.py:  470: printSegment:         A[Web App<br/>React + TypeScript]
+   DEBUG: 2025-12-26 15:55:12,842:      pdf_renderer.py:  470: printSegment:         B[PWA Service Worker<br/>Offline Support]
+   DEBUG: 2025-12-26 15:55:12,842:      pdf_renderer.py:  470: printSegment:         C[IndexedDB<br/>Local Cache]
+   DEBUG: 2025-12-26 15:55:12,843:      pdf_renderer.py:  470: printSegment:     end
+   DEBUG: 2025-12-26 15:55:12,843:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,844:      pdf_renderer.py:  470: printSegment:     subgraph "API Gateway Layer"
+   DEBUG: 2025-12-26 15:55:12,844:      pdf_renderer.py:  470: printSegment:         D[FastAPI Router<br/>Request Validation]
+   DEBUG: 2025-12-26 15:55:12,845:      pdf_renderer.py:  470: printSegment:         E[API v2 Endpoints<br/>Structured Responses]
+   DEBUG: 2025-12-26 15:55:12,845:      pdf_renderer.py:  470: printSegment:     end
+   DEBUG: 2025-12-26 15:55:12,846:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,846:      pdf_renderer.py:  470: printSegment:     subgraph "AI Layer"
+   DEBUG: 2025-12-26 15:55:12,846:      pdf_renderer.py:  470: printSegment:         F[Inference Engine<br/>MobileNetV2]
+   DEBUG: 2025-12-26 15:55:12,847:      pdf_renderer.py:  470: printSegment:         G[Preprocessing<br/>OpenCV]
+   DEBUG: 2025-12-26 15:55:12,848:      pdf_renderer.py:  470: printSegment:         H[Model Cache<br/>Performance]
+   DEBUG: 2025-12-26 15:55:12,848:      pdf_renderer.py:  470: printSegment:     end
+   DEBUG: 2025-12-26 15:55:12,848:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,850:      pdf_renderer.py:  470: printSegment:     subgraph "Knowledge Layer"
+   DEBUG: 2025-12-26 15:55:12,851:      pdf_renderer.py:  470: printSegment:         I[Disease Knowledge<br/>JSON Database]
+   DEBUG: 2025-12-26 15:55:12,852:      pdf_renderer.py:  470: printSegment:         J[Knowledge Engine<br/>Query Logic]
+   DEBUG: 2025-12-26 15:55:12,852:      pdf_renderer.py:  470: printSegment:         K[Multilingual Support]
+   DEBUG: 2025-12-26 15:55:12,852:      pdf_renderer.py:  470: printSegment:     end
+   DEBUG: 2025-12-26 15:55:12,853:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,854:      pdf_renderer.py:  470: printSegment:     subgraph "Data Layer"
+   DEBUG: 2025-12-26 15:55:12,854:      pdf_renderer.py:  470: printSegment:         L[Firebase Firestore<br/>Scan History]
+   DEBUG: 2025-12-26 15:55:12,855:      pdf_renderer.py:  470: printSegment:         M[Model Metadata<br/>Benchmarks]
+   DEBUG: 2025-12-26 15:55:12,855:      pdf_renderer.py:  470: printSegment:     end
+   DEBUG: 2025-12-26 15:55:12,858:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,859:      pdf_renderer.py:  470: printSegment:     A -->|REST/JSON| D
+   DEBUG: 2025-12-26 15:55:12,859:      pdf_renderer.py:  470: printSegment:     B -->|Background Sync| D
+   DEBUG: 2025-12-26 15:55:12,860:      pdf_renderer.py:  470: printSegment:     A <-->|Cache| C
+   DEBUG: 2025-12-26 15:55:12,860:      pdf_renderer.py:  470: printSegment:     D --> E
+   DEBUG: 2025-12-26 15:55:12,860:      pdf_renderer.py:  470: printSegment:     E -->|Image| F
+   DEBUG: 2025-12-26 15:55:12,861:      pdf_renderer.py:  470: printSegment:     F --> G
+   DEBUG: 2025-12-26 15:55:12,861:      pdf_renderer.py:  470: printSegment:     G --> H
+   DEBUG: 2025-12-26 15:55:12,862:      pdf_renderer.py:  470: printSegment:     E -->|Disease Query| J
+   DEBUG: 2025-12-26 15:55:12,862:      pdf_renderer.py:  470: printSegment:     J --> I
+   DEBUG: 2025-12-26 15:55:12,863:      pdf_renderer.py:  470: printSegment:     J --> K
+   DEBUG: 2025-12-26 15:55:12,863:      pdf_renderer.py:  470: printSegment:     F -->|Save Result| L
+   DEBUG: 2025-12-26 15:55:12,865:      pdf_renderer.py:  470: printSegment:     H -->|Metrics| M
+   DEBUG: 2025-12-26 15:55:12,865:      pdf_renderer.py:  470: printSegment:     
+   DEBUG: 2025-12-26 15:55:12,866:      pdf_renderer.py:  470: printSegment:     style F fill:#e1f5ff
+   DEBUG: 2025-12-26 15:55:12,867:      pdf_renderer.py:  470: printSegment:     style I fill:#fff4e1
+   DEBUG: 2025-12-26 15:55:12,867:      pdf_renderer.py:  470: printSegment:     style A fill:#e8f5e9
+   DEBUG: 2025-12-26 15:55:12,868:      pdf_renderer.py:  470: printSegment:     style L fill:#f3e5f5
+   DEBUG: 2025-12-26 15:55:12,869:      pdf_renderer.py:  470: printSegment: Layer Responsibilities
+   DEBUG: 2025-12-26 15:55:12,871:      pdf_renderer.py:  470: printSegment: 🎨 Frontend Layer
+   DEBUG: 2025-12-26 15:55:12,983:      pdf_renderer.py:  470: printSegment: Responsibility:
+   DEBUG: 2025-12-26 15:55:12,984:      pdf_renderer.py:  470: printSegment:  User interface and experience only
+   DEBUG: 2025-12-26 15:55:12,986:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:12,986:      pdf_renderer.py:  470: printSegment: Display results clearly
+   DEBUG: 2025-12-26 15:55:12,988:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:12,989:      pdf_renderer.py:  470: printSegment: Handle user interactions
+   DEBUG: 2025-12-26 15:55:12,989:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:12,990:      pdf_renderer.py:  470: printSegment: Manage offline state
+   DEBUG: 2025-12-26 15:55:12,990:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:12,991:      pdf_renderer.py:  470: printSegment: No business logic
+   DEBUG: 2025-12-26 15:55:12,991:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:12,991:      pdf_renderer.py:  470: printSegment: No AI logic
+   DEBUG: 2025-12-26 15:55:12,992:      pdf_renderer.py:  470: printSegment: 🚪 API Gateway Layer
+   DEBUG: 2025-12-26 15:55:13,098:      pdf_renderer.py:  470: printSegment: Responsibility:
+   DEBUG: 2025-12-26 15:55:13,099:      pdf_renderer.py:  470: printSegment:  Request routing and validation
+   DEBUG: 2025-12-26 15:55:13,100:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,100:      pdf_renderer.py:  470: printSegment: Input validation (Pydantic)
+   DEBUG: 2025-12-26 15:55:13,101:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,101:      pdf_renderer.py:  470: printSegment: Error handling
+   DEBUG: 2025-12-26 15:55:13,102:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,102:      pdf_renderer.py:  470: printSegment: Rate limiting
+   DEBUG: 2025-12-26 15:55:13,102:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,103:      pdf_renderer.py:  470: printSegment: API versioning
+   DEBUG: 2025-12-26 15:55:13,103:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,103:      pdf_renderer.py:  470: printSegment: Response formatting
+   DEBUG: 2025-12-26 15:55:13,104:      pdf_renderer.py:  470: printSegment: 🧠 AI Layer
+   DEBUG: 2025-12-26 15:55:13,215:      pdf_renderer.py:  470: printSegment: Responsibility:
+   DEBUG: 2025-12-26 15:55:13,216:      pdf_renderer.py:  470: printSegment:  Pure inference only
+   DEBUG: 2025-12-26 15:55:13,216:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,216:      pdf_renderer.py:  470: printSegment: Image preprocessing
+   DEBUG: 2025-12-26 15:55:13,217:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,218:      pdf_renderer.py:  470: printSegment: Model inference
+   DEBUG: 2025-12-26 15:55:13,219:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,219:      pdf_renderer.py:  470: printSegment: Performance tracking
+   DEBUG: 2025-12-26 15:55:13,220:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,221:      pdf_renderer.py:  470: printSegment: No treatment logic
+   DEBUG: 2025-12-26 15:55:13,221:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,222:      pdf_renderer.py:  470: printSegment: No domain knowledge
+   DEBUG: 2025-12-26 15:55:13,222:      pdf_renderer.py:  470: printSegment: 📚 Knowledge Layer
+   DEBUG: 2025-12-26 15:55:13,223:      pdf_renderer.py:  470: printSegment: Responsibility:
+   DEBUG: 2025-12-26 15:55:13,223:      pdf_renderer.py:  470: printSegment:  Domain expertise and recommendations
+   DEBUG: 2025-12-26 15:55:13,224:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,224:      pdf_renderer.py:  470: printSegment: Disease information lookup
+   DEBUG: 2025-12-26 15:55:13,225:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,225:      pdf_renderer.py:  470: printSegment: Treatment protocols
+   DEBUG: 2025-12-26 15:55:13,226:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,226:      pdf_renderer.py:  470: printSegment: Severity assessment
+   DEBUG: 2025-12-26 15:55:13,227:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,227:      pdf_renderer.py:  470: printSegment: Multilingual content
+   DEBUG: 2025-12-26 15:55:13,227:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,228:      pdf_renderer.py:  470: printSegment: Deterministic outputs
+   DEBUG: 2025-12-26 15:55:13,228:      pdf_renderer.py:  470: printSegment: 💾 Data Layer
+   DEBUG: 2025-12-26 15:55:13,229:      pdf_renderer.py:  470: printSegment: Responsibility:
+   DEBUG: 2025-12-26 15:55:13,229:      pdf_renderer.py:  470: printSegment:  Persistence and history
+   DEBUG: 2025-12-26 15:55:13,230:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,230:      pdf_renderer.py:  470: printSegment: Scan history storage
+   DEBUG: 2025-12-26 15:55:13,231:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,231:      pdf_renderer.py:  470: printSegment: User data
+   DEBUG: 2025-12-26 15:55:13,232:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,232:      pdf_renderer.py:  470: printSegment: Model benchmarks
+   DEBUG: 2025-12-26 15:55:13,233:      pdf_renderer.py:  470: printSegment: l
+   DEBUG: 2025-12-26 15:55:13,234:      pdf_renderer.py:  470: printSegment: Analytics data
+   DEBUG: 2025-12-26 15:55:13,235:      pdf_renderer.py:  470: printSegment: File Structure (SANJIVANI 2.0)
+   DEBUG: 2025-12-26 15:55:13,235:      pdf_renderer.py:  470: printSegment: CropGuard/
+   DEBUG: 2025-12-26 15:55:13,236:      pdf_renderer.py:  470: printSegment: ├── frontend/
+   DEBUG: 2025-12-26 15:55:13,244:      pdf_renderer.py:  470: printSegment: │   ├── src/
+   DEBUG: 2025-12-26 15:55:13,245:      pdf_renderer.py:  470: printSegment: │   │   ├── components/
+   DEBUG: 2025-12-26 15:55:13,245:      pdf_renderer.py:  470: printSegment: │   │   │   ├── scan/
+   DEBUG: 2025-12-26 15:55:13,246:      pdf_renderer.py:  470: printSegment: │   │   │   │   ├── ResultCard.tsx          # NEW: Structured result display
+   DEBUG: 2025-12-26 15:55:13,246:      pdf_renderer.py:  470: printSegment: │   │   │   │   ├── ActionCard.tsx          # NEW: Recommended actions
+   DEBUG: 2025-12-26 15:55:13,247:      pdf_renderer.py:  470: printSegment: │   │   │   │   ├── ConfidenceBar.tsx       # NEW: Visual confidence
+   DEBUG: 2025-12-26 15:55:13,248:      pdf_renderer.py:  470: printSegment: │   │   │   │   └── SeverityBadge.tsx       # NEW: Severity indicator
+   DEBUG: 2025-12-26 15:55:13,248:      pdf_renderer.py:  470: printSegment: │   │   │   ├── dashboard/
+   DEBUG: 2025-12-26 15:55:13,248:      pdf_renderer.py:  470: printSegment: │   │   │   └── ui/
+   DEBUG: 2025-12-26 15:55:13,249:      pdf_renderer.py:  470: printSegment: │   │   ├── hooks/
+   DEBUG: 2025-12-26 15:55:13,249:      pdf_renderer.py:  470: printSegment: │   │   │   ├── useOfflineSync.ts           # NEW: Offline sync
+   DEBUG: 2025-12-26 15:55:13,250:      pdf_renderer.py:  470: printSegment: │   │   │   └── useModelMetrics.ts          # NEW: Model info
+   DEBUG: 2025-12-26 15:55:13,250:      pdf_renderer.py:  470: printSegment: │   │   ├── lib/
+   DEBUG: 2025-12-26 15:55:13,251:      pdf_renderer.py:  470: printSegment: │   │   │   ├── offline-queue.ts            # NEW: Scan queue
+   DEBUG: 2025-12-26 15:55:13,251:      pdf_renderer.py:  470: printSegment: │   │   │   └── api-client.ts               # MODIFY: API v2
+   DEBUG: 2025-12-26 15:55:13,252:      pdf_renderer.py:  470: printSegment: │   │   └── pages/
+   DEBUG: 2025-12-26 15:55:13,253:      pdf_renderer.py:  470: printSegment: │   │       └── Scan.tsx                    # MODIFY: New response
+   DEBUG: 2025-12-26 15:55:13,253:      pdf_renderer.py:  470: printSegment: │   ├── public/
+   DEBUG: 2025-12-26 15:55:13,254:      pdf_renderer.py:  470: printSegment: │   │   ├── service-worker.js               # NEW: PWA
+   DEBUG: 2025-12-26 15:55:13,254:      pdf_renderer.py:  470: printSegment: │   │   └── manifest.json                   # NEW: PWA config
+   DEBUG: 2025-12-26 15:55:13,255:      pdf_renderer.py:  470: printSegment: │   └── package.json
+   DEBUG: 2025-12-26 15:55:13,255:      pdf_renderer.py:  470: printSegment: │
+   DEBUG: 2025-12-26 15:55:13,255:      pdf_renderer.py:  470: printSegment: ├── backend/
+   DEBUG: 2025-12-26 15:55:13,256:      pdf_renderer.py:  470: printSegment: │   ├── ai/
+   DEBUG: 2025-12-26 15:55:13,256:      pdf_renderer.py:  470: printSegment: │   │   ├── __init__.py
+   DEBUG: 2025-12-26 15:55:13,257:      pdf_renderer.py:  470: printSegment: │   │   ├── inference_engine.py             # NEW: Isolated inference
+   DEBUG: 2025-12-26 15:55:13,258:      pdf_renderer.py:  470: printSegment: │   │   ├── model_evaluator.py              # NEW: Benchmarking
+   DEBUG: 2025-12-26 15:55:13,258:      pdf_renderer.py:  470: printSegment: │   │   ├── dataset_config.py               # NEW: Focused scope
+   DEBUG: 2025-12-26 15:55:13,259:      pdf_renderer.py:  470: printSegment: │   │   └── preprocessing.py                # NEW: Image pipeline
+   DEBUG: 2025-12-26 15:55:13,260:      pdf_renderer.py:  470: printSegment: │   ├── knowledge/
+   DEBUG: 2025-12-26 15:55:13,261:      pdf_renderer.py:  470: printSegment: │   │   ├── __init__.py
+   DEBUG: 2025-12-26 15:55:13,261:      pdf_renderer.py:  470: printSegment: │   │   ├── disease_knowledge.json          # NEW: Versioned DB
+   DEBUG: 2025-12-26 15:55:13,261:      pdf_renderer.py:  470: printSegment: │   │   └── knowledge_engine.py             # NEW: Query logic
+   DEBUG: 2025-12-26 15:55:13,262:      pdf_renderer.py:  470: printSegment: │   ├── schemas/
+   DEBUG: 2025-12-26 15:55:13,262:      pdf_renderer.py:  470: printSegment: │   │   ├── __init__.py
+   DEBUG: 2025-12-26 15:55:13,262:      pdf_renderer.py:  470: printSegment: │   │   ├── prediction.py                   # NEW: Response schemas
+   DEBUG: 2025-12-26 15:55:13,264:      pdf_renderer.py:  470: printSegment: │   │   └── metrics.py                      # NEW: Benchmark schemas
+   DEBUG: 2025-12-26 15:55:13,264:      pdf_renderer.py:  470: printSegment: │   ├── api/
+   DEBUG: 2025-12-26 15:55:13,265:      pdf_renderer.py:  470: printSegment: │   │   ├── __init__.py
+   DEBUG: 2025-12-26 15:55:13,265:      pdf_renderer.py:  470: printSegment: │   │   ├── v2/
+   DEBUG: 2025-12-26 15:55:13,265:      pdf_renderer.py:  470: printSegment: │   │   │   ├── predict.py                  # NEW: v2 endpoint
+   DEBUG: 2025-12-26 15:55:13,267:      pdf_renderer.py:  470: printSegment: │   │   │   ├── metrics.py                  # NEW: Model metrics
+   DEBUG: 2025-12-26 15:55:13,268:      pdf_renderer.py:  470: printSegment: │   │   │   └── health.py                   # NEW: Health check
+   DEBUG: 2025-12-26 15:55:13,268:      pdf_renderer.py:  470: printSegment: │   ├── models/
+   DEBUG: 2025-12-26 15:55:13,269:      pdf_renderer.py:  470: printSegment: │   │   ├── plant_disease_v2.h5             # NEW: Retrained model
+   DEBUG: 2025-12-26 15:55:13,270:      pdf_renderer.py:  470: printSegment: │   │   ├── plant_disease_v2.tflite         # NEW: Edge version
+   DEBUG: 2025-12-26 15:55:13,270:      pdf_renderer.py:  470: printSegment: │   │   ├── model_metadata.json             # NEW: Benchmarks
+   DEBUG: 2025-12-26 15:55:13,271:      pdf_renderer.py:  470: printSegment: │   │   └── class_names.json                # MODIFY: New classes
+   DEBUG: 2025-12-26 15:55:13,271:      pdf_renderer.py:  470: printSegment: │   ├── main.py                             # MODIFY: New structure
+   DEBUG: 2025-12-26 15:55:13,272:      pdf_renderer.py:  470: printSegment: │   ├── train_model_v2.py                   # NEW: Improved training
+   DEBUG: 2025-12-26 15:55:13,273:      pdf_renderer.py:  470: printSegment: │   └── requirements.txt                    # MODIFY: Add dependencies
+   DEBUG: 2025-12-26 15:55:13,274:      pdf_renderer.py:  470: printSegment: │
+   DEBUG: 2025-12-26 15:55:13,274:      pdf_renderer.py:  470: printSegment: ├── docs/
+   DEBUG: 2025-12-26 15:55:13,275:      pdf_renderer.py:  470: printSegment: │   ├── ARCHITECTURE.md                     # NEW: System design
+   DEBUG: 2025-12-26 15:55:13,275:      pdf_renderer.py:  470: printSegment: │   ├── AI_PIPELINE.md                      # NEW: ML documentation
+   DEBUG: 2025-12-26 15:55:13,276:      pdf_renderer.py:  470: printSegment: │   ├── API.md                              # NEW: API reference
+   DEBUG: 2025-12-26 15:55:13,277:      pdf_renderer.py:  470: printSegment: │   └── DEPLOYMENT.md                       # NEW: Deploy guide
+   DEBUG: 2025-12-26 15:55:13,277:      pdf_renderer.py:  470: printSegment: │
+   DEBUG: 2025-12-26 15:55:13,278:      pdf_renderer.py:  470: printSegment: ├── BENCHMARKS.md                           # NEW: Performance
+   DEBUG: 2025-12-26 15:55:13,278:      pdf_renderer.py:  470: printSegment: metrics
+   DEBUG: 2025-12-26 15:55:13,279:      pdf_renderer.py:  470: printSegment: ├── README.md                               # MODIFY: Portfolio-grade
+   DEBUG: 2025-12-26 15:55:13,281:      pdf_renderer.py:  470: printSegment: └── docker-compose.yml                      # MODIFY: Updated
+   DEBUG: 2025-12-26 15:55:13,281:      pdf_renderer.py:  470: printSegment: services
+   DEBUG: 2025-12-26 15:55:13,282:      pdf_renderer.py:  470: printSegment: Data Flow
+   DEBUG: 2025-12-26 15:55:13,283:      pdf_renderer.py:  470: printSegment: 1. Prediction Request Flow
+   DEBUG: 2025-12-26 15:55:13,283:      pdf_renderer.py:  470: printSegment: User → Camera → Image Capture
+   DEBUG: 2025-12-26 15:55:13,284:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,284:      pdf_renderer.py:  470: printSegment: Frontend → FormData
+   DEBUG: 2025-12-26 15:55:13,285:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,285:      pdf_renderer.py:  470: printSegment: API Gateway → Validate Request
+   DEBUG: 2025-12-26 15:55:13,286:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,286:      pdf_renderer.py:  470: printSegment: Inference Engine → Preprocess Image
+   DEBUG: 2025-12-26 15:55:13,287:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,288:      pdf_renderer.py:  470: printSegment: Model → Classification
+   DEBUG: 2025-12-26 15:55:13,288:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,289:      pdf_renderer.py:  470: printSegment: Knowledge Engine → Map to Disease Info
+   DEBUG: 2025-12-26 15:55:13,289:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,289:      pdf_renderer.py:  470: printSegment: API Response → Structured JSON
+   DEBUG: 2025-12-26 15:55:13,289:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,291:      pdf_renderer.py:  470: printSegment: Frontend → Render Result Card
+   DEBUG: 2025-12-26 15:55:13,291:      pdf_renderer.py:  470: printSegment: 2. Offline Flow
+   DEBUG: 2025-12-26 15:55:13,292:      pdf_renderer.py:  470: printSegment: User Scans → Check Network
+   DEBUG: 2025-12-26 15:55:13,292:      pdf_renderer.py:  470: printSegment:     ↓ (Offline)
+   DEBUG: 2025-12-26 15:55:13,292:      pdf_renderer.py:  470: printSegment: Queue Scan → IndexedDB
+   DEBUG: 2025-12-26 15:55:13,293:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,293:      pdf_renderer.py:  470: printSegment: Show Queued State
+   DEBUG: 2025-12-26 15:55:13,294:      pdf_renderer.py:  470: printSegment:     ↓ (Online)
+   DEBUG: 2025-12-26 15:55:13,295:      pdf_renderer.py:  470: printSegment: Background Sync → Process Queue
+   DEBUG: 2025-12-26 15:55:13,295:      pdf_renderer.py:  470: printSegment:     ↓
+   DEBUG: 2025-12-26 15:55:13,296:      pdf_renderer.py:  470: printSegment: Update UI → Show Results
+   DEBUG: 2025-12-26 15:55:13,296:      pdf_renderer.py:  470: printSegment: Technology Choices Rationale
+   DEBUG: 2025-12-26 15:55:13,297:      pdf_renderer.py:  470: printSegment: | Technology | Why? | Alternative Considered |
+   DEBUG: 2025-12-26 15:55:13,298:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,298:      pdf_renderer.py:  470: printSegment: |------------|------|----------------------|
+   DEBUG: 2025-12-26 15:55:13,299:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,299:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,299:      pdf_renderer.py:  470: printSegment: MobileNetV2
+   DEBUG: 2025-12-26 15:55:13,302:      pdf_renderer.py:  470: printSegment:  | Edge-ready,
+   DEBUG: 2025-12-26 15:55:13,302:      pdf_renderer.py:  470: printSegment: proven, 14MB model size, fast inference | EfficientNet (larger), ResNet (slower) |
+   DEBUG: 2025-12-26 15:55:13,303:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,303:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,304:      pdf_renderer.py:  470: printSegment: FastAPI
+   DEBUG: 2025-12-26 15:55:13,306:      pdf_renderer.py:  470: printSegment:  | Type safety, auto
+   DEBUG: 2025-12-26 15:55:13,307:      pdf_renderer.py:  470: printSegment: docs, async, Python ML ecosystem | Flask (no async), Django (overkill) |
+   DEBUG: 2025-12-26 15:55:13,308:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,309:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,309:      pdf_renderer.py:  470: printSegment: Firebase
+   DEBUG: 2025-12-26 15:55:13,311:      pdf_renderer.py:  470: printSegment:  | Real-time, scalable, offline
+   DEBUG: 2025-12-26 15:55:13,312:      pdf_renderer.py:  470: printSegment: support, easy auth | PostgreSQL (harder offline), MongoDB |
+   DEBUG: 2025-12-26 15:55:13,312:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,312:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,313:      pdf_renderer.py:  470: printSegment: TypeScript
+   DEBUG: 2025-12-26 15:55:13,315:      pdf_renderer.py:  470: printSegment:  | Type safety, better DX, catches errors
+   DEBUG: 2025-12-26 15:55:13,315:      pdf_renderer.py:  470: printSegment: early | JavaScript (no types) |
+   DEBUG: 2025-12-26 15:55:13,316:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,316:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,317:      pdf_renderer.py:  470: printSegment: PWA
+   DEBUG: 2025-12-26 15:55:13,317:      pdf_renderer.py:  470: printSegment:  | Offline-first, installable, no app store needed | Native app (2x dev effort) |
+   DEBUG: 2025-12-26 15:55:13,318:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,318:      pdf_renderer.py:  470: printSegment: | 
+   DEBUG: 2025-12-26 15:55:13,319:      pdf_renderer.py:  470: printSegment: TensorFlow
+   DEBUG: 2025-12-26 15:55:13,320:      pdf_renderer.py:  470: printSegment:  | Industry standard, great docs, .tflite export | PyTorch (harder mobile) |
+   DEBUG: 2025-12-26 15:55:13,321:      pdf_renderer.py:  470: printSegment: Success Metrics
+   DEBUG: 2025-12-26 15:55:13,321:      pdf_renderer.py:  470: printSegment: | Metric | Target | Current | Status |
+   DEBUG: 2025-12-26 15:55:13,321:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,321:      pdf_renderer.py:  470: printSegment: |--------|--------|---------|--------|
+   DEBUG: 2025-12-26 15:55:13,323:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,324:      pdf_renderer.py:  470: printSegment: | Model Accuracy | >90% | TBD | 🟡 Pending |
+   DEBUG: 2025-12-26 15:55:13,464:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,464:      pdf_renderer.py:  470: printSegment: |
+   DEBUG: 2025-12-26 15:55:13,464:      pdf_renderer.py:  470: printSegment: Inference Time | 
+   DEBUG: 2025-12-26 15:55:13,465:      pdf_renderer.py:  470: printSegment: <
+   DEBUG: 2025-12-26 15:55:13,465:      pdf_renderer.py:  470: printSegment: 100ms | ~1000ms (mock) | 🔴 Needs work |
+   DEBUG: 2025-12-26 15:55:13,466:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,467:      pdf_renderer.py:  470: printSegment: | Model Size | 
+   DEBUG: 2025-12-26 15:55:13,467:      pdf_renderer.py:  470: printSegment: <
+   DEBUG: 2025-12-26 15:55:13,467:      pdf_renderer.py:  470: printSegment: 20MB | TBD | 🟡 Pending |
+   DEBUG: 2025-12-26 15:55:13,468:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,469:      pdf_renderer.py:  470: printSegment: | Offline Support |
+   DEBUG: 2025-12-26 15:55:13,469:      pdf_renderer.py:  470: printSegment: Full PWA | None | 🔴 Not started |
+   DEBUG: 2025-12-26 15:55:13,470:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,470:      pdf_renderer.py:  470: printSegment: | API Response Time | 
+   DEBUG: 2025-12-26 15:55:13,470:      pdf_renderer.py:  470: printSegment: <
+   DEBUG: 2025-12-26 15:55:13,471:      pdf_renderer.py:  470: printSegment: 200ms | ~500ms | 🟡 Acceptable |
+   DEBUG: 2025-12-26 15:55:13,471:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2025-12-26 15:55:13,471:      pdf_renderer.py:  470: printSegment: | Code Coverage | >70% | 0% | 🔴 No
+   DEBUG: 2025-12-26 15:55:13,473:      pdf_renderer.py:  470: printSegment: tests |
+   DEBUG: 2025-12-26 15:55:13,477:      pdf_renderer.py:  470: printSegment: This architecture separates concerns, ensures testability, and positions SANJIVANI 2.0 as a production-grade
+   DEBUG: 2025-12-26 15:55:13,479:      pdf_renderer.py:  470: printSegment: system worthy of portfolio presentation.
+   DEBUG: 2025-12-26 15:55:13,479:      pdf_renderer.py:   53: 0, [1, 'SANJIVANI 2.0 - System Architecture', 1, 68.0]
+   DEBUG: 2025-12-26 15:55:13,479:      pdf_renderer.py:   53: 1, [2, 'High-Level Architecture', 1, 106.0]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 2, [2, 'Layer Responsibilities', 1, 703.5999999999999]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 3, [3, '🎨 Frontend Layer', 2, 72.0]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 4, [3, '🚪 API Gateway Layer', 2, 190.8]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 5, [3, '🧠 AI Layer', 2, 309.6]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 6, [3, '📚 Knowledge Layer', 2, 428.4]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 7, [3, '💾 Data Layer', 2, 547.1999999999999]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 8, [2, 'File Structure (SANJIVANI 2.0)', 2, 666.3999999999999]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 9, [2, 'Data Flow', 4, 212.8]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 10, [3, '1. Prediction Request Flow', 4, 246.0]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 11, [3, '2. Offline Flow', 4, 466.79999999999995]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 12, [2, 'Technology Choices Rationale', 4, 627.9999999999999]
+   DEBUG: 2025-12-26 15:55:13,480:      pdf_renderer.py:   53: 13, [2, 'Success Metrics', 5, 110.8]

@@ -1,11 +1,16 @@
 fastapi
-uvicorn
-tensorflow
-opencv-python
+uvicorn[standard]
 python-multipart
-pillow
+tensorflow>=2.13.0
+opencv-python
+Pillow
 numpy
 pydantic
 firebase-admin
 kagglehub
 scipy
+
+# Training dependencies
+matplotlib>=3.5.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
