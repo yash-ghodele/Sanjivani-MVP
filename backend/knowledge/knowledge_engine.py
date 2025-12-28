@@ -15,7 +15,12 @@ class KnowledgeEngine:
     """
     
     def __init__(self, knowledge_path: Optional[str] = None):
-        self.knowledge_path = knowledge_path or "backend/knowledge/disease_knowledge.json"
+        # Robust path handling
+        default_path = "knowledge/disease_knowledge.json"
+        if not Path(default_path).exists():
+            default_path = "backend/knowledge/disease_knowledge.json"
+            
+        self.knowledge_path = knowledge_path or default_path
         self.knowledge_db = {}
         self.version = "unknown"
         self.load_knowledge_base()

@@ -14,3 +14,11 @@ scipy
 matplotlib>=3.5.0
 seaborn>=0.12.0
 scikit-learn>=1.2.0
+
+# AI/LLM
+google-generativeai
+
+# Testing
+pytest
+pytest-asyncio
+httpx

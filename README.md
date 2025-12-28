@@ -155,17 +155,39 @@ pytest tests/ -v
 
 **→ [Full deployment guide](docs/DEPLOYMENT.md)**
 
+### 🚀 Deployment
+
+#### Frontend (Cloudflare Pages / Vercel)
+1. Push code to GitHub.
+2. Connect repository to Cloudflare Pages.
+3. **Build Settings**:
+   * **Framework Preset**: Next.js (Static/Standard)
+   * **Build Command**: `npx @cloudflare/next-on-pages` (if using Edge) OR `npm run build`
+   * **Output Directory**: `.vercel/output/static` or `out` (depends on config)
+4. Configure **Environment Variables** in Cloudflare Dashboard:
+   * `NEXT_PUBLIC_API_URL`: Your backend URL
+   * `NEXT_PUBLIC_FIREBASE_...`: All Firebase public keys
+
+#### Backend (Render/Railway/AWS)
+1. Deploy `backend` directory.
+2. Set Build Command: `pip install -r requirements.txt`
+3. Set Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. Configure **Environment Variables**:
+   * `GEMINI_API_KEY`: Google AI Studio Key
+   * `OPENWEATHER_API_KEY`: OpenWeatherMap Key
+   * `FIREBASE_CREDENTIALS`: Path to JSON or Base64 encoded JSON
+
 ---
 
 ## 🧰 Tech Stack
 
 ### Frontend
 
-* Next.js (App Router)
+* Next.js 15 (App Router)
 * TypeScript
-* Tailwind CSS v4
+* Tailwind CSS
 * Lucide Icons
-* React Hooks
+* React Server Components
 
 ### Backend
 

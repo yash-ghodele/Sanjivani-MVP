@@ -1,24 +1,31 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
-import { Camera, X, RefreshCw, CheckCircle, AlertTriangle, ArrowRight, Loader2, Clock, Info } from "lucide-react";
+import { Camera, X, RefreshCw, CheckCircle, ArrowRight, Loader2, Clock, Info, Upload, Image as ImageIcon } from "lucide-react";
 import Link from 'next/link';
-import Image from 'next/image';
-import { PredictionResponse } from '@/services/api';
+import { PredictionResponse, analyzeCropImage } from '@/services/api';
+import { useOfflineSync } from '@/hooks/useOfflineSync';
+import { FeedbackDialog } from "@/components/FeedbackDialog";
+import { AIExplanation } from "@/components/AIExplanation";
+import { compressImage } from '@/utils/compression';
 
 export default function ScanPage() {
+    const router = useRouter();
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
     const [stream, setStream] = useState<MediaStream | null>(null);
     const [image, setImage] = useState<string | null>(null);
     const [analyzing, setAnalyzing] = useState(false);
     const [result, setResult] = useState<PredictionResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [mode, setMode] = useState<'select' | 'camera' | 'upload'>('select');
+    const [isDragging, setIsDragging] = useState(false);
 
-    // Initialize Camera
+    // Cleanup camera on unmount
     useEffect(() => {
-        startCamera();
         return () => stopCamera();
     }, []);
 
@@ -50,60 +57,146 @@ export default function ScanPage() {
             const video = videoRef.current;
             const canvas = canvasRef.current;
 
-            // Set canvas dimensions to match video
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
 
-            // Draw video frame to canvas
             const ctx = canvas.getContext('2d');
             if (ctx) {
                 ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
                 const dataUrl = canvas.toDataURL('image/jpeg');
                 setImage(dataUrl);
-                stopCamera(); // Stop stream after capture
+                stopCamera();
             }
+        }
+    };
+
+    const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            processFile(file);
+        }
+    };
+
+    const processFile = (file: File) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            setImage(e.target?.result as string);
+            setMode('upload');
+        };
+        reader.readAsDataURL(file);
+    };
+
+    const handleDragOver = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(true);
+    };
+
+    const handleDragLeave = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+    };
+
+    const handleDrop = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+
+        const file = e.dataTransfer.files?.[0];
+        if (file && file.type.startsWith('image/')) {
+            processFile(file);
         }
     };
 
     const resetScan = () => {
         setImage(null);
         setResult(null);
-        startCamera();
+        setMode('select');
+        setError(null);
+        stopCamera();
     };
 
+    const saveScanToHistory = (result: PredictionResponse, imageUrl: string) => {
+        try {
+            const scanRecord = {
+                id: Date.now().toString(),
+                imageUrl,
+                crop: result.crop,
+                disease: result.disease,
+                severity: result.severity,
+                confidence: result.confidence,
+                timestamp: Date.now(),
+                metadata: result.metadata
+            };
+
+            const history = localStorage.getItem('scan_history');
+            const scans = history ? JSON.parse(history) : [];
+            scans.unshift(scanRecord); // Add to beginning
+
+            // Keep only last 50 scans
+            if (scans.length > 50) {
+                scans.pop();
+            }
+
+            localStorage.setItem('scan_history', JSON.stringify(scans));
+        } catch (error) {
+            console.error('Failed to save scan to history:', error);
+        }
+    };
+
+    const { isOnline } = useOfflineSync();
+
     const analyzeImage = async () => {
+        if (!image) return;
         setAnalyzing(true);
-        // MOCK DATA: Simulating backend response strictly following V2 contract
-        // In production, this would be: const data = await analyzeCropImage(file);
-        setTimeout(() => {
-            setResult({
-                crop: "Tomato",
-                disease: "Early Blight",
-                confidence: 0.94,
-                severity: "Moderate",
-                explanation: "Dark concentric rings detected on lower leaves indicate Early Blight fungal infection.",
-                recommended_actions: {
-                    immediate: [
-                        "Isolate infected plants to prevent spread.",
-                        "Remove and destroy affected leaves."
-                    ],
-                    short_term: [
-                        "Apply copper-based fungicide every 7 days.",
-                        "Reduce overhead watering to keep foliage dry."
-                    ],
-                    preventive: [
-                        "Rotate crops next season.",
-                        "Direct water to soil base only."
-                    ]
-                },
-                metadata: {
-                    model_version: "v2.0.0-mobilenet",
-                    inference_time_ms: 45,
-                    visual_features: ["concentric_rings", "yellow_halo"]
-                }
-            });
+        setError(null);
+
+        try {
+            const res = await fetch(image);
+            const blob = await res.blob();
+
+            if (!isOnline) {
+                const { addOfflineScan } = await import('@/lib/db');
+                await addOfflineScan({
+                    id: Date.now().toString(),
+                    imageBlob: blob,
+                    timestamp: Date.now()
+                });
+
+                setError("You are offline. Scan saved to queue and will auto-upload when online.");
+                setAnalyzing(false);
+                return;
+            }
+
+            // ... inside analyzeImage ...
+
+            let fileToUpload: File;
+            if (blob instanceof File) {
+                fileToUpload = blob;
+            } else {
+                fileToUpload = new File([blob], "capture.jpg", { type: "image/jpeg" });
+            }
+
+            // Compress image
+            const compressedFile = await compressImage(fileToUpload);
+
+            const data = await analyzeCropImage(compressedFile);
+            setResult(data);
+            saveScanToHistory(data, image);
+
+            // Store for results page
+            localStorage.setItem('latest_scan_result', JSON.stringify(data));
+            localStorage.setItem('latest_scan_image', image);
+
+            // Navigate to results page
+            router.push('/scan/results');
+        } catch (err) {
+            console.error("Analysis Failed:", err);
+            setError("Analysis failed. Please try again.");
+        } finally {
             setAnalyzing(false);
-        }, 1500);
+        }
     };
 
     return (
@@ -122,14 +215,71 @@ export default function ScanPage() {
             {/* Main Content */}
             <div className={`max-w-md mx-auto relative rounded-3xl overflow-hidden bg-nature-950/50 border border-nature-800 flex flex-col shadow-2xl shadow-nature-900/20 transition-all duration-500 ${result ? 'h-auto' : 'h-[60vh]'}`}>
 
-                {/* Camera View / Image Preview */}
+                {/* Selection Screen / Camera View / Image Preview */}
                 <div className={`relative bg-black flex items-center justify-center overflow-hidden transition-all duration-500 ${result ? 'h-48' : 'flex-1'}`}>
-                    {image ? (
+                    {mode === 'select' && !image ? (
+                        // Selection Screen (Upload or Camera) with Drag & Drop
+                        <div
+                            className={`w-full h-full flex flex-col items-center justify-center gap-6 p-8 transition-all ${isDragging ? 'bg-nature-500/10 border-2 border-nature-400 border-dashed' : ''
+                                }`}
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}
+                        >
+                            <div className="text-center mb-4">
+                                <ImageIcon className={`w-16 h-16 mx-auto mb-3 transition-all ${isDragging ? 'text-nature-300 scale-110' : 'text-nature-400 opacity-80'
+                                    }`} />
+                                <h2 className="text-xl font-bold text-white mb-2">
+                                    {isDragging ? 'Drop image here' : 'Choose Image Source'}
+                                </h2>
+                                <p className="text-sm text-gray-400">
+                                    {isDragging ? 'Release to upload' : 'Upload, drag & drop, or capture a new photo'}
+                                </p>
+                            </div>
+
+                            {!isDragging && (
+                                <>
+
+                                    {/* Primary: Upload Button */}
+                                    <button
+                                        onClick={() => fileInputRef.current?.click()}
+                                        className="w-full max-w-xs px-6 py-4 rounded-2xl bg-gradient-to-r from-nature-600 to-nature-500 text-white font-bold text-lg shadow-lg shadow-nature-500/30 hover:shadow-nature-500/50 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 group"
+                                    >
+                                        <Upload className="w-6 h-6 group-hover:translate-y-[-2px] transition-transform" />
+                                        Upload from Gallery
+                                    </button>
+
+                                    {/* Secondary: Camera Button */}
+                                    <button
+                                        onClick={() => {
+                                            setMode('camera');
+                                            startCamera();
+                                        }}
+                                        className="w-full max-w-xs px-6 py-4 rounded-2xl border-2 border-nature-500/30 bg-nature-900/40 text-white font-bold text-lg hover:bg-nature-800/60 hover:border-nature-500/50 transition-all flex items-center justify-center gap-3 group"
+                                    >
+                                        <Camera className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                                        Use Camera
+                                    </button>
+
+                                    {/* Hidden file input */}
+                                    <input
+                                        ref={fileInputRef}
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={handleFileUpload}
+                                        className="hidden"
+                                    />
+                                </>
+                            )}
+                        </div>
+                    ) : image ? (
+                        // Image Preview
                         <div className="relative w-full h-full">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={image} alt="Captured" className="w-full h-full object-cover" />
+                            <img src={image} alt="Selected crop" className="w-full h-full object-cover" />
                         </div>
-                    ) : (
+                    ) : mode === 'camera' ? (
+                        // Camera View
                         <>
                             <video
                                 ref={videoRef}
@@ -148,21 +298,38 @@ export default function ScanPage() {
                                 </div>
                             )}
                         </>
-                    )}
+                    ) : null}
                 </div>
 
                 {/* Controls / Result Area */}
                 <div className="p-6 bg-nature-900/90 backdrop-blur-md border-t border-nature-700/50">
-                    {!image ? (
-                        <div className="flex justify-center py-4">
+                    {mode === 'select' && !image ? (
+                        // Selection mode - no controls needed
+                        <div className="py-4 text-center text-sm text-gray-400">
+                            Select an option above to begin
+                        </div>
+                    ) : mode === 'camera' && !image ? (
+                        // Camera mode - show capture button
+                        <div className="flex flex-col gap-3">
                             <button
                                 onClick={captureImage}
-                                className="w-20 h-20 rounded-full border-4 border-white flex items-center justify-center hover:scale-105 transition-transform active:scale-95 group"
+                                className="w-20 h-20 mx-auto rounded-full border-4 border-white flex items-center justify-center hover:scale-105 transition-transform active:scale-95 group"
                             >
                                 <div className="w-16 h-16 rounded-full bg-white group-active:bg-nature-200 transition-colors" />
                             </button>
+                            <Button
+                                variant="ghost"
+                                className="text-nature-300 hover:text-nature-200"
+                                onClick={() => {
+                                    stopCamera();
+                                    setMode('select');
+                                }}
+                            >
+                                ← Back to options
+                            </Button>
                         </div>
                     ) : !result ? (
+                        // Image captured/uploaded - show analyze buttons
                         <div className="flex gap-4 py-4">
                             <Button
                                 variant="outline"
@@ -189,6 +356,7 @@ export default function ScanPage() {
                             </Button>
                         </div>
                     ) : (
+                        // Results Display
                         <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
                             {/* Diagnosis Header */}
                             <div className="flex items-start justify-between">
@@ -206,6 +374,7 @@ export default function ScanPage() {
                                     </div>
                                     <h2 className="text-2xl font-bold text-white">{result.disease}</h2>
                                     <p className="text-sm text-gray-400 mt-1">{result.explanation}</p>
+                                    <FeedbackDialog scanId={Date.now().toString()} prediction={result.disease} />
                                 </div>
                                 <div className="text-center bg-white/5 px-3 py-2 rounded-lg border border-white/10">
                                     <div className="text-2xl font-bold text-nature-400">{(result.confidence * 100).toFixed(0)}%</div>
@@ -213,13 +382,20 @@ export default function ScanPage() {
                                 </div>
                             </div>
 
+                            {/* AI Tutor Layer */}
+                            <AIExplanation
+                                disease={result.disease}
+                                confidence={result.confidence}
+                                crop={result.crop}
+                            />
+
                             {/* Action Cards */}
                             <div className="space-y-4">
                                 <h3 className="font-bold text-sm text-gray-300 flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-nature-500" /> Recommended Actions
                                 </h3>
 
-                                {result.recommended_actions.immediate.length > 0 && (
+                                {result.recommended_actions?.immediate && result.recommended_actions.immediate.length > 0 && (
                                     <div className="bg-red-500/10 border-l-4 border-red-500 p-3 rounded-r-lg">
                                         <p className="text-xs text-red-400 font-bold mb-1 uppercase">Immediate Action</p>
                                         <ul className="list-disc list-inside text-sm text-gray-200 space-y-1">
@@ -230,7 +406,7 @@ export default function ScanPage() {
                                     </div>
                                 )}
 
-                                {result.recommended_actions.short_term.length > 0 && (
+                                {result.recommended_actions?.short_term && result.recommended_actions.short_term.length > 0 && (
                                     <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-3 rounded-r-lg">
                                         <p className="text-xs text-yellow-400 font-bold mb-1 uppercase">Short Term Treatment</p>
                                         <ul className="list-disc list-inside text-sm text-gray-200 space-y-1">
@@ -245,10 +421,10 @@ export default function ScanPage() {
                             {/* Metadata Footer */}
                             <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
                                 <span className="flex items-center gap-1">
-                                    <Clock className="w-3 h-3" /> {result.metadata.inference_time_ms}ms
+                                    <Clock className="w-3 h-3" /> {result.metadata?.inference_time_ms || 0}ms
                                 </span>
                                 <span className="flex items-center gap-1">
-                                    <Info className="w-3 h-3" /> {result.metadata.model_version}
+                                    <Info className="w-3 h-3" /> {result.metadata?.model_version || 'v2.0.0'}
                                 </span>
                             </div>
 
@@ -259,6 +435,9 @@ export default function ScanPage() {
                     )}
                 </div>
             </div>
+
+            {/* Hidden canvas for camera capture */}
+            <canvas ref={canvasRef} className="hidden" />
         </div>
     );
 }

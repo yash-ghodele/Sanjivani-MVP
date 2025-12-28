@@ -27,9 +27,13 @@ import seaborn as sns
 # Import configuration
 import sys
 sys.path.append(str(Path(__file__).parent))
-from ai.dataset_config import (
-    CLASS_NAMES, MODEL_CONFIG, AUGMENTATION_CONFIG,
-    VALIDATION_SPLIT, TEST_SPLIT, PERFORMANCE_THRESHOLDS
+from ai.dataset_config_v2 import (
+    CLASS_NAMES,
+    MODEL_CONFIG,
+    AUGMENTATION_CONFIG,
+    VALIDATION_SPLIT,
+    TEST_SPLIT,
+    PERFORMANCE_THRESHOLDS
 )
 
 # Set random seeds for reproducibility
@@ -71,8 +75,9 @@ def create_model(num_classes: int):
     # Create new model
     inputs = keras.Input(shape=MODEL_CONFIG["input_size"])
     
-    # Preprocessing
-    x = keras.applications.mobilenet_v2.preprocess_input(inputs)
+    # Preprocessing (MobileNetV2 expects [-1, 1])
+    # Replaces 'preprocess_input' which caused serialization issues
+    x = layers.Rescaling(1./127.5, offset=-1)(inputs)
     
     # Base model
     x = base_model(x, training=False)

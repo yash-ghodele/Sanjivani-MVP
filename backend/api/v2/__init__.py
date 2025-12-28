@@ -1,5 +1,7 @@
 # API v2 Routers
-from .predict import router as predict_router
-from .metrics import router as metrics_router
+from . import predict
+from . import metrics
+from . import meta
+from . import alerts
 
-__all__ = ['predict_router', 'metrics_router']
+__all__ = ['predict', 'metrics', 'meta', 'alerts']

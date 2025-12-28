@@ -14,6 +14,7 @@ export interface PredictionResponse {
     crop: string;
     disease: string;
     confidence: number;
+    alternatives?: { disease: string; confidence: number }[];
     severity: "Low" | "Moderate" | "High" | "Critical";
     explanation: string;
     recommended_actions: RecommendedActions;
@@ -22,9 +23,10 @@ export interface PredictionResponse {
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-export async function analyzeCropImage(imageFile: File): Promise<PredictionResponse> {
+export async function analyzeCropImage(imageFile: File | Blob): Promise<PredictionResponse> {
     const formData = new FormData();
-    formData.append('file', imageFile);
+    // If it's a blob, we need to provide a filename
+    formData.append('file', imageFile, 'capture.jpg');
 
     try {
         const response = await fetch(`${API_URL}/predict`, {

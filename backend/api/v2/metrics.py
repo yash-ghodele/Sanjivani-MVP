@@ -25,8 +25,10 @@ async def get_model_metrics():
     - Training date
     """
     try:
-        # Load model metadata from file
-        metadata_path = Path("backend/models/model_metadata.json")
+        # Robust path handling
+        metadata_path = Path("models/model_metadata.json")
+        if not metadata_path.exists():
+            metadata_path = Path("backend/models/model_metadata.json")
         
         if metadata_path.exists():
             with open(metadata_path, 'r') as f:

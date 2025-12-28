@@ -4,9 +4,19 @@ Production-grade architecture with separated concerns
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
 
 # Import API v2 routers
-from api.v2 import predict_router, metrics_router
+# Import API v2 routers
+from api.v2 import predict, meta, alerts, metrics, search
+from api.v2.feedback import router as feedback_router
+from api.v2.chat import router as chat_router
+from api import weather
+from api import ai_analysis
 
 # Import initialization functions
 from database import init_db
@@ -37,10 +47,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from fastapi.middleware.gzip import GZipMiddleware
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
 
 # Include API v2 routers
-app.include_router(predict_router)
-app.include_router(metrics_router)
+# Note: predict_router and metrics_router have prefixes internal to them
+app.include_router(metrics.router)
+
+# These routers rely on the prefix defined here to match frontend expectations
+app.include_router(predict.router, prefix="/api/v2", tags=["Prediction"])
+app.include_router(meta.router, prefix="/api/v2/meta", tags=["Meta"])
+app.include_router(alerts.router, prefix="/api/v2/alerts", tags=["Alerts"])
+app.include_router(feedback_router, prefix="/api/v2")
+app.include_router(chat_router, prefix="/api/v2")
+app.include_router(search.router, prefix="/api/v2", tags=["Search"])
+app.include_router(weather.router)
+app.include_router(ai_analysis.router)
 
 
 @app.on_event("startup")

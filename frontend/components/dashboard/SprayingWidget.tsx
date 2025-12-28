@@ -38,7 +38,7 @@ export function SprayingWidget({ windSpeed, humidity, isRaining }: SprayingWidge
                                 {isUnsafe ? "NOT SAFE" : "OPTIMAL"}
                             </span>
                         </div>
-                        <p className="text-sm text-gray-400 mt-2 max-w-[200px]">
+                        <p className="text-sm text-white/70 mt-2 max-w-[200px] leading-relaxed">
                             {isUnsafe
                                 ? isRaining ? "Rain detected. Spray will wash off." : "High winds/low humidity."
                                 : "Perfect conditions for absorption."}

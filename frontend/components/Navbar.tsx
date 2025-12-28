@@ -4,7 +4,14 @@ import Link from 'next/link';
 import { Leaf, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button'; // Will create UI button next
+import { Button } from '@/components/ui/button';
+import { AuthButton } from '@/components/AuthButton';
+import dynamic from 'next/dynamic';
+
+const GlobalSearchComponent = dynamic(() => import('@/components/GlobalSearch'), {
+    ssr: false,
+    loading: () => <div className="h-10 w-10 xl:w-60 bg-white/5 rounded-lg animate-pulse" />
+});
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -35,20 +42,28 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
-                    <NavLink href="/">Home</NavLink>
-                    <NavLink href="/dashboard">Dashboard</NavLink>
-                    <NavLink href="/scan">Scan Crop</NavLink>
-                    <a href="https://yash-ghodele.pages.dev/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-nature-400 font-medium transition-colors text-sm">About</a>
+                <div className="hidden md:flex items-center gap-6">
+                    <GlobalSearchComponent />
+                    <div className="flex items-center gap-6">
+                        <NavLink href="/">Home</NavLink>
+                        <NavLink href="/dashboard">Dashboard</NavLink>
+                        <NavLink href="/calendar">Calendar</NavLink>
+                        <NavLink href="/history">History</NavLink>
+                        <NavLink href="/faq">FAQ</NavLink>
+                        <NavLink href="/about">About Project</NavLink>
+                    </div>
                 </div>
 
-                {/* Action Button */}
-                <div className="hidden md:block">
+                {/* Action Button & Auth */}
+                <div className="hidden md:flex items-center gap-4">
                     <Link href="/scan">
-                        <button className="px-6 py-2.5 rounded-full bg-gradient-to-r from-nature-600 to-nature-500 text-white font-bold text-sm shadow-lg shadow-nature-500/20 hover:shadow-nature-500/40 hover:scale-105 transition-all">
+                        <button className="px-6 py-2.5 rounded-full bg-accent-500 text-white font-bold text-sm shadow-lg shadow-accent-500/20 hover:shadow-accent-500/40 hover:scale-105 transition-all">
                             Start Diagnosis
                         </button>
                     </Link>
+                    <div className="flex items-center gap-2">
+                        <AuthButton />
+                    </div>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -65,9 +80,12 @@ export function Navbar() {
                 <div className="md:hidden absolute top-full left-0 right-0 bg-dark-800 border-b border-white/10 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
                     <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
                     <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</MobileNavLink>
-                    <MobileNavLink href="/scan" onClick={() => setMobileMenuOpen(false)}>Scan Crop</MobileNavLink>
+                    <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)}>Calendar</MobileNavLink>
+                    <MobileNavLink href="/history" onClick={() => setMobileMenuOpen(false)}>History</MobileNavLink>
+                    <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
+                    <MobileNavLink href="/about" onClick={() => setMobileMenuOpen(false)}>About Project</MobileNavLink>
                     <Link href="/scan" onClick={() => setMobileMenuOpen(false)}>
-                        <button className="w-full py-3 rounded-xl bg-nature-600 font-bold text-white">Start Diagnosis</button>
+                        <button className="w-full py-3 rounded-xl bg-accent-500 font-bold text-white">Start Diagnosis</button>
                     </Link>
                 </div>
             )}

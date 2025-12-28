@@ -1,7 +1,7 @@
 {
-    "version": "2.0.0",
-    "last_updated": "2025-12-26",
-    "description": "Versioned disease knowledge database for SANJIVANI 2.0",
+    "version": "2.1.0",
+    "last_updated": "2025-12-27",
+    "description": "Versioned disease knowledge database for SANJIVANI 2.0 - Expanded Crop Coverage",
     "diseases": {
         "Early_Blight": {
             "scientific_name": "Alternaria solani",
@@ -11,41 +11,26 @@
                 "Potato"
             ],
             "symptoms": [
-                "Dark brown spots with concentric rings on older leaves",
+                "Dark brown spots with concentric rings",
                 "Yellowing around spots",
-                "Premature leaf drop",
-                "Reduced yield"
+                "Premature leaf drop"
             ],
             "recommended_actions": {
                 "immediate": [
-                    "Remove and destroy infected leaves immediately",
-                    "Apply copper-based fungicide (Copper oxychloride 50% WP @ 3g/L)",
-                    "Isolate affected plants if possible"
+                    "Remove and destroy infected leaves",
+                    "Apply copper-based fungicide"
                 ],
                 "short_term": [
-                    "Apply Mancozeb 75% WP @ 2.5g/L every 7-10 days",
-                    "Ensure proper plant spacing for air circulation",
-                    "Water at soil level, avoid wetting foliage"
+                    "Apply Mancozeb 75% WP every 7-10 days",
+                    "Improve air circulation"
                 ],
                 "preventive": [
-                    "Crop rotation with non-solanaceous crops",
-                    "Use disease-resistant varieties",
-                    "Remove crop debris after harvest",
-                    "Apply balanced fertilizer to strengthen plants"
+                    "Crop rotation",
+                    "Use resistant varieties"
                 ]
             },
-            "explanation": "Fungal disease that typically starts on lower, older leaves and progresses upward. Thrives in warm, humid conditions.",
-            "economic_impact": "Can reduce yields by 20-30% if left untreated",
-            "multilingual": {
-                "hi": {
-                    "name": "अर्ली ब्लाइट",
-                    "symptoms": "पुरानी पत्तियों पर गहरे भूरे रंग के धब्बे"
-                },
-                "mr": {
-                    "name": "अर्ली ब्लाइट",
-                    "symptoms": "जुन्या पानांवर गडद तपकिरी ठिपके"
-                }
-            }
+            "explanation": "Fungal disease that typically starts on lower, older leaves and progresses upward.",
+            "economic_impact": "Can reduce yields by 20-30% if left untreated."
         },
         "Late_Blight": {
             "scientific_name": "Phytophthora infestans",
@@ -55,212 +40,200 @@
                 "Potato"
             ],
             "symptoms": [
-                "Water-soaked lesions on leaves and stems",
+                "Large, water-soaked dark spots",
                 "White fungal growth on leaf undersides",
-                "Rapid plant death within days",
-                "Fruit/tuber rot"
+                "Rapid browning and wilting"
             ],
             "recommended_actions": {
                 "immediate": [
-                    "Apply Metalaxyl + Mancozeb @ 2.5g/L within 24 hours",
-                    "Destroy severely infected plants",
-                    "Store-bought fungicide application urgent",
-                    "Contact agricultural extension officer"
+                    "Destructive harvest of heavily infected plants",
+                    "Apply Metalaxyl + Mancozeb fungicide"
                 ],
                 "short_term": [
-                    "Spray Cymoxanil 8% + Mancozeb 64% WP every 5 days",
-                    "Improve drainage to reduce moisture",
-                    "Remove all infected plant material",
-                    "Monitor weather - disease spreads in cool, wet conditions"
+                    "Monitor fields daily",
+                    "Avoid overhead irrigation"
                 ],
                 "preventive": [
-                    "Plant resistant varieties (e.g., Kashi Anmol)",
-                    "Avoid overhead irrigation",
-                    "Hill up potatoes to protect tubers",
-                    "Use disease-free seed/transplants"
+                    "Use certified disease-free seeds",
+                    "Destroy volunteer plants"
                 ]
             },
-            "explanation": "Highly aggressive fungal disease. Caused the Irish Potato Famine. Can destroy entire crops in 2-3 weeks during favorable conditions.",
-            "economic_impact": "Can cause 100% crop loss if not controlled immediately",
-            "multilingual": {
-                "hi": {
-                    "name": "लेट ब्लाइट",
-                    "symptoms": "पत्तियों और तनों पर पानी जैसे धब्बे"
-                },
-                "mr": {
-                    "name": "लेट ब्लाइट",
-                    "symptoms": "पाने आणि खोडांवर पाण्यासारखे ठिपके"
-                }
-            }
+            "explanation": "Devastating water mold disease capable of destroying entire crops rapidly.",
+            "economic_impact": "Capable of 100% crop loss in favorable conditions."
         },
         "Leaf_Mold": {
             "scientific_name": "Passalora fulva",
-            "severity": "Moderate",
+            "severity": "Low",
             "crops_affected": [
                 "Tomato"
             ],
             "symptoms": [
-                "Pale green to yellowish spots on upper leaf surface",
-                "Olive green to brown mold on leaf underside",
-                "Leaves curl and die",
-                "Reduced photosynthesis"
+                "Pale yellow spots on upper leaf surface",
+                "Olymp green to brown velvety mold on underside"
             ],
             "recommended_actions": {
                 "immediate": [
-                    "Remove affected leaves",
-                    "Apply copper fungicide spray",
-                    "Increase ventilation in greenhouse/field"
+                    "Improve greenhouse ventilation"
                 ],
                 "short_term": [
-                    "Apply Chlorothalonil 75% WP @ 2g/L weekly",
-                    "Reduce humidity by improving airflow",
-                    "Prune lower leaves for better air circulation"
+                    "Reduce humidity levels"
                 ],
                 "preventive": [
-                    "Plant resistant varieties",
-                    "Maintain relative humidity below 85%",
-                    "Avoid crowding plants",
-                    "Disinfect greenhouse structures"
+                    "Clean greenhouse structures between seasons"
                 ]
             },
-            "explanation": "Fungal disease common in greenhouses and humid conditions. Does not affect fruit quality directly but reduces plant vigor.",
-            "economic_impact": "10-25% yield reduction in severe cases",
-            "multilingual": {
-                "hi": {
-                    "name": "लीफ मोल्ड",
-                    "symptoms": "पत्तियों की ऊपरी सतह पर हल्के हरे से पीले धब्बे"
-                },
-                "mr": {
-                    "name": "लीफ मोल्ड",
-                    "symptoms": "पानांच्या वरच्या पृष्ठभागावर फिकट हिरवे ठिपके"
-                }
-            }
+            "explanation": "Fungal disease primarily affecting foliage in high humidity environments.",
+            "economic_impact": "Minimal yield impact unless infection is severe."
         },
-        "Bacterial_Blight": {
-            "scientific_name": "Xanthomonas oryzae pv. oryzae",
-            "severity": "High",
-            "crops_affected": [
-                "Rice"
-            ],
-            "symptoms": [
-                "Water-soaked lesions on leaf tips and edges",
-                "Lesions turn yellow then white",
-                "Systemic infection in severe cases",
-                "Reduced grain filling"
-            ],
-            "recommended_actions": {
-                "immediate": [
-                    "Apply Copper hydroxide @ 2g/L",
-                    "Drain field temporarily if flooded",
-                    "Remove severely infected plants"
-                ],
-                "short_term": [
-                    "Spray Streptocycline 15% + Copper oxychloride 50% WP",
-                    "Balanced fertilizer application (avoid excess nitrogen)",
-                    "Monitor insect pests (vectors of disease)"
-                ],
-                "preventive": [
-                    "Use resistant varieties (e.g., Swarna Sub1)",
-                    "Treat seeds with hot water (52°C for 30 min)",
-                    "Avoid deep flooding",
-                    "Maintain balanced nitrogen levels"
-                ]
-            },
-            "explanation": "Bacterial disease spread by water, wind, and insects. Most damaging during monsoon season.",
-            "economic_impact": "10-50% yield loss depending on crop stage and weather",
-            "multilingual": {
-                "hi": {
-                    "name": "बैक्टीरियल ब्लाइट",
-                    "symptoms": "पत्तियों के किनारों पर पानी जैसे धब्बे"
-                },
-                "mr": {
-                    "name": "बॅक्टेरियल ब्लाइट",
-                    "symptoms": "पानांच्या कडांवर पाण्यासारखे ठिपके"
-                }
-            }
-        },
-        "Brown_Spot": {
-            "scientific_name": "Bipolaris oryzae",
+        "Common_Rust": {
+            "scientific_name": "Puccinia sorghi",
             "severity": "Moderate",
             "crops_affected": [
-                "Rice"
+                "Corn"
             ],
             "symptoms": [
-                "Circular or oval brown spots on leaves",
-                "Spots have gray center",
-                "Lesions can cover entire leaf",
-                "Reduced grain quality"
+                "Small, powdery pustules on both leaf surfaces",
+                "Cinnamon-brown to brick-red color",
+                "Pustules turn black as plant matures"
             ],
             "recommended_actions": {
                 "immediate": [
-                    "Apply Mancozeb 75% WP @ 2g/L",
-                    "Remove infected leaves if localized",
-                    "Improve field drainage"
+                    "Apply foliar fungicides if infection is early",
+                    "Monitor spread closely"
                 ],
                 "short_term": [
-                    "Spray Carbendazim 50% WP @ 1g/L every 10 days",
-                    "Apply potassium fertilizer to strengthen plants",
-                    "Monitor for spread"
+                    "Ensure adequate potassium fertilization"
                 ],
                 "preventive": [
-                    "Use healthy, certified seeds",
-                    "Treat seeds with Carbendazim before sowing",
-                    "Maintain proper plant nutrition",
-                    "Avoid water stress"
+                    "Plant resistant corn hybrids"
                 ]
             },
-            "explanation": "Fungal disease associated with nutrient deficiency and poor soil conditions. Common in fields with unbalanced fertilization.",
-            "economic_impact": "5-20% yield reduction, affects grain quality",
-            "multilingual": {
-                "hi": {
-                    "name": "ब्राउन स्पॉट",
-                    "symptoms": "पत्तियों पर गोलाकार भूरे धब्बे"
-                },
-                "mr": {
-                    "name": "तपकिरी ठिपके",
-                    "symptoms": "पानांवर गोल तपकिरी ठिपके"
-                }
-            }
+            "explanation": "Fungal disease favored by cool temperatures and high humidity.",
+            "economic_impact": "Can cause 10-25% yield loss in susceptible varieties."
+        },
+        "Northern_Leaf_Blight": {
+            "scientific_name": "Exserohilum turcicum",
+            "severity": "High",
+            "crops_affected": [
+                "Corn"
+            ],
+            "symptoms": [
+                "Long, cigar-shaped gray-green lesions",
+                "Lesions can span 1-6 inches long",
+                "Entire leaves may turn brown and die"
+            ],
+            "recommended_actions": {
+                "immediate": [
+                    "Apply strobilurin or triazole fungicides"
+                ],
+                "short_term": [
+                    "Scout fields weekly"
+                ],
+                "preventive": [
+                    "Crop rotation with soybeans",
+                    "Tillage to bury residue"
+                ]
+            },
+            "explanation": "Major foliar disease of corn in humid climates.",
+            "economic_impact": "Significant yield reduction due to loss of photosynthetic area."
+        },
+        "Bacterial_Blight": {
+            "scientific_name": "Xanthomonas citri",
+            "severity": "High",
+            "crops_affected": [
+                "Cotton"
+            ],
+            "symptoms": [
+                "Angular, water-soaked spots on leaves",
+                "Black Arm symptoms on stems",
+                "Boll rot"
+            ],
+            "recommended_actions": {
+                "immediate": [
+                    "Spray Streptocycline antibiotic"
+                ],
+                "short_term": [
+                    "Remove infected plant debris"
+                ],
+                "preventive": [
+                    "Use acid-delinted seeds",
+                    "Grow resistant varieties"
+                ]
+            },
+            "explanation": "Serious bacterial disease affecting all aerial parts of cotton plant.",
+            "economic_impact": "Causes seedling blight, leaf shedding, and boll rotting."
+        },
+        "Brown_Rust": {
+            "scientific_name": "Puccinia triticina",
+            "severity": "Moderate",
+            "crops_affected": [
+                "Wheat"
+            ],
+            "symptoms": [
+                "Small, round, orange-brown pustules",
+                "Randomly scattered on upper leaf surface"
+            ],
+            "recommended_actions": {
+                "immediate": [
+                    "Apply Propiconazole fungicide"
+                ],
+                "short_term": [
+                    "Maintain balanced nitrogen levels"
+                ],
+                "preventive": [
+                    "Eradicate volunteer wheat plants"
+                ]
+            },
+            "explanation": "Most common rust disease of wheat worldwide.",
+            "economic_impact": "Typically causes 20% yield loss in severe epidemics."
+        },
+        "Yellow_Rust": {
+            "scientific_name": "Puccinia striiformis",
+            "severity": "High",
+            "crops_affected": [
+                "Wheat"
+            ],
+            "symptoms": [
+                "Yellow pustules arranged in linear stripes",
+                "Affects leaf blades, sheaths, and heads"
+            ],
+            "recommended_actions": {
+                "immediate": [
+                    "Immediate fungicide application (Tebuconazole)"
+                ],
+                "short_term": [
+                    "Monitor flag leaves closely"
+                ],
+                "preventive": [
+                    "Diversify wheat varieties planted"
+                ]
+            },
+            "explanation": "Also known as Stripe Rust, thrives in cool, moist climates.",
+            "economic_impact": "Can cause 100% crop loss if infection occurs early."
         },
         "Healthy": {
-            "severity": "None",
+            "scientific_name": "N/A",
+            "severity": "Low",
             "crops_affected": [
-                "Tomato",
-                "Potato",
-                "Rice"
+                "All"
             ],
             "symptoms": [
                 "Vibrant green leaves",
-                "No visible lesions or spots",
-                "Normal growth pattern",
-                "Good vigor"
+                "No spots or lesions"
             ],
             "recommended_actions": {
-                "immediate": [],
+                "immediate": [
+                    "No action required"
+                ],
                 "short_term": [
-                    "Continue current management practices",
-                    "Monitor regularly for early disease signs",
-                    "Maintain proper nutrition"
+                    "Continue regular monitoring"
                 ],
                 "preventive": [
-                    "Regular scouting for pests and diseases",
-                    "Practice crop rotation",
-                    "Use balanced fertilization",
-                    "Maintain field hygiene"
+                    "Maintain current care routine"
                 ]
             },
-            "explanation": "Plant shows no signs of disease. Continue good agricultural practices.",
-            "economic_impact": "None - maintain health to maximize yield",
-            "multilingual": {
-                "hi": {
-                    "name": "स्वस्थ",
-                    "symptoms": "कोई लक्षण नहीं, पौधा स्वस्थ है"
-                },
-                "mr": {
-                    "name": "निरोगी",
-                    "symptoms": "कोणतीही लक्षणे नाहीत, रोप निरोगी आहे"
-                }
-            }
+            "explanation": "Plant appears healthy and vigorous.",
+            "economic_impact": "None."
         }
     }
 }

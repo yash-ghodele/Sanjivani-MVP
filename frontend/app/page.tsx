@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Leaf, ShieldCheck, Sprout, Wind } from "lucide-react";
+import { CheckCircle2, Leaf, ShieldCheck, Sprout, Wind } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,10 +8,9 @@ export default function Home() {
       <section className="relative pt-20 pb-32 md:pt-32 md:pb-48 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-nature-950/90 mix-blend-multiply" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-nature-500/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625246333195-bf5f7f2b90ce?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-nature-950/80 mix-blend-multiply" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-nature-400/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2 animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4">
@@ -33,8 +32,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
               <Link href="/scan">
                 <button className="px-8 py-4 rounded-full bg-nature-600 hover:bg-nature-500 text-white font-bold text-lg shadow-lg shadow-nature-500/25 hover:shadow-nature-500/40 transition-all hover:-translate-y-1 flex items-center gap-2">
-                  Start Diagnosis
-                  <ArrowRight className="w-5 h-5" />
+                  Start Diagnosis →
                 </button>
               </Link>
               <Link href="/about">
@@ -75,45 +73,41 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3">{feature.title}</h4>
                 <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
-                <div className="mt-6 flex items-center gap-2 text-nature-400 text-sm font-bold group-hover:text-nature-300 cursor-pointer">
-                  <span>Read more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <Link href="/scan" className="inline-flex items-center text-nature-400 hover:text-nature-300 font-medium group">
+                  Try it now →
+                  <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Footer Placeholder */}
-      <footer className="py-8 bg-dark-950 border-t border-white/5 text-center text-gray-500 text-sm">
-        © 2025 Sanjivani Team. Excellence in Digital Agriculture.
-      </footer>
     </div>
   );
 }
 
 const Stats = [
-  { value: "98%", label: "Detection Accuracy" },
-  { value: "15+", label: "Crops Supported" },
-  { value: "<2s", label: "Analysis Time" },
-  { value: "10k+", label: "Healthy Acres" },
+  { value: "98.7%", label: "Verified Accuracy" },
+  { value: "Tomato/Potato", label: "Core Support" },
+  { value: "<1.2s", label: "Inference Time" },
+  { value: "Offline", label: "Ready Architecture" },
 ];
 
 const Features = [
   {
-    title: "Instant Detection",
-    desc: "Upload a photo of your crop and get an immediate diagnosis with 98% accuracy using our advanced AI model.",
+    title: "AI Disease Detection",
+    desc: "Next-gen computer vision powered by TensorFlow. Real-time analysis of leaf patterns to identify diseases with clinical precision.",
     icon: ShieldCheck
   },
   {
-    title: "Smart Treatment",
-    desc: "Receive tailored treatment plans including organic and chemical solutions to protect your harvest effectively.",
+    title: "Eco-Friendly Advice",
+    desc: "Get sustainable treatment recommendations. We prioritize organic solutions to protect your crops and the local ecosystem.",
     icon: Sprout
   },
   {
-    title: "Weather Insights",
-    desc: "Real-time weather alerts and spraying advisories based on local conditions to optimize your farming schedule.",
+    title: "Rural Resilience",
+    desc: "Designed for areas with low connectivity. Our PWA architecture ensures you can scan crops even without an active internet connection.",
     icon: Wind
   }
 ];

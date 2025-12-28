@@ -10,7 +10,7 @@ import io
 import tensorflow as tf
 from pathlib import Path
 
-from .dataset_config import CLASS_NAMES, MODEL_CONFIG, get_crop_from_class, get_disease_from_class
+from .dataset_config_v2 import CLASS_NAMES, MODEL_CONFIG, get_crop_from_class, get_disease_from_class, get_severity_from_class
 
 
 class InferenceEngine:
@@ -21,7 +21,12 @@ class InferenceEngine:
     
     def __init__(self, model_path: Optional[str] = None):
         self.model = None
-        self.model_path = model_path or "backend/models/plant_disease_v2.h5"
+        # Robust path handling: check local 'models' or 'backend/models'
+        default_path = "models/plant_disease_v2.h5" 
+        if not Path(default_path).exists():
+            default_path = "backend/models/plant_disease_v2.h5"
+            
+        self.model_path = model_path or default_path
         self.model_metadata = {}
         self.inference_times = []  # Track performance
         
@@ -126,6 +131,7 @@ class InferenceEngine:
         class_name = CLASS_NAMES[class_idx]
         crop = get_crop_from_class(class_name)
         disease = get_disease_from_class(class_name)
+        severity = get_severity_from_class(class_name)
         
         # Get top 3 predictions for context
         top_3_idx = np.argsort(predictions[0])[-3:][::-1]
@@ -141,6 +147,7 @@ class InferenceEngine:
             "crop": crop,
             "disease": disease.replace("_", " ").title(),
             "disease_key": disease,
+            "severity": severity,
             "confidence": confidence,
             "alternatives": alternatives
         }

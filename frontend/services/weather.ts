@@ -1,40 +1,88 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export interface WeatherData {
-    temp: number;
+    temperature: number;
     condition: string;
-    location: string;
-    windSpeed: number;
+    description: string;
     humidity: number;
-    icon: string;
+    wind_speed: number;
+    location: string;
 }
 
-const API_KEY = "b40f70eaaf15418c6ce06cedb4c519ea"; // Kept from previous env
-// In production, use process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-
-export async function getWeather(lat?: number, lon?: number): Promise<WeatherData> {
+export async function fetchLiveWeather(
+    lat: number,
+    lon: number
+): Promise<WeatherData> {
     try {
-        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric`;
+        const response = await fetch(
+            `${API_URL}/api/v2/weather?lat=${lat}&lon=${lon}`
+        );
 
-        if (lat && lon) {
-            url += `&lat=${lat}&lon=${lon}`;
-        } else {
-            url += `&q=Jalgaon,IN`; // Default
+        if (!response.ok) {
+            throw new Error('Weather fetch failed');
         }
 
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('Weather fetch failed');
-
-        const data = await res.json();
-
-        return {
-            temp: Math.round(data.main.temp),
-            condition: data.weather[0].main,
-            location: data.name,
-            windSpeed: Math.round(data.wind.speed * 3.6), // m/s to km/h
-            humidity: data.main.humidity,
-            icon: data.weather[0].icon
-        };
+        const result = await response.json();
+        return result.data;
     } catch (error) {
-        console.error("Weather Error:", error);
-        throw error;
+        console.error('Weather API Error:', error);
+        // Return fallback
+        return {
+            temperature: 28,
+            condition: 'Clear',
+            description: 'clear sky',
+            humidity: 65,
+            wind_speed: 12,
+            location: 'Unknown'
+        };
     }
+}
+
+// Get user's location with timeout
+export async function getUserLocation(): Promise<{ lat: number, lon: number }> {
+    return new Promise((resolve) => {
+        const defaultLocation = { lat: 21.0077, lon: 75.5626 }; // Jalgaon, MH
+
+        if (!navigator.geolocation) {
+            resolve(defaultLocation);
+            return;
+        }
+
+        // Timeout fallback after 5 seconds
+        const timeoutId = setTimeout(() => {
+            console.warn('Geolocation timed out, using default');
+            resolve(defaultLocation);
+        }, 5000);
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                clearTimeout(timeoutId);
+                resolve({
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude
+                });
+            },
+            (error) => {
+                clearTimeout(timeoutId);
+                console.warn('Geolocation error:', error);
+                resolve(defaultLocation);
+            },
+            { timeout: 5000, enableHighAccuracy: false }
+        );
+    });
+}
+
+// Legacy function for backward compatibility
+export async function getWeather(lat?: number, lon?: number): Promise<any> {
+    const location = lat && lon ? { lat, lon } : await getUserLocation();
+    const weather = await fetchLiveWeather(location.lat, location.lon);
+
+    return {
+        temp: weather.temperature,
+        condition: weather.condition,
+        location: weather.location,
+        windSpeed: weather.wind_speed,
+        humidity: weather.humidity,
+        icon: '01d' // placeholder
+    };
 }
