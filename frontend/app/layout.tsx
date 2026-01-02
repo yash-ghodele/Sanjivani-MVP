@@ -6,6 +6,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
 
 import { NotificationProvider } from "@/context/NotificationContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 
 export default function RootLayout({
@@ -17,8 +18,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-nature-900 text-white font-sans selection:bg-nature-500/30 selection:text-white" suppressHydrationWarning>
         <NotificationProvider>
-          {/* <ServiceWorkerRegister /> */}
-          {children}
+          <LanguageProvider>
+            {/* <ServiceWorkerRegister /> */}
+            {children}
+          </LanguageProvider>
         </NotificationProvider>
       </body>
     </html>
