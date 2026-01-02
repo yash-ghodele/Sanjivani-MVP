@@ -56,7 +56,7 @@ export function Navbar() {
                 {/* Action Button & Auth */}
                 <div className="hidden md:flex items-center gap-4">
                     <Link href="/scan">
-                        <button className="px-6 py-2.5 rounded-full bg-white text-[#0f110f] font-semibold text-sm hover:bg-[#82ae19] hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(130,174,25,0.4)]">
+                        <button className="px-6 py-2.5 rounded-full bg-nature-600 text-white font-semibold text-sm hover:bg-nature-500 transition-all shadow-[0_0_20px_rgba(130,174,25,0.3)]">
                             Start Diagnosis
                         </button>
                     </Link>
@@ -64,30 +64,39 @@ export function Navbar() {
                         <AuthButton />
                     </div>
                 </div>
-
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <X /> : <Menu />}
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 glass-nav border-t border-white/5 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
-                    <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
-                    <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</MobileNavLink>
-                    <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)}>Calendar</MobileNavLink>
-                    <MobileNavLink href="/history" onClick={() => setMobileMenuOpen(false)}>History</MobileNavLink>
-                    <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
-                    <Link href="/scan" onClick={() => setMobileMenuOpen(false)}>
-                        <button className="w-full btn-primary py-3">Start Diagnosis</button>
+                        </button>
                     </Link>
-                </div>
-            )}
-        </nav>
+                    <div className="flex items-center gap-2">
+                        <AuthButton />
+                    </div>
+                </div >
+
+        {/* Mobile Toggle */ }
+        < button
+    className = "md:hidden text-white"
+    onClick = {() => setMobileMenuOpen(!mobileMenuOpen)
+}
+                >
+    { mobileMenuOpen?<X /> : <Menu />}
+                </button >
+            </div >
+
+    {/* Mobile Menu */ }
+{
+    mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 glass-nav border-t border-white/5 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+            <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
+            <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</MobileNavLink>
+            <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)}>Calendar</MobileNavLink>
+            <MobileNavLink href="/history" onClick={() => setMobileMenuOpen(false)}>History</MobileNavLink>
+            <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
+            <Link href="/scan" onClick={() => setMobileMenuOpen(false)}>
+                <button className="w-full btn-primary py-3">Start Diagnosis</button>
+            </Link>
+        </div>
+    )
+}
+        </nav >
     );
 }
 
