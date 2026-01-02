@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Leaf, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { AuthButton } from '@/components/AuthButton';
@@ -13,6 +14,7 @@ export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, hasMounted } = useAuth();
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,10 +51,10 @@ export function Navbar() {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-6">
-                    <NavLink href="/">Home</NavLink>
-                    <NavLink href="/dashboard">Dashboard</NavLink>
-                    <NavLink href="/calendar">Calendar</NavLink>
-                    <NavLink href="/faq">FAQ</NavLink>
+                    <NavLink href="/" active={pathname === '/'}>Home</NavLink>
+                    <NavLink href="/dashboard" active={pathname === '/dashboard'}>Dashboard</NavLink>
+                    <NavLink href="/calendar" active={pathname === '/calendar'}>Calendar</NavLink>
+                    <NavLink href="/faq" active={pathname === '/faq'}>FAQ</NavLink>
                 </div>
 
                 {/* Action Button & Auth */}
@@ -83,10 +85,10 @@ export function Navbar() {
                     <div className="flex justify-center pb-4 border-b border-white/5">
                         <NavbarLanguageSelector />
                     </div>
-                    <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
-                    <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</MobileNavLink>
-                    <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)}>Calendar</MobileNavLink>
-                    <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
+                    <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)} active={pathname === '/'}>Home</MobileNavLink>
+                    <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)} active={pathname === '/dashboard'}>Dashboard</MobileNavLink>
+                    <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)} active={pathname === '/calendar'}>Calendar</MobileNavLink>
+                    <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)} active={pathname === '/faq'}>FAQ</MobileNavLink>
                     <Link href="/scan" onClick={(e) => { handleScanClick(e); setMobileMenuOpen(false); }}>
                         <button className="w-full btn-primary py-3">Start Diagnosis</button>
                     </Link>
@@ -96,23 +98,36 @@ export function Navbar() {
     );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({ href, children, active }: { href: string; children: React.ReactNode; active: boolean }) {
     return (
         <Link
             href={href}
-            className="text-gray-400 hover:text-nature-500 font-medium transition-colors text-sm tracking-wide"
+            className={cn(
+                "font-medium transition-all text-sm tracking-wide relative",
+                active
+                    ? "text-nature-400"
+                    : "text-gray-400 hover:text-nature-500"
+            )}
         >
             {children}
+            {active && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-nature-400 rounded-full" />
+            )}
         </Link>
     );
 }
 
-function MobileNavLink({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
+function MobileNavLink({ href, onClick, children, active }: { href: string; onClick: () => void; children: React.ReactNode; active: boolean }) {
     return (
         <Link
             href={href}
             onClick={onClick}
-            className="text-gray-300 hover:text-white font-medium py-3 border-b border-white/5"
+            className={cn(
+                "font-medium py-3 border-b border-white/5 transition-colors",
+                active
+                    ? "text-nature-400"
+                    : "text-gray-300 hover:text-white"
+            )}
         >
             {children}
         </Link>
