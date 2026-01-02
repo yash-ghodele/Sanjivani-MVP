@@ -57,16 +57,7 @@ export function WeatherWidget() {
             }
         } catch (err) {
             console.error("Weather fetch error:", err);
-            setError("Weather unavailable");
-            // Fallback for demo/offline
-            setWeather({
-                temperature: 28,
-                condition: "Sunny",
-                description: "clear sky",
-                humidity: 45,
-                wind_speed: 12,
-                location: "Demo Farm Location"
-            });
+            setError("Unable to fetch weather data");
         } finally {
             setLoading(false);
         }
@@ -80,6 +71,24 @@ export function WeatherWidget() {
         return (
             <div className="glass-card p-6 rounded-3xl h-full flex items-center justify-center min-h-[200px]">
                 <Loader2 className="w-8 h-8 text-[#82ae19] animate-spin" />
+            </div>
+        );
+    }
+
+    if (error || !weather) {
+        return (
+            <div className="glass-card p-6 rounded-3xl h-full flex flex-col items-center justify-center min-h-[200px] text-center">
+                <Cloud className="w-12 h-12 text-gray-600 mb-3 opacity-50" />
+                <p className="text-gray-400 text-sm mb-2">{error || "Weather data unavailable"}</p>
+                <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={fetchWeather}
+                    className="text-nature-400 hover:text-nature-300 hover:bg-nature-500/10"
+                >
+                    <RefreshCw className="w-4 h-4 mr-2" />
+                    Retry
+                </Button>
             </div>
         );
     }
