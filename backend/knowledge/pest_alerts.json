@@ -1,0 +1,29 @@
+[
+    {
+        "id": "alert_001",
+        "pest": "Fall Armyworm",
+        "crop": "Corn",
+        "severity": "High",
+        "region": "Maharashtra",
+        "date": "2025-12-28",
+        "description": "Rapid spread detected in Nashik district. Scout fields immediately for egg masses."
+    },
+    {
+        "id": "alert_002",
+        "pest": "Pink Bollworm",
+        "crop": "Cotton",
+        "severity": "Critical",
+        "region": "Gujarat",
+        "date": "2025-12-27",
+        "description": "Resistance to Bt cotton observed. Install pheromone traps."
+    },
+    {
+        "id": "alert_003",
+        "pest": "Late Blight",
+        "crop": "Tomato",
+        "severity": "Moderate",
+        "region": "Karnataka",
+        "date": "2025-12-26",
+        "description": "High humidity forecast favors blight. Preventive fungicide recommended."
+    }
+]

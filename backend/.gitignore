@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+serviceAccountKey.json
+*.h5
+*.tflite
