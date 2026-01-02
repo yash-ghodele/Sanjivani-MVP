@@ -97,7 +97,7 @@ graph TB
 ## File Structure (SANJIVANI 2.0)
 
 ```
-CropGuard/
+Sanjivani/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/

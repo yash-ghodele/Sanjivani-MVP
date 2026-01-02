@@ -5,12 +5,12 @@
 1. **Download the Kaggle Dataset:**
    ```bash
    # Visit: https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
-   # Download and extract to: CropGuard/dataset/PlantVillage/
+   # Download and extract to: Sanjivani/dataset/PlantVillage/
    ```
 
 2. **Expected folder structure:**
    ```
-   CropGuard/
+   Sanjivani/
    ├── dataset/
    │   └── PlantVillage/
    │       ├── train/
@@ -26,7 +26,7 @@
 ## Training the Model
 
 ```bash
-cd CropGuard/backend
+cd Sanjivani/backend
 python train_model.py
 ```
 
