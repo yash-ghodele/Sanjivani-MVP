@@ -19,8 +19,8 @@ export default function Dashboard() {
     const { user, loading, hasMounted } = useAuth();
     const [stats, setStats] = useState<any>(null);
 
-    // Default role for all authenticated users (can be extended with Firebase custom claims later)
-    const role = 'farmer';
+    // Default role - can be extended with Firebase custom claims later
+    const role: 'farmer' | 'admin' | 'sender' | 'receiver' = 'farmer';
 
     useEffect(() => {
         if (role === 'admin') {
