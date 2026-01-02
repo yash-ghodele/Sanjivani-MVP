@@ -21,7 +21,7 @@ export default function RootLayout({
         <NotificationProvider>
           {/* <ServiceWorkerRegister /> */}
           <Navbar />
-          <main className="min-h-screen pt-16">
+          <main className="min-h-screen">
             {children}
           </main>
           <Footer />
