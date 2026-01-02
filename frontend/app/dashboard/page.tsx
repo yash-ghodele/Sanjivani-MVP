@@ -20,7 +20,7 @@ export default function Dashboard() {
     const [stats, setStats] = useState<any>(null);
 
     // Default role - can be extended with Firebase custom claims later
-    const role: 'farmer' | 'admin' | 'sender' | 'receiver' = 'farmer';
+    const role = 'farmer' as 'farmer' | 'admin' | 'sender' | 'receiver';
 
     useEffect(() => {
         if (role === 'admin') {
