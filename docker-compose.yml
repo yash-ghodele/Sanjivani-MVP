@@ -3,22 +3,39 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
+    container_name: sanjivani-frontend
     ports:
-      - "80:80"
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
     depends_on:
       - backend
+    networks:
+      - sanjivani-network
     restart: always
 
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    container_name: sanjivani-backend
     ports:
       - "8000:8000"
     environment:
-      - CORS_ORIGINS=http://localhost,http://localhost:80
+      - PORT=8000
+      - HOST=0.0.0.0
+      # Add your API keys here or in a .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - FIREBASE_CREDENTIALS=${FIREBASE_CREDENTIALS}
+    networks:
+      - sanjivani-network
     volumes:
       - ./backend/models:/app/models
     restart: always
+
+networks:
+  sanjivani-network:
+    driver: bridge

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '**' },
     ],
   },
+  output: "standalone",
   // Explicitly disable experimental features to prevent chunk load errors
 };
 
