@@ -1,293 +1,264 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { useAuth } from "@/hooks/useAuth";
+import { Loader2, ScanLine, Calendar, TrendingUp, Download, Leaf, Clock, ArrowRight, Activity, Shield } from "lucide-react";
+import Link from 'next/link';
+import { Button } from "@/components/ui/button";
 import { WeatherWidget } from "@/components/dashboard/WeatherWidget";
 import { SprayingWidget } from "@/components/dashboard/SprayingWidget";
-import { PestAlertsWidget } from "@/components/dashboard/PestAlertsWidget";
-import { Button } from "@/components/ui/button";
-import { SupportedCrops } from "@/components/SupportedCrops";
-import {
-    Leaf, CalendarDays, ArrowRight, ScanLine, BarChart3, Database, ShieldCheck, Users, Activity, TrendingUp, AlertCircle, Clock
-} from "lucide-react";
-import Link from "next/link";
-// In a real app, we would fetch weather data here or pass it down
+import { DashboardBackground } from "@/components/ui/DashboardBackground";
 
-import { useAuth } from "@/hooks/useAuth";
-import { Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+interface ScanRecord {
+    id: string;
+    imageUrl: string;
+    crop: string;
+    disease: string;
+    severity: string;
+    confidence: number;
+    timestamp: number;
+    metadata: {
+        inference_time_ms: number;
+        model_version: string;
+    };
+}
 
 export default function Dashboard() {
     const { user, loading, hasMounted } = useAuth();
-    const [stats, setStats] = useState<any>(null);
-
-    // Default role - can be extended with Firebase custom claims later
+    const [scans, setScans] = useState<ScanRecord[]>([]);
     const role = 'farmer' as 'farmer' | 'admin' | 'expert' | 'dealer';
 
     useEffect(() => {
-        if (role === 'admin') {
-            const fetchStats = async () => {
-                try {
-                    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-                    const [perfRes, healthRes] = await Promise.all([
-                        fetch(`${apiUrl}/api/v2/model/performance`),
-                        fetch(`${apiUrl}/api/v2/health`)
-                    ]);
-                    if (perfRes.ok && healthRes.ok) {
-                        const pData = await perfRes.json();
-                        const hData = await healthRes.json();
-                        setStats({ performance: pData, health: hData });
-                    }
-                } catch (e) {
-                    console.error("Failed to fetch admin stats", e);
-                }
-            };
-            fetchStats();
+        loadScanHistory();
+    }, []);
+
+    const loadScanHistory = () => {
+        try {
+            const history = localStorage.getItem('scan_history');
+            if (history) {
+                const parsed = JSON.parse(history);
+                const normalized = parsed.map((scan: ScanRecord) => ({
+                    ...scan,
+                    confidence: scan.confidence > 1 ? scan.confidence / 100 : scan.confidence
+                }));
+                setScans(normalized.sort((a: ScanRecord, b: ScanRecord) => b.timestamp - a.timestamp));
+            }
+        } catch (error) {
+            console.error('Failed to load scan history:', error);
         }
-    }, [role]);
+    };
+
+    const exportData = () => {
+        const dataStr = JSON.stringify(scans, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(dataBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `sanjivani_scan_history_${Date.now()}.json`;
+        link.click();
+    };
+
+    const getSeverityColor = (severity: string) => {
+        switch (severity.toLowerCase()) {
+            case 'critical':
+            case 'high':
+                return 'text-red-400 bg-red-500/10 border-red-500/30';
+            case 'moderate':
+                return 'text-yellow-400 bg-yellow-500/10 border-yellow-500/30';
+            default:
+                return 'text-nature-400 bg-nature-500/10 border-nature-500/30';
+        }
+    };
 
     if (!hasMounted) return null;
 
     if (loading) {
         return (
-            <div className="flex h-screen items-center justify-center bg-black">
+            <div className="flex h-screen items-center justify-center bg-[#0f110f]">
                 <Loader2 className="w-8 h-8 text-nature-500 animate-spin" />
             </div>
         );
     }
 
+    const recentScans = scans.slice(0, 5);
+    const criticalScans = scans.filter(s => s.severity.toLowerCase() === 'critical' || s.severity.toLowerCase() === 'high').length;
+    const farmStatus = criticalScans > 0 ? 'needs attention' : 'healthy';
+
     return (
-        <div className="min-h-screen bg-dark-900">
-            <div className="container mx-auto px-4 py-8 max-w-5xl">
-                {/* Welcome Header */}
-                <div className="flex items-end justify-between mb-8">
-                    <div>
-                        <div className="flex items-center gap-2 mb-1">
-                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-400 uppercase tracking-widest border border-white/5">
-                                {role} Dashboard
-                            </span>
-                        </div>
-                        <h1 className="text-3xl font-display font-bold text-white">
-                            Namaste, {user?.displayName?.split(' ')[0] || 'Farmer'}
-                        </h1>
-                        <p className="text-white/60 mt-1">Here is your {role === 'farmer' ? 'farm' : 'system'} summary.</p>
+        <div className="min-h-screen bg-[#0f110f] relative">
+            <DashboardBackground />
+
+            <div className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
+                {/* Hero Section */}
+                <div className="mb-10">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-nature-500/10 text-nature-400 uppercase tracking-wider border border-nature-500/20">
+                            {role} Dashboard
+                        </span>
                     </div>
-                    <div className="w-12 h-12 rounded-full bg-nature-800 border border-nature-600 overflow-hidden">
-                        {user?.photoURL ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src={user.photoURL} alt="User" className="w-full h-full object-cover" />
-                        ) : role === 'farmer' ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src="/assets/farmer-icon.jpg" alt="Farmer" className="w-full h-full object-cover" />
-                        ) : (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src="/assets/farmer-avatar.avif" alt="User" className="w-full h-full object-cover" />
-                        )}
+                    <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-2">
+                        Namaste, {user?.displayName?.split(' ')[0] || 'Farmer'}! 🙏
+                    </h1>
+                    <p className="text-xl text-gray-400">
+                        Your farm is <span className={`font-semibold ${farmStatus === 'healthy' ? 'text-nature-400' : 'text-yellow-400'}`}>{farmStatus}</span>
+                    </p>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div className="glass-card p-5 rounded-2xl border border-white/5">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-10 h-10 rounded-xl bg-nature-500/10 flex items-center justify-center">
+                                <ScanLine className="w-5 h-5 text-nature-400" />
+                            </div>
+                            <div>
+                                <div className="text-2xl font-display font-bold text-white">{scans.length}</div>
+                                <div className="text-xs text-gray-400">Total Scans</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="glass-card p-5 rounded-2xl border border-white/5">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+                                <Activity className="w-5 h-5 text-red-400" />
+                            </div>
+                            <div>
+                                <div className="text-2xl font-display font-bold text-red-400">{criticalScans}</div>
+                                <div className="text-xs text-gray-400">Alerts</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="glass-card p-5 rounded-2xl border border-white/5">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-blue-400" />
+                            </div>
+                            <div>
+                                <div className="text-2xl font-display font-bold text-blue-400">
+                                    {scans.length > 0 ? Math.round(scans.reduce((acc, s) => acc + s.confidence, 0) / scans.length * 100) : 0}%
+                                </div>
+                                <div className="text-xs text-gray-400">Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="glass-card p-5 rounded-2xl border border-white/5">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-10 h-10 rounded-xl bg-nature-500/10 flex items-center justify-center">
+                                <Shield className="w-5 h-5 text-nature-400" />
+                            </div>
+                            <div>
+                                <div className="text-2xl font-display font-bold text-nature-400">
+                                    {scans.length - criticalScans}
+                                </div>
+                                <div className="text-xs text-gray-400">Healthy</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Main Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    {/* --- FARMER VIEW --- */}
-                    {role === 'farmer' && (
-                        <>
-                            <div className="animate-slide-up animate-delay-100">
-                                <WeatherWidget />
+                {/* Primary CTA - Start Scan */}
+                <Link href="/scan">
+                    <div className="mb-8 glass-card p-8 rounded-3xl border border-nature-500/20 bg-gradient-to-br from-nature-900/40 to-transparent hover:border-nature-500/40 transition-all cursor-pointer group">
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <h2 className="text-2xl font-display font-bold text-white mb-2">Check Your Crops Now</h2>
+                                <p className="text-gray-400">AI diagnosis in under 3 seconds • Works offline</p>
                             </div>
-
-                            <div className="glass-card p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between group cursor-pointer hover:bg-nature-900/60 transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-br from-nature-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div>
-                                    <div className="w-10 h-10 rounded-full bg-nature-500/20 flex items-center justify-center mb-4">
-                                        <ScanLine className="w-5 h-5 text-nature-400" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white">Diagnose Crop</h3>
-                                    <p className="text-sm text-white/70 mt-1">Detect diseases instantly with AI.</p>
-                                </div>
-                                <Link href="/scan" className="mt-6">
-                                    <Button className="w-full bg-nature-600 hover:bg-nature-500 text-white font-bold h-12 rounded-xl group-hover:scale-[1.02] transition-transform">
-                                        Start Scan <ArrowRight className="ml-2 w-4 h-4" />
-                                    </Button>
-                                </Link>
-                            </div>
-
-                            <div className="animate-slide-up animate-delay-200">
-                                <SprayingWidget windSpeed={12} humidity={45} isRaining={false} />
-                            </div>
-
-                            <div className="animate-slide-up animate-delay-300">
-                                <PestAlertsWidget />
-                            </div>
-
-                            <div className="lg:col-span-3 glass-card p-8 rounded-3xl mt-2">
-                                <div className="flex items-center justify-between mb-6">
-                                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                                        <CalendarDays className="w-5 h-5 text-nature-400" />
-                                        Upcoming Tasks
-                                    </h3>
-                                    <Button variant="ghost" className="text-nature-400 hover:text-nature-300">View All</Button>
-                                </div>
-                                <div className="space-y-4">
-                                    {[
-                                        { title: "Fertilize Tomato Patch", date: "Today, 4:00 PM", status: "urgent" },
-                                        { title: "Irrigation Schedule", date: "Tomorrow, 6:00 AM", status: "pending" },
-                                    ].map((task, i) => (
-                                        <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
-                                            <div className="flex items-center gap-4">
-                                                <div className={`w-2 h-10 rounded-full ${task.status === 'urgent' ? 'bg-nature-500' : 'bg-gray-600'}`} />
-                                                <div>
-                                                    <h4 className="font-bold text-white">{task.title}</h4>
-                                                    <p className="text-xs text-gray-400 uppercase tracking-wide">{task.date}</p>
-                                                </div>
-                                            </div>
-                                            {task.status === 'urgent' && (
-                                                <span className="px-3 py-1 rounded-full bg-nature-500/20 text-nature-400 text-xs font-bold border border-nature-500/30">DO NOW</span>
-                                            )}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Scan History Card */}
-                            <Link href="/history" className="glass-card p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between group cursor-pointer hover:bg-blue-900/30 transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div>
-                                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
-                                        <Clock className="w-5 h-5 text-blue-400" />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-white">Scan History</h3>
-                                    <p className="text-sm text-white/70 mt-1">View past diagnoses and trends.</p>
-                                </div>
-                                <div className="mt-4 text-sm text-blue-400 font-medium group-hover:translate-x-1 transition-transform">
-                                    View History →
-                                </div>
-                            </Link>
-
-                            {/* Data Sovereignty Card */}
-                            <div className="lg:col-span-3 glass-card p-6 rounded-3xl mt-2 border border-nature-500/20 bg-nature-900/40">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <h3 className="text-lg font-bold text-white">Data Sovereignty</h3>
-                                        <p className="text-sm text-white/70">Your farm data belongs to you. Export your scan history anytime.</p>
-                                    </div>
-                                    <Button
-                                        onClick={async () => {
-                                            try {
-                                                // Dynamic import to avoid SSR issues with IndexedDB
-                                                const { getOfflineScans } = await import("@/lib/db");
-                                                const { downloadCSV } = await import("@/lib/export");
-
-                                                // Import type for safety (casted)
-                                                // Note: In a real app we'd import the type at top level,
-                                                // but to keep 'use client' clean without side-effects we use 'any' with care or explicit mapping.
-                                                const scans = await getOfflineScans();
-
-                                                if (scans.length > 0) {
-                                                    const csvData = scans.map((s: any) => ({
-                                                        id: s.id,
-                                                        timestamp: new Date(s.timestamp).toISOString(),
-                                                        status: 'offline_pending',
-                                                        image_size: s.imageBlob.size
-                                                    }));
-                                                    downloadCSV(csvData, `cropguard_data_${new Date().toISOString().split('T')[0]}.csv`);
-                                                } else {
-                                                    // Mock data if no real scans
-                                                    downloadCSV([
-                                                        { id: 'mock_1', timestamp: new Date().toISOString(), disease: 'Early Blight', confidence: 0.95 },
-                                                        { id: 'mock_2', timestamp: new Date(Date.now() - 86400000).toISOString(), disease: 'Healthy', confidence: 0.99 }
-                                                    ], `cropguard_sample_data.csv`);
-                                                }
-                                            } catch (e) {
-                                                console.error("Export failed", e);
-                                            }
-                                        }}
-                                        variant="outline"
-                                        className="border-nature-500 text-nature-400 hover:bg-nature-500 hover:text-white"
-                                    >
-                                        Download CSV
-                                    </Button>
-                                </div>
-                            </div>
-
-                            {/* Supported Crops Registry */}
-                            <div className="lg:col-span-3 mt-4">
-                                <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-4">
-                                    <Leaf className="w-5 h-5 text-nature-400" />
-                                    Supported Crops
-                                </h3>
-                                <SupportedCrops />
-                            </div>
-                        </>
-                    )}
-
-                    {/* --- ADMIN VIEW --- */}
-                    {role === 'admin' && (
-                        <>
-                            <div className="glass-card p-6 rounded-3xl">
-                                <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                                    <Activity className="w-5 h-5 text-nature-400" />
-                                    System Health
-                                </h3>
-                                <div className="flex items-center gap-2 text-nature-400 mb-4">
-                                    <span className={`w-3 h-3 rounded-full ${stats?.health?.status === 'healthy' ? 'bg-nature-500 animate-pulse' : 'bg-yellow-500'}`} />
-                                    {stats?.health?.status?.toUpperCase() || 'INITIALIZING...'}
-                                </div>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between text-sm text-gray-300">
-                                        <span>API Latency</span>
-                                        <span>{stats?.performance?.avg_inference_ms ? `${stats.performance.avg_inference_ms.toFixed(1)}ms` : '45ms'}</span>
-                                    </div>
-                                    <div className="flex justify-between text-sm text-gray-300">
-                                        <span>Total Inferences</span>
-                                        <span>{stats?.performance?.total_inferences || '1,234'}</span>
-                                    </div>
-                                    <div className="flex justify-between text-sm text-gray-300">
-                                        <span>Model Loaded</span>
-                                        <span className={stats?.health?.model_loaded ? 'text-nature-400' : 'text-red-400'}>
-                                            {stats?.health?.model_loaded ? 'YES' : 'NO'}
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between text-sm text-gray-300">
-                                        <span>Knowledge base</span>
-                                        <span>v{stats?.health?.knowledge_version || 'unknown'}</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="glass-card p-6 rounded-3xl">
-                                <h3 className="text-lg font-bold text-white mb-4">Pending Approvals</h3>
-                                <div className="text-4xl font-bold text-white mb-1">12</div>
-                                <p className="text-gray-400 mt-2 text-sm">&quot;The best fertilizer is the farmer&apos;s shadow.&quot;</p>
-                            </div>
-
-                            <div className="glass-card p-6 rounded-3xl">
-                                <h3 className="text-lg font-bold text-white mb-4">Total Scans Today</h3>
-                                <div className="text-4xl font-bold text-white mb-1">843</div>
-                                <p className="text-green-400 text-sm flex items-center gap-1">↑ 12% vs yesterday</p>
-                            </div>
-                        </>
-                    )}
-
-                    {/* --- EXPERT / DEALER VIEW --- */}
-                    {(role === 'expert' || role === 'dealer') && (
-                        <div className="lg:col-span-3 glass-card p-8 rounded-3xl">
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-lg font-bold text-white">Active Assignments ({role === 'expert' ? 'Consultations' : 'Orders'})</h3>
-                                <Button>New Shipment</Button>
-                            </div>
-                            <div className="space-y-4">
-                                {[1, 2, 3].map((i) => (
-                                    <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                                        <div>
-                                            <div className="font-bold text-white">Order #{1000 + i} - Tomatoes (500kg)</div>
-                                            <div className="text-sm text-gray-400">Status: In Transit • ETA: 2 hours</div>
-                                        </div>
-                                        <Button variant="outline" size="sm">Track</Button>
-                                    </div>
-                                ))}
+                            <div className="w-16 h-16 rounded-2xl bg-nature-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <ScanLine className="w-8 h-8 text-white" />
                             </div>
                         </div>
-                    )}
+                    </div>
+                </Link>
 
+                {/* Farm Overview Grid */}
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <WeatherWidget />
+                    <SprayingWidget />
+                </div>
+
+                {/* Recent Scan History */}
+                <div className="glass-card p-6 rounded-3xl border border-white/5">
+                    <div className="flex items-center justify-between mb-6">
+                        <h3 className="text-xl font-display font-bold text-white">Recent Scans</h3>
+                        {scans.length > 0 && (
+                            <Button
+                                onClick={exportData}
+                                variant="ghost"
+                                className="text-nature-400 hover:text-nature-300 text-sm"
+                            >
+                                <Download className="w-4 h-4 mr-2" />
+                                Export Data
+                            </Button>
+                        )}
+                    </div>
+
+                    {recentScans.length === 0 ? (
+                        <div className="text-center py-12">
+                            <Leaf className="w-16 h-16 text-gray-600 mx-auto mb-4 opacity-50" />
+                            <p className="text-gray-400 mb-2">No scans yet</p>
+                            <p className="text-sm text-gray-500 mb-4">Start your first scan to begin monitoring your crops</p>
+                            <Link href="/scan">
+                                <Button className="bg-nature-600 hover:bg-nature-500">
+                                    Start First Scan
+                                </Button>
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="space-y-3">
+                            {recentScans.map((scan) => (
+                                <div
+                                    key={scan.id}
+                                    className="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-nature-500/30 transition-all"
+                                >
+                                    <div className="flex gap-4">
+                                        {/* Thumbnail */}
+                                        <div className="w-16 h-16 rounded-xl overflow-hidden bg-nature-950/50 flex-shrink-0">
+                                            {scan.imageUrl ? (
+                                                <img
+                                                    src={scan.imageUrl}
+                                                    alt="Scan"
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center">
+                                                    <Leaf className="w-6 h-6 text-nature-500/30" />
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Info */}
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-start justify-between gap-2 mb-1">
+                                                <div>
+                                                    <h4 className="font-bold text-white text-sm truncate">{scan.disease}</h4>
+                                                    <p className="text-xs text-gray-400">{scan.crop}</p>
+                                                </div>
+                                                <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${getSeverityColor(scan.severity)}`}>
+                                                    {scan.severity}
+                                                </span>
+                                            </div>
+
+                                            <div className="flex items-center gap-3 text-xs text-gray-500">
+                                                <span className="flex items-center gap-1">
+                                                    <Calendar className="w-3 h-3" />
+                                                    {new Date(scan.timestamp).toLocaleDateString()}
+                                                </span>
+                                                <span className="flex items-center gap-1">
+                                                    <TrendingUp className="w-3 h-3" />
+                                                    {Math.round(scan.confidence * 100)}%
+                                                </span>
+                                                <span className="flex items-center gap-1">
+                                                    <Clock className="w-3 h-3" />
+                                                    {scan.metadata?.inference_time_ms || 0}ms
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
