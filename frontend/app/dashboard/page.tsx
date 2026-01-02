@@ -20,7 +20,7 @@ export default function Dashboard() {
     const [stats, setStats] = useState<any>(null);
 
     // Default role - can be extended with Firebase custom claims later
-    const role = 'farmer' as 'farmer' | 'admin' | 'sender' | 'receiver';
+    const role = 'farmer' as 'farmer' | 'admin' | 'expert' | 'dealer';
 
     useEffect(() => {
         if (role === 'admin') {
@@ -267,11 +267,11 @@ export default function Dashboard() {
                         </>
                     )}
 
-                    {/* --- SENDER / RECEIVER VIEW --- */}
-                    {(role === 'sender' || role === 'receiver') && (
+                    {/* --- EXPERT / DEALER VIEW --- */}
+                    {(role === 'expert' || role === 'dealer') && (
                         <div className="lg:col-span-3 glass-card p-8 rounded-3xl">
                             <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-lg font-bold text-white">Active Shipments ({role === 'sender' ? 'Outbound' : 'Inbound'})</h3>
+                                <h3 className="text-lg font-bold text-white">Active Assignments ({role === 'expert' ? 'Consultations' : 'Orders'})</h3>
                                 <Button>New Shipment</Button>
                             </div>
                             <div className="space-y-4">
