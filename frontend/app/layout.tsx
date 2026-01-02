@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/700.css";
 import "@fontsource/inter/400.css";
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className="antialiased bg-dark-900 text-white font-sans selection:bg-nature-500/30 selection:text-nature-200" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased bg-nature-900 text-white font-sans selection:bg-nature-500/30 selection:text-white" suppressHydrationWarning>
         <NotificationProvider>
           <ServiceWorkerRegister />
           <Navbar />

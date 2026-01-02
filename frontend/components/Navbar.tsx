@@ -29,20 +29,20 @@ export function Navbar() {
         <nav
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled ? "bg-dark-900/80 backdrop-blur-md border-b border-white/5 py-3" : "bg-transparent py-5"
+                isScrolled ? "glass-nav py-4" : "bg-transparent py-6"
             )}
         >
-            <div className="container mx-auto px-4 flex items-center justify-between">
+            <div className="container-padding flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-full bg-nature-500/20 flex items-center justify-center border border-nature-500/30 group-hover:bg-nature-500/30 transition-colors">
-                        <Leaf className="w-6 h-6 text-nature-400" />
+                    <div className="w-10 h-10 rounded-full bg-nature-500/10 flex items-center justify-center border border-nature-500/20 group-hover:bg-nature-500/20 transition-colors">
+                        <Leaf className="w-6 h-6 text-nature-500" />
                     </div>
                     <span className="text-2xl font-display font-bold text-white tracking-tight">Sanjivani</span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-6">
+                <div className="hidden md:flex items-center gap-8">
                     <GlobalSearchComponent />
                     <div className="flex items-center gap-6">
                         <NavLink href="/">Home</NavLink>
@@ -50,14 +50,14 @@ export function Navbar() {
                         <NavLink href="/calendar">Calendar</NavLink>
                         <NavLink href="/history">History</NavLink>
                         <NavLink href="/faq">FAQ</NavLink>
-                        <NavLink href="/about">About Project</NavLink>
+                        <NavLink href="/about">About</NavLink>
                     </div>
                 </div>
 
                 {/* Action Button & Auth */}
                 <div className="hidden md:flex items-center gap-4">
                     <Link href="/scan">
-                        <button className="px-6 py-2.5 rounded-full bg-accent-500 text-white font-bold text-sm shadow-lg shadow-accent-500/20 hover:shadow-accent-500/40 hover:scale-105 transition-all">
+                        <button className="btn-primary px-6 py-3 text-sm shadow-lg shadow-nature-500/20">
                             Start Diagnosis
                         </button>
                     </Link>
@@ -77,15 +77,15 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-dark-800 border-b border-white/10 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+                <div className="md:hidden absolute top-full left-0 right-0 glass-nav border-t border-white/5 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
                     <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
                     <MobileNavLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</MobileNavLink>
                     <MobileNavLink href="/calendar" onClick={() => setMobileMenuOpen(false)}>Calendar</MobileNavLink>
                     <MobileNavLink href="/history" onClick={() => setMobileMenuOpen(false)}>History</MobileNavLink>
                     <MobileNavLink href="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
-                    <MobileNavLink href="/about" onClick={() => setMobileMenuOpen(false)}>About Project</MobileNavLink>
+                    <MobileNavLink href="/about" onClick={() => setMobileMenuOpen(false)}>About</MobileNavLink>
                     <Link href="/scan" onClick={() => setMobileMenuOpen(false)}>
-                        <button className="w-full py-3 rounded-xl bg-accent-500 font-bold text-white">Start Diagnosis</button>
+                        <button className="w-full btn-primary py-3">Start Diagnosis</button>
                     </Link>
                 </div>
             )}
@@ -97,7 +97,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     return (
         <Link
             href={href}
-            className="text-white/70 hover:text-nature-400 font-medium transition-colors text-sm"
+            className="text-gray-400 hover:text-nature-500 font-medium transition-colors text-sm tracking-wide"
         >
             {children}
         </Link>
@@ -109,7 +109,7 @@ function MobileNavLink({ href, onClick, children }: { href: string; onClick: () 
         <Link
             href={href}
             onClick={onClick}
-            className="text-white/80 hover:text-white font-medium py-2 border-b border-white/5"
+            className="text-gray-300 hover:text-white font-medium py-3 border-b border-white/5"
         >
             {children}
         </Link>

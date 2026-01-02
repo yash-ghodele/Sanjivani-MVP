@@ -1,119 +1,125 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    /* "Green Space" Premium Dark Palette */
+    --nature-950: 15 17 15;   /* #0f110f */
+    --nature-900: 26 26 24;   /* #1a1a18 Deep Charcoal */
+    --nature-800: 38 38 36;   /* #262624 */
+    --nature-700: 58 59 56;
+    --nature-600: 78 80 75;
+    --nature-500: 130 174 25; /* #82ae19 Neon Leaf Green */
+    --nature-400: 155 194 56;
+    --nature-300: 181 214 99;
+    --nature-200: 220 236 181;
+    --nature-100: 241 248 225;
+    --nature-50: 247 250 239;
 
-@theme {
-  /* Forest & Earth Palette (Extracted from User Image) */
-  --color-nature-50: #fffbef;  /* Cream/Paper - Main Light BG */
-  --color-nature-100: #f4f7e2;
-  --color-nature-200: #e3ebd3;
-  --color-nature-300: #c2d19b;
-  --color-nature-400: #a7b971; 
-  --color-nature-500: #8f9d52; /* Olive Accent - Primary Brand */
-  --color-nature-600: #6f7d3d;
-  --color-nature-700: #525d2d;
-  --color-nature-800: #394021;
-  --color-nature-900: #212615;
-  --color-nature-950: #153726; /* Deep Forest - Main Dark BG */
+    --background: var(--nature-900);
+    --foreground: 255 255 255;
+  }
+ 
+  .dark {
+    --background: var(--nature-900);
+    --foreground: 255 255 255;
+  }
+}
+ 
+@layer base {
+  body {
+    @apply bg-nature-900 text-white antialiased font-sans selection:bg-nature-500/30 selection:text-white;
+  }
+}
 
-  /* Semantic Accents */
-  --color-accent-500: #e13600; /* Clay Orange - CTA/Warnings */
-  --color-accent-400: #ff5722;
-
-  
-  --color-dark-900: #020617; /* Deepest Slate */
-  --color-dark-800: #0f172a;
-  --color-dark-700: #1e293b;
-
-  --font-display: var(--font-outfit), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
-  
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-fade-in: fadeIn 0.5s ease-out forwards;
-  --animate-slide-up: slideUp 0.5s ease-out forwards;
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes subtleZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-  }
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-  @keyframes pulseSubtle {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
+@layer components {
+  /* Premium Glassmorphism */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/5 shadow-xl;
   }
   
-  --animate-subtle-zoom: subtleZoom 20s ease-in-out infinite alternate;
-  --animate-shimmer: shimmer 3s infinite linear;
-  --animate-pulse-subtle: pulseSubtle 2s ease-in-out infinite;
-}
+  .glass-nav {
+    @apply bg-nature-900/80 backdrop-blur-md border-b border-white/5;
+  }
 
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-
-.hover-glow {
-  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(46,204,113,0.2)] hover:border-nature-500/50;
-}
-
-:root {
-  --background: #020617;
-  --foreground: #f8fafc;
-}
-
-.dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-}
-
-/* Glassmorphism Utilities */
-.glass-panel {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10;
-}
-
-.glass-card {
-  @apply bg-nature-950/60 backdrop-blur-xl border border-nature-500/30 shadow-2xl;
-}
-
-.text-legible {
-  @apply text-white/80 antialiased;
-}
-
-.text-gradient {
-  @apply bg-gradient-to-r from-nature-400 to-emerald-600 bg-clip-text text-transparent;
+  .btn-primary {
+    @apply bg-nature-500 text-white font-semibold rounded-full hover:bg-nature-400 hover:scale-[1.02] transition-all shadow-lg shadow-nature-500/20;
+  }
+  
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-nature-500 to-nature-300;
+  }
 }
 
 /* Base Styles */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+:root {
+  --background: var(--color-nature-900);
+  --foreground: var(--color-white);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
-::-webkit-scrollbar-track {
-  background: #020617;
+
+/* Premium Glassmorphism */
+/* Used for Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+
+/* Used for Navbar */
+.glass-nav {
+  background: rgba(26, 26, 24, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+
+/* Interactive Glass Hover */
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(130, 174, 25, 0.3); /* Green glow hint */
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-nature-500);
+  color: #ffffff;
+  border-radius: 9999px; /* Full pill */
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-nature-400);
+  box-shadow: 0 0 15px rgba(130, 174, 25, 0.4);
+  transform: scale(1.02);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #82ae19 0%, #b5d663 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Utilities */
+.container-padding {
+  @apply px-6 md:px-12 max-w-7xl mx-auto;
 }

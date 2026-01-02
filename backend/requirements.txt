@@ -9,6 +9,8 @@ pydantic
 firebase-admin
 kagglehub
 scipy
+python-dotenv
+requests  # Required for weather_service.py
 
 # Training dependencies
 matplotlib>=3.5.0
