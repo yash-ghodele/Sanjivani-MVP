@@ -6,14 +6,15 @@ import { FallingLeavesBackground } from "@/components/ui/FallingLeavesBackground
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen selection:bg-nature-500/30">
-      <HeroSection />
-
-      {/* Unified Section for Seamless Transition */}
-      <div className="relative bg-[#0f110f] overflow-hidden">
-        {/* Continuous Background Effects */}
+    <div className="flex flex-col min-h-screen selection:bg-nature-500/30 relative">
+      {/* Global Falling Leaves Background */}
+      <div className="fixed inset-0 z-0">
         <FallingLeavesBackground />
+      </div>
 
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        <HeroSection />
         <FeaturesGrid />
         <AboutSection />
         <CTASection />
