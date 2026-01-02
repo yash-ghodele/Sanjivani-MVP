@@ -104,7 +104,10 @@ graph TB
 | Rice diseases | 🛠 Planned (v2.1) |
 | Offline scan queue | 🛠 Planned |
 | TFLite edge deployment | 🛠 Planned |
-| Multilingual UI | 🛠 Planned |
+| Rice diseases | 🛠 Planned (v2.1) |
+| Offline scan queue | 🛠 Planned |
+| TFLite edge deployment | 🛠 Planned |
+| Multilingual UI (EN/HI/MR) | ✅ Implemented |
 
 ### 📡 API Design
 
@@ -116,6 +119,8 @@ graph TB
 ### 🖥️ Next.js Frontend
 
 * App Router architecture with **Server Side Rendering** support
+* **Dashboard 2.0**: Modular widget system (Weather, Spraying Index, Activity Timeline)
+* **Interactive Sidebar**: Real-time location, clock, and language controls
 * **Green Space Design**: "Deep Forest" theme with falling leaves motion effects
 * Glassmorphism used selectively for result emphasis
 * Mobile-first, touch-friendly layout

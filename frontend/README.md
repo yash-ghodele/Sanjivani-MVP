@@ -11,6 +11,7 @@ A high-performance, accessible web interface for the Sanjivani AI platform, buil
 
 ## ⚡ Features
 
+*   **Multilingual Support**: Full translation for English, Hindi, and Marathi via `i18next`.
 *   **Camera Integration**: Native HTML5 camera access for real-time scanning.
 *   **Dynamic Dashboard**: Live weather widget (OpenWeather) and recent activity tracking.
 *   **Result Cards**: Adaptive cards for "Immediate", "Short-term", and "Preventive" actions.
