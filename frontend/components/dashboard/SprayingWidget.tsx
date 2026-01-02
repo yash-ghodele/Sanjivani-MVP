@@ -1,22 +1,31 @@
-import { Wind, Droplets, ThumbsUp, ThumbsDown } from "lucide-react";
+import { Wind, Droplets, ThumbsUp, ThumbsDown, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SprayingWidgetProps {
     windSpeed: number; // km/h
     humidity: number; // %
     isRaining: boolean;
+    isLoading?: boolean;
 }
 
-export function SprayingWidget({ windSpeed, humidity, isRaining }: SprayingWidgetProps) {
+export function SprayingWidget({ windSpeed, humidity, isRaining, isLoading }: SprayingWidgetProps) {
+    if (isLoading) {
+        return (
+            <div className="glass-card p-6 rounded-3xl h-full flex items-center justify-center min-h-[200px]">
+                <Loader2 className="w-8 h-8 text-nature-500 animate-spin" />
+            </div>
+        );
+    }
+
     const isUnsafe = isRaining || windSpeed > 15 || humidity < 30;
 
     return (
         <div className={cn(
-            "glass-card p-6 rounded-3xl relative overflow-hidden transition-all",
+            "glass-card p-6 rounded-3xl relative overflow-hidden transition-all h-full",
             isUnsafe ? "border-red-500/30 bg-red-500/5" : "border-nature-500/30 bg-nature-500/5"
         )}>
-            <div className="flex justify-between items-start z-10 relative">
-                <div>
+            <div className="flex justify-between items-start z-10 relative h-full flex-col">
+                <div className="w-full">
                     <h3 className={cn(
                         "font-medium flex items-center gap-2 mb-1",
                         isUnsafe ? "text-red-300" : "text-nature-300"
@@ -46,7 +55,7 @@ export function SprayingWidget({ windSpeed, humidity, isRaining }: SprayingWidge
                     </div>
                 </div>
 
-                <div className="space-y-2 text-right">
+                <div className="space-y-2 text-right w-full mt-4">
                     <div className="flex items-center justify-end gap-2 text-sm font-medium text-gray-300">
                         <Wind className="h-4 w-4 text-nature-400" />
                         {windSpeed} km/h

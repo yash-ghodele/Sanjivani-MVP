@@ -1,72 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Cloud, Droplets, Wind, MapPin, Loader2, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WeatherData } from "@/hooks/useWeather";
 
-interface WeatherData {
-    temperature: number;
-    condition: string;
-    description: string;
-    humidity: number;
-    wind_speed: number;
-    location: string;
+interface WeatherWidgetProps {
+    weather: WeatherData | null;
+    loading: boolean;
+    error: string | null;
+    onRetry: () => void;
 }
 
-export function WeatherWidget() {
-    const [weather, setWeather] = useState<WeatherData | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    const fetchWeather = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            // Default to Nagpur/Central India coordinates if geolocation fails or is denied
-            let lat = 21.1458;
-            let lon = 79.0882;
-
-            if (navigator.geolocation) {
-                try {
-                    const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-                        navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 });
-                    });
-                    lat = position.coords.latitude;
-                    lon = position.coords.longitude;
-                } catch (e) {
-                    console.warn("Geolocation denied or timed out, using default.", e);
-                }
-            }
-
-            // Safety check
-            if (isNaN(lat) || isNaN(lon)) {
-                lat = 21.1458;
-                lon = 79.0882;
-            }
-
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-            const res = await fetch(`${apiUrl}/api/v2/weather?lat=${lat}&lon=${lon}`);
-
-            if (!res.ok) throw new Error("Failed to fetch weather");
-
-            const data = await res.json();
-            if (data.success && data.data) {
-                setWeather(data.data);
-            } else {
-                throw new Error("Invalid format");
-            }
-        } catch (err) {
-            console.error("Weather fetch error:", err);
-            setError("Unable to fetch weather data");
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        fetchWeather();
-    }, []);
-
+export function WeatherWidget({ weather, loading, error, onRetry }: WeatherWidgetProps) {
     if (loading) {
         return (
             <div className="glass-card p-6 rounded-3xl h-full flex items-center justify-center min-h-[200px]">
@@ -83,7 +28,7 @@ export function WeatherWidget() {
                 <Button
                     variant="ghost"
                     size="sm"
-                    onClick={fetchWeather}
+                    onClick={onRetry}
                     className="text-nature-400 hover:text-nature-300 hover:bg-nature-500/10"
                 >
                     <RefreshCw className="w-4 h-4 mr-2" />
@@ -103,11 +48,11 @@ export function WeatherWidget() {
                     <div>
                         <div className="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wider font-bold mb-1">
                             <MapPin className="w-3 h-3" />
-                            {weather?.location || "Unknown"}
+                            {weather.location || "Unknown"}
                         </div>
-                        <div className="text-sm text-gray-400 capitalize">{weather?.description}</div>
+                        <div className="text-sm text-gray-400 capitalize">{weather.description}</div>
                     </div>
-                    <Button variant="ghost" size="icon" onClick={fetchWeather} className="h-8 w-8 text-[#82ae19] hover:bg-[#82ae19]/10 rounded-full">
+                    <Button variant="ghost" size="icon" onClick={onRetry} className="h-8 w-8 text-[#82ae19] hover:bg-[#82ae19]/10 rounded-full">
                         <RefreshCw className="w-4 h-4" />
                     </Button>
                 </div>
@@ -115,7 +60,7 @@ export function WeatherWidget() {
                 <div className="flex items-center gap-4 mb-6">
                     <Cloud className="w-16 h-16 text-[#82ae19]" />
                     <div>
-                        <div className="text-5xl font-display font-bold">{weather?.temperature}°</div>
+                        <div className="text-5xl font-display font-bold">{weather.temperature}°</div>
                         <div className="text-sm text-gray-400">Celsius</div>
                     </div>
                 </div>
@@ -125,14 +70,14 @@ export function WeatherWidget() {
                 <div className="bg-white/5 rounded-2xl p-3 border border-white/5 flex items-center gap-3">
                     <Droplets className="w-5 h-5 text-blue-400" />
                     <div>
-                        <div className="text-lg font-bold">{weather?.humidity}%</div>
+                        <div className="text-lg font-bold">{weather.humidity}%</div>
                         <div className="text-[10px] text-gray-500 uppercase">Humidity</div>
                     </div>
                 </div>
                 <div className="bg-white/5 rounded-2xl p-3 border border-white/5 flex items-center gap-3">
                     <Wind className="w-5 h-5 text-gray-400" />
                     <div>
-                        <div className="text-lg font-bold">{weather?.wind_speed} <span className="text-xs font-normal text-gray-500">km/h</span></div>
+                        <div className="text-lg font-bold">{weather.wind_speed} <span className="text-xs font-normal text-gray-500">km/h</span></div>
                         <div className="text-[10px] text-gray-500 uppercase">Wind</div>
                     </div>
                 </div>
