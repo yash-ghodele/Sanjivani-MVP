@@ -78,3 +78,26 @@ Since Cloudflare blocks Python backends, deploy the `backend/` folder to **Rende
 4.  **Redeploy** the Frontend.
 
 ✅ **Done!** Your Sanjivani 2.0 app is now globally distributed.
+
+---
+
+## 🌐 Custom Domains & Renaming
+
+### Change `*.pages.dev` Subdomain
+Your default URL is `[project-name].pages.dev`. To change this:
+1.  Go to **Workers & Pages** > Select Project > **Settings**.
+2.  Go to **General** > **Project restrictions**.
+3.  Use **"Edit project name"** to change the `project-name` prefix.
+    *   *Note:* This changes the URL to `[new-name].pages.dev`.
+
+### Add Custom Domain (e.g., `app.sanjivani.com`)
+1.  Go to **Workers & Pages** > Select Project > **Custom Domains**.
+2.  Click **"Set up a custom domain"**.
+3.  Enter your domain (e.g., `www.yourdomain.com`).
+### How to Manually Redeploy
+If you need to trigger a fresh build without pushing code:
+1.  Go to **Workers & Pages** > Select Project.
+2.  Go to **Deployments**.
+3.  Click the **three dots (...)** next to the latest deployment.
+4.  Select **"Retry deployment"**.
+    *   *Useful when:* The backend URL changed or env vars were updated.

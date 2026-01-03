@@ -49,3 +49,28 @@ If you prefer to configure it manually without the `render.yaml` file:
 4.  **Redeploy** the Frontend.
 
 Your full stack application is now live! 🌍
+
+---
+
+## 🌐 Custom Domains & Renaming
+
+### Change `*.onrender.com` Subdomain
+1.  Go to your **Dashboard** > Select Service (`sanjivani-backend`).
+2.  Go to **Settings**.
+3.  Scroll to **"Unique Name"** (or "Service Name").
+4.  Edit it. Your URL will update to `[new-name].onrender.com`.
+    *   *⚠️ Important:* You must update the `NEXT_PUBLIC_API_URL` in your Cloudflare Frontend settings if you do this!
+
+### Add Custom Domain (e.g., `api.sanjivani.com`)
+1.  Go to **Settings** > **Custom Domains**.
+2.  Click **"Add Custom Domain"**.
+3.  Enter your domain.
+4.  Add the `CNAME` record to your DNS provider as shown by Render.
+
+### How to Manually Redeploy
+If you need to restart the server or apply config changes without pushing code:
+1.  Go to **Dashboard** > Select Service.
+2.  Click **"Manual Deploy"** (top right).
+3.  **Options:**
+    *   **Deploy latest commit:** Quickest. Just restarts/rebuilds.
+    *   **Clear build cache & deploy:** Use this if you changed dependencies (e.g., `requirements.txt`) and it's acting weird.
